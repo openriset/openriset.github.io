@@ -102,3 +102,39 @@
 @media (min-width: 768px) {
   .section-body { max-height: none !important; overflow: visible !important; opacity: 1 !important; }
 }
+
+/* ── Auto-slider carousel ── */
+.auto-slider {
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+}
+.auto-slider .slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+.auto-slider .slide.active {
+  opacity: 1;
+  position: relative;
+  pointer-events: auto;
+}
+.slider-dots {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+.slider-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background: #cbd5e1;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.slider-dot.active {
+  width: 18px;
+  background: #64748b;
+}
