@@ -23,15 +23,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: 'npm'
 
-      - uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-
-      - run: bun install
-
-      - name: Build with Astro
-        run: PATH="./node_modules/.bin:$PATH" astro build
+      - run: npm install
+      - run: npx astro build
 
       - uses: actions/upload-pages-artifact@v3
         with:
