@@ -1,21 +1,24 @@
 {
-  "name": "openriset.github.io",
+  "name": "openriset-website",
   "type": "module",
   "version": "1.0.0",
-  "description": "Website OpenRiset — Infrastruktur Sains Terbuka untuk Indonesia",
+  "private": true,
+  "description": "OpenRiset — Infrastruktur Sains Terbuka untuk Indonesia",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "check:watch": "astro check --watch"
   },
   "dependencies": {
-    "astro": "^5.2.0"
+    "astro": "^6.3.7"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.0.0",
-    "tailwindcss": "^4.0.0",
-    "typescript": "^5.7.0"
+    "@astrojs/check": "^0.9.9",
+    "@tailwindcss/vite": "^4.3.0",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^6.0.3"
   }
 }

@@ -1,0 +1,34 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  icon?: string;
+  href?: string;
+}
+
+const { title, description, icon, href } = Astro.props;
+const Wrapper = href ? 'a' : 'div';
+---
+
+<Wrapper
+  {href}
+  class="block group p-6 sm:p-8 rounded-2xl border border-or-slate-200 bg-white hover:border-or-blue-300 hover:shadow-lg hover:shadow-or-blue-100/50 transition-all duration-200"
+  target={href ? "_blank" : undefined}
+  rel={href ? "noopener" : undefined}
+>
+  {icon && (
+    <span class="text-3xl mb-4 block">{icon}</span>
+  )}
+  <h3 class="text-lg font-bold text-or-slate-900 group-hover:text-or-blue-700 transition-colors">
+    {title}
+  </h3>
+  <p class="mt-2 text-sm text-or-slate-500 leading-relaxed">
+    {description}
+  </p>
+  {href && (
+    <span class="inline-flex items-center gap-1 mt-4 text-sm font-medium text-or-blue-600">
+      Pelajari lebih lanjut
+      <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </span>
+  )}
+</Wrapper>

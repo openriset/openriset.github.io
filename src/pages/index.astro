@@ -1,18 +1,226 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import Card from '../components/Card.astro';
+import RepoCard from '../components/RepoCard.astro';
+import Footer from '../components/Footer.astro';
+
+const SITE_TITLE = "OpenRiset — Infrastruktur Sains Terbuka untuk Indonesia";
+const SITE_DESC = "OpenRiset adalah organisasi yang membangun infrastruktur saintifik terbuka untuk Indonesia. Platform untuk mengindeks, memverifikasi, dan mempublikasikan karya ilmiah. Open source, non-profit, untuk komunitas.";
 ---
 
-<Layout>
-  <main class="max-w-4xl mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold text-stone-900 mb-4">
-      OpenRiset
-    </h1>
-    <p class="text-xl text-stone-600 mb-8">
-      Infrastruktur Sains Terbuka untuk Indonesia
-    </p>
-    <p class="text-stone-700">
-      OpenRiset adalah organisasi yang membangun infrastruktur saintifik terbuka. 
-      Platform untuk mengindeks, memverifikasi, dan mempublikasikan karya ilmiah.
-    </p>
+<Layout title={SITE_TITLE} description={SITE_DESC}>
+  <Nav />
+  
+  <main>
+    <Hero />
+    
+    <!-- Visi & Misi -->
+    <Section id="visi" title="Visi & Misi" subtitle="Mengapa OpenRiset ada dan apa yang kami perjuangkan.">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Card
+          title="Visi"
+          description="Membangun infrastruktur saintifik terbuka yang menjadi standar bagi komunitas riset di Indonesia dan dunia. Setiap peneliti, dari siswa hingga akademisi, memiliki akses ke alat publikasi yang terpercaya."
+          icon="🎯"
+        />
+        <Card
+          title="Misi"
+          description="Mengembangkan perangkat lunak dan standar terbuka untuk publikasi, verifikasi, dan sitasi karya ilmiah. Mendemokratisasi akses terhadap infrastruktur riset berkualitas tanpa biaya."
+          icon="🚀"
+        />
+        <Card
+          title="Prinsip Open Source"
+          description="Semua kode kami publik di bawah lisensi MIT. Transparansi total dalam pengembangan. Siapa pun dapat mengaudit, memodifikasi, dan berkontribusi."
+          icon="⚡"
+        />
+        <Card
+          title="Independen & Non-Profit"
+          description="Tidak terafiliasi dengan institusi atau pendanaan pihak manapun. Kami percaya infrastruktur riset harus bebas dari konflik kepentingan."
+          icon="🛡️"
+        />
+      </div>
+    </Section>
+
+    <!-- Proyek -->
+    <Section id="proyek" title="Proyek Kami" subtitle="Repositori yang menjadi fondasi infrastruktur riset terbuka.">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <RepoCard
+          name="community"
+          description="Monorepo utama OpenRiset — berisi semua aplikasi, shared packages, dan konfigurasi."
+          language="TypeScript"
+          stars={0}
+          url="https://github.com/openriset/community"
+        />
+        <RepoCard
+          name="spec"
+          description="Dokumen spesifikasi, keputusan teknis, dan arsitektur untuk seluruh ekosistem OpenRiset."
+          language="Markdown"
+          stars={0}
+          url="https://github.com/openriset/spec"
+        />
+        <RepoCard
+          name="citation"
+          description="Standar sitasi terbuka untuk karya ilmiah. Format interoperabel untuk pertukaran data sitasi."
+          language="TypeScript"
+          stars={0}
+          url="https://github.com/openriset/citation"
+        />
+        <RepoCard
+          name="openriset.github.io"
+          description="Website resmi OpenRiset — dibangun dengan Astro 6 dan Tailwind CSS 4."
+          language="TypeScript"
+          stars={0}
+          url="https://github.com/openriset/openriset.github.io"
+        />
+        <RepoCard
+          name=".github"
+          description="Profil organisasi dan konfigurasi GitHub untuk seluruh repositori OpenRiset."
+          language="Markdown"
+          stars={0}
+          url="https://github.com/openriset/.github"
+        />
+        <Card
+          title="Butuh Infrastruktur Riset?"
+          description="OpenRiset menyediakan fondasi yang dapat digunakan oleh organisasi riset manapun. Bebas biaya, bebas modifikasi."
+          href="https://github.com/openriset"
+        />
+      </div>
+    </Section>
+
+    <!-- Arsitektur -->
+    <Section id="arsitektur" title="Arsitektur" subtitle="Teknologi yang kami gunakan untuk membangun infrastruktur.">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <Card
+          title="SvelteKit"
+          description="Framework full-stack untuk aplikasi web modern. Performa tinggi dengan SSR dan static generation."
+          icon="🧩"
+        />
+        <Card
+          title="TypeScript"
+          description="Strict mode. Semua kode kami fully typed untuk keamanan dan maintainability jangka panjang."
+          icon="🔷"
+        />
+        <Card
+          title="PostgreSQL + Drizzle"
+          description="Database relasional modern dengan ORM type-safe. Skema terdefinisi ketat, migrasi terotomasi."
+          icon="🗄️"
+        />
+        <Card
+          title="Better Auth"
+          description="Autentikasi modern dengan dukungan multi-provider, session management, dan role-based access."
+          icon="🔐"
+        />
+        <Card
+          title="Kubernetes-ready"
+          description="Aplikasi dirancang untuk deployment cloud-native. Docker compose untuk development lokal."
+          icon="☸️"
+        />
+        <Card
+          title="Astro"
+          description="Static site generation untuk website publik. Performa tinggi, zero JavaScript by default."
+          icon="🌐"
+        />
+      </div>
+    </Section>
+
+    <!-- Kontribusi -->
+    <Section id="kontribusi" title="Berkontribusi" subtitle="OpenRiset terbuka untuk kontribusi dari siapa pun.">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <Card
+          title="Developer"
+          description="Bantu kami membangun infrastruktur. TypeScript, SvelteKit, PostgreSQL — kontribusi code, review, dan testing sangat diterima."
+          icon="💻"
+          href="https://github.com/openriset/community"
+        />
+        <Card
+          title="Peneliti"
+          description="Gunakan platform kami untuk publikasi karya ilmiah. Berikan masukan tentang format, metadata, dan workflow yang dibutuhkan komunitas riset."
+          icon="🔬"
+          href="https://github.com/openriset/spec"
+        />
+        <Card
+          title="Organisasi"
+          description="Adopsi standar dan infrastruktur OpenRiset untuk organisasi Anda. Kami menyediakan dokumentasi lengkap untuk deployment mandiri."
+          icon="🏛️"
+          href="https://github.com/openriset"
+        />
+      </div>
+    </Section>
+
+    <!-- FAQ singkat -->
+    <Section id="faq" title="Pertanyaan Umum">
+      <div class="max-w-2xl mx-auto space-y-6">
+        <details class="group border border-or-slate-200 rounded-xl p-5 hover:border-or-blue-300 transition-colors">
+          <summary class="font-semibold text-or-slate-900 cursor-pointer group-open:text-or-blue-700 transition-colors marker:text-or-blue-500">
+            Apa bedanya OpenRiset dengan platform riset lain?
+          </summary>
+          <p class="mt-3 text-sm text-or-slate-600 leading-relaxed">
+            OpenRiset bukan platform — kami adalah <strong>infrastruktur</strong>. Kami membangun fondasi teknis dan standar yang dapat digunakan organisasi manapun untuk menjalankan platform riset mereka sendiri. Open source, self-hostable, tanpa vendor lock-in.
+          </p>
+        </details>
+        <details class="group border border-or-slate-200 rounded-xl p-5 hover:border-or-blue-300 transition-colors">
+          <summary class="font-semibold text-or-slate-900 cursor-pointer group-open:text-or-blue-700 transition-colors marker:text-or-blue-500">
+            Apakah OpenRiset gratis?
+          </summary>
+          <p class="mt-3 text-sm text-or-slate-600 leading-relaxed">
+            Ya. Semua kode kami berlisensi <strong>MIT</strong> — bebas digunakan, dimodifikasi, dan didistribusikan, termasuk untuk keperluan komersial. Kami tidak memungut biaya apapun.
+          </p>
+        </details>
+        <details class="group border border-or-slate-200 rounded-xl p-5 hover:border-or-blue-300 transition-colors">
+          <summary class="font-semibold text-or-slate-900 cursor-pointer group-open:text-or-blue-700 transition-colors marker:text-or-blue-500">
+            Bagaimana cara memulai menggunakan OpenRiset?
+          </summary>
+          <p class="mt-3 text-sm text-or-slate-600 leading-relaxed">
+            Clone repositori <a href="https://github.com/openriset/community" class="underline" target="_blank" rel="noopener">community</a>, baca dokumentasi di <a href="https://github.com/openriset/spec" class="underline" target="_blank" rel="noopener">spec</a>, dan jalankan menggunakan Docker Compose. Untuk pertanyaan, buka issue di GitHub.
+          </p>
+        </details>
+      </div>
+    </Section>
+
+    <!-- CTA -->
+    <section class="py-20 sm:py-28">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="rounded-3xl bg-gradient-to-br from-or-slate-900 to-or-slate-800 p-10 sm:p-16 shadow-2xl shadow-or-slate-900/20">
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
+            Mari bangun masa depan riset Indonesia
+          </h2>
+          <p class="mt-4 text-base sm:text-lg text-or-slate-300 max-w-xl mx-auto leading-relaxed">
+            Infrastruktur terbuka, standar yang jelas, kolaborasi tanpa batas. Bersama kita wujudkan ekosistem riset yang aksesibel untuk semua.
+          </p>
+          <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <a href="https://github.com/openriset" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-or-slate-900 font-semibold text-sm hover:bg-or-slate-100 transition-colors" target="_blank" rel="noopener">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              Mulai di GitHub
+            </a>
+            <a href="mailto:openriset@proton.me" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-or-slate-600 text-or-slate-200 font-semibold text-sm hover:bg-or-slate-700 transition-colors">
+              Hubungi Kami
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+  
+  <Footer />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "OpenRiset",
+      "url": "https://openriset.github.io",
+      "description": "OpenRiset adalah organisasi yang membangun infrastruktur saintifik terbuka untuk Indonesia. Platform untuk mengindeks, memverifikasi, dan mempublikasikan karya ilmiah.",
+      "email": "openriset@proton.me",
+      "logo": "https://openriset.github.io/favicon.svg",
+      "sameAs": [
+        "https://github.com/openriset"
+      ],
+      "foundingDate": "2025",
+      "nonprofitStatus": "NonProfitType",
+      "actionableFeedbackPolicy": "https://github.com/openriset/community#contributing"
+    }
+  </script>
 </Layout>

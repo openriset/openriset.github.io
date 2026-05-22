@@ -1,12 +1,20 @@
+// @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://openriset.github.io',
-  vite: {
-    plugins: [tailwindcss()]
+  prefetch: {
+    defaultStrategy: 'viewport',
+    prefetchAll: true
   },
   build: {
-    outDir: 'dist'
+    inlineStylesheets: 'auto'
+  },
+  vite: {
+    plugins: [tailwindcss()],
+    build: {
+      cssMinify: true
+    }
   }
 });
