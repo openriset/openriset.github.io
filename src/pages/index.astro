@@ -13,12 +13,53 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
 
   <main>
     <!-- ═══════════════════════════════════════════ HERO ═══════════════════════════════════════════ -->
-    <section class="relative overflow-hidden pt-12 sm:pt-20 lg:pt-28 pb-16 sm:pb-24">
+    <section id="hero-section" class="relative overflow-hidden pt-12 sm:pt-20 lg:pt-28 pb-16 sm:pb-24">
       <!-- Glow spots & grid overlays -->
       <div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,rgba(37,99,235,0.06),transparent)]" aria-hidden="true"></div>
       <div class="absolute top-16 right-0 w-80 sm:w-[35rem] h-80 sm:h-[35rem] bg-brand-100/30 rounded-full blur-3xl -translate-y-1/4 translate-x-1/4" aria-hidden="true"></div>
       <div class="absolute bottom-0 left-0 w-72 sm:w-[30rem] h-72 sm:h-[30rem] bg-amber-50/40 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4" aria-hidden="true"></div>
-      <div class="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_30%,transparent_70%)]" aria-hidden="true"></div>
+      <div id="hero-grid" class="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_30%,transparent_70%)] parallax-gpu" aria-hidden="true"></div>
+
+      <!-- Hero Left Tech Drawing Background -->
+      <div id="hero-blueprint-left" class="absolute bottom-10 left-5 w-96 h-96 opacity-[0.18] pointer-events-none select-none hidden lg:block parallax-gpu" aria-hidden="true">
+        <svg class="w-full h-full text-brand-600" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.75">
+          <circle cx="60" cy="140" r="40" stroke-dasharray="2, 2" class="svg-orbit-slow" />
+          <circle cx="60" cy="140" r="20" />
+          <line x1="60" y1="100" x2="160" y2="40" />
+          <line x1="60" y1="120" x2="160" y2="40" stroke-dasharray="1, 1" />
+          <circle cx="160" cy="40" r="6" fill="currentColor" />
+          <rect x="140" y="80" width="40" height="30" stroke-dasharray="2, 2" />
+          <path d="M20 140 H180 M60 20 V180" stroke-width="0.5" />
+          <text x="145" y="95" font-size="5" font-family="monospace">SYS_ALT_1</text>
+          <text x="15" y="25" font-size="5" font-family="monospace">SCALE: 1:250</text>
+        </svg>
+      </div>
+
+      <!-- Hero Right Tech Drawing Background (Telemetry & Matrix) -->
+      <div id="hero-blueprint-right" class="absolute top-24 right-5 w-96 h-96 opacity-[0.18] pointer-events-none select-none hidden xl:block parallax-gpu" aria-hidden="true">
+        <svg class="w-full h-full text-brand-600" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.75">
+          <!-- Crosshair and coordinate lines -->
+          <path d="M100 20 V180 M20 100 H180" stroke-dasharray="3, 3" stroke-width="0.5" />
+          <!-- Rotating Radar Sweep Group -->
+          <g class="svg-orbit-slow">
+            <circle cx="100" cy="100" r="80" stroke-dasharray="1, 5" />
+            <line x1="100" y1="100" x2="170" y2="30" />
+          </g>
+          <circle cx="100" cy="100" r="50" />
+          <circle cx="100" cy="100" r="6" fill="currentColor" />
+          <line x1="100" y1="100" x2="30" y2="170" stroke-dasharray="2, 2" />
+          <!-- Floating system text -->
+          <text x="110" y="35" font-size="5" font-family="monospace">SYS_HERO_INIT: OK</text>
+          <text x="110" y="45" font-size="5" font-family="monospace">COORD: 0x4f8e2a</text>
+          <text x="110" y="55" font-size="5" font-family="monospace">VECTOR: [0.85, 0.42, 0.31]</text>
+          <text x="25" y="92" font-size="5" font-family="monospace">ROTATION: +45.2°</text>
+          <!-- Corner angle markers -->
+          <path d="M15 15 H25 M15 15 V25" stroke-width="1" />
+          <path d="M185 15 H175 M185 15 V25" stroke-width="1" />
+          <path d="M15 185 H25 M15 185 V175" stroke-width="1" />
+          <path d="M185 185 H175 M185 185 V175" stroke-width="1" />
+        </svg>
+      </div>
 
       <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div class="grid lg:grid-cols-12 gap-12 items-center">
@@ -67,7 +108,7 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
 
           <!-- Hero Right: Interactive Protocol Dashboard -->
           <div class="lg:col-span-5 reveal-slow">
-            <div class="relative rounded-2xl border border-neutral-200 bg-white/70 p-5 shadow-2xl backdrop-blur-md">
+            <div class="relative rounded-2xl border border-neutral-200 bg-white/70 p-5 shadow-2xl backdrop-blur-md tech-corners">
               <!-- Top bar -->
               <div class="flex items-center justify-between border-b border-neutral-100 pb-3 mb-4">
                 <div class="flex items-center gap-2">
@@ -137,9 +178,67 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
     </section>
 
     <!-- ═══════════════════════════════════════════ WHY (COMPARATIVE) ═══════════════════════════════════════════ -->
-    <section id="why" class="py-16 sm:py-24 bg-soft border-y border-neutral-100">
-      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+    <section id="why" class="relative py-16 sm:py-24 bg-soft border-y border-neutral-100 bg-dot-grid overflow-visible">
+      <div class="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white pointer-events-none" aria-hidden="true"></div>
+      
+      <!-- Technical margin markers -->
+      <div class="absolute top-10 left-5 font-mono text-[9px] text-neutral-400 select-none hidden lg:block" aria-hidden="true">
+        REF_PT: 0.14-A // LAT: -6.2088 // LONG: 106.8456
+      </div>
+      <div class="absolute bottom-10 right-5 font-mono text-[9px] text-neutral-400 select-none hidden lg:block" aria-hidden="true">
+        SYS_STATUS: VERIFIED // SYNC: 100%
+      </div>
+
+      <!-- Why Section Large Blueprint Flowchart -->
+      <div id="why-flowchart" class="absolute top-10 left-10 w-[50rem] h-[30rem] opacity-[0.16] pointer-events-none select-none hidden xl:block parallax-gpu" aria-hidden="true">
+        <svg class="w-full h-full text-ink" viewBox="0 0 800 400" fill="none" stroke="currentColor" stroke-width="0.75">
+          <rect x="50" y="150" width="120" height="60" rx="4" />
+          <rect x="250" y="80" width="120" height="60" rx="4" stroke-dasharray="3, 3" />
+          <rect x="250" y="220" width="120" height="60" rx="4" />
+          <rect x="450" y="150" width="120" height="60" rx="4" />
+          <rect x="650" y="150" width="100" height="60" rx="4" />
+          <path id="why-path-1" d="M170 180 H210 V110 H250 M170 180 H210 V250 H250" />
+          <path id="why-path-2" d="M370 110 H410 V180 H450 M370 250 H410 V180 H450" />
+          <path id="why-path-3" d="M570 180 H650" />
+          <text x="60" y="185" font-size="8" font-family="monospace" fill="currentColor" stroke="none">Data Source</text>
+          <text x="260" y="115" font-size="8" font-family="monospace" fill="currentColor" stroke="none">Commercial DB</text>
+          <text x="260" y="255" font-size="8" font-family="monospace" fill="currentColor" stroke="none">OpenRiset Index</text>
+          <text x="460" y="185" font-size="8" font-family="monospace" fill="currentColor" stroke="none">Global Graph</text>
+          <text x="660" y="185" font-size="8" font-family="monospace" fill="currentColor" stroke="none">Public Access</text>
+          <circle cx="210" cy="110" r="3" fill="currentColor" />
+          <circle cx="210" cy="250" r="3" fill="currentColor" />
+          <circle cx="410" cy="180" r="3" fill="currentColor" />
+        </svg>
+      </div>
+
+      <!-- Why Section Decentralized Topology Background (Right) -->
+      <div id="why-swarm" class="absolute bottom-10 right-10 w-[24rem] h-[24rem] opacity-[0.16] pointer-events-none select-none hidden lg:block parallax-gpu" aria-hidden="true">
+        <svg class="w-full h-full text-brand-600" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.75">
+          <!-- Central ring -->
+          <circle cx="100" cy="100" r="25" stroke-dasharray="3, 3" class="svg-orbit-reverse-slow" />
+          <!-- Decentralized nodes -->
+          <circle cx="100" cy="40" r="8" fill="currentColor" />
+          <circle cx="45" cy="80" r="8" />
+          <circle cx="155" cy="80" r="8" />
+          <circle cx="65" cy="150" r="8" />
+          <circle cx="135" cy="150" r="8" />
+          <!-- Connections -->
+          <line x1="100" y1="48" x2="45" y2="72" />
+          <line x1="100" y1="48" x2="155" y2="72" />
+          <line x1="45" y1="88" x2="65" y2="142" />
+          <line x1="155" y1="88" x2="135" y2="142" />
+          <line x1="65" y1="150" x2="135" y2="150" stroke-dasharray="2, 2" />
+          <line x1="100" y1="40" x2="100" y2="100" stroke-dasharray="1, 1" />
+          <!-- Extra telemetry texts -->
+          <text x="100" y="25" font-size="5" font-family="monospace" text-anchor="middle" fill="currentColor" stroke="none">NODE_PEER_01</text>
+          <text x="30" y="70" font-size="5" font-family="monospace" text-anchor="middle" fill="currentColor" stroke="none">NODE_PEER_02</text>
+          <text x="170" y="70" font-size="5" font-family="monospace" text-anchor="middle" fill="currentColor" stroke="none">NODE_PEER_03</text>
+          <text x="100" y="103" font-size="5" font-family="monospace" text-anchor="middle" fill="currentColor" stroke="none">IPFS_DHT_SWARM</text>
+        </svg>
+      </div>
+      <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+          <div class="font-mono text-[10px] text-neutral-400 mb-2">[SEC_01 / LITERACY_PARADIGM]</div>
           <span class="text-brand-600 text-xs font-bold uppercase tracking-widest">Paradigma Baru</span>
           <h2 class="mt-3 text-2xl sm:text-4xl font-extrabold text-ink leading-tight">
             Riset Indonesia butuh fondasi terbuka, bukan ekosistem terkunci
@@ -149,89 +248,153 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
           </p>
         </div>
 
-        <!-- Comparative Grid -->
-        <div class="grid md:grid-cols-2 gap-8 items-stretch reveal-slow">
-          <!-- Column 1: Traditional platform -->
-          <div class="rounded-2xl border border-red-100 bg-white p-6 sm:p-8 flex flex-col justify-between shadow-sm relative overflow-hidden group">
-            <div class="absolute top-0 right-0 w-24 h-24 bg-red-50/40 rounded-full blur-xl group-hover:scale-125 transition-transform"></div>
-            <div>
-              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 text-red-700 text-xs font-semibold mb-6">
-                Platform Berlangganan / Vendor Lock-in
+        <!-- Collapsible wrapper for mobile -->
+        <div id="why-collapse" class="mobile-collapse-body">
+          <!-- Comparative Grid -->
+          <div class="grid md:grid-cols-2 gap-8 items-stretch reveal-slow mobile-carousel" id="why-carousel">
+            <!-- Column 1: Traditional platform -->
+            <div class="rounded-2xl border border-red-100 bg-white p-6 sm:p-8 flex flex-col justify-between shadow-sm relative overflow-hidden group tech-corners">
+              <div class="absolute top-0 right-0 w-24 h-24 bg-red-50/40 rounded-full blur-xl group-hover:scale-125 transition-transform"></div>
+              <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 text-red-700 text-xs font-semibold mb-6">
+                  Platform Berlangganan / Vendor Lock-in
+                </div>
+                <h3 class="text-lg font-bold text-ink mb-4">Sistem Riset Tradisional (Tertutup)</h3>
+                <ul class="space-y-4">
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+                    <div>
+                      <span class="text-sm font-semibold text-ink block">Karya Ilmiah Rentan Hilang</span>
+                      <span class="text-xs text-neutral-500 leading-normal block mt-0.5">Tugas akhir siswa sekolah dan skripsi kampus kecil seringkali hilang tanpa jejak digital atau indeksasi formal.</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+                    <div>
+                      <span class="text-sm font-semibold text-ink block">Format Metadata Tidak Seragam</span>
+                      <span class="text-xs text-neutral-500 leading-normal block mt-0.5">Setiap institusi menggunakan format berbeda (Excel, PDF mentah, dsb) sehingga mempersulit penelusuran data antar sistem.</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+                    <div>
+                      <span class="text-sm font-semibold text-ink block">Ketergantungan Server Tunggal</span>
+                      <span class="text-xs text-neutral-500 leading-normal block mt-0.5">Data terisolasi di server vendor komersial. Jika masa langganan habis, akses ke jejak ilmiah institusi terancam terputus.</span>
+                    </div>
+                  </li>
+                </ul>
               </div>
-              <h3 class="text-lg font-bold text-ink mb-4">Sistem Riset Tradisional (Tertutup)</h3>
-              <ul class="space-y-4">
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
-                  <div>
-                    <span class="text-sm font-semibold text-ink block">Karya Ilmiah Rentan Hilang</span>
-                    <span class="text-xs text-neutral-500 leading-normal block mt-0.5">Tugas akhir siswa sekolah dan skripsi kampus kecil seringkali hilang tanpa jejak digital atau indeksasi formal.</span>
-                  </div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
-                  <div>
-                    <span class="text-sm font-semibold text-ink block">Format Metadata Tidak Seragam</span>
-                    <span class="text-xs text-neutral-500 leading-normal block mt-0.5">Setiap institusi menggunakan format berbeda (Excel, PDF mentah, dsb) sehingga mempersulit penelusuran data antar sistem.</span>
-                  </div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
-                  <div>
-                    <span class="text-sm font-semibold text-ink block">Ketergantungan Server Tunggal</span>
-                    <span class="text-xs text-neutral-500 leading-normal block mt-0.5">Data terisolasi di server vendor komersial. Jika masa langganan habis, akses ke jejak ilmiah institusi terancam terputus.</span>
-                  </div>
-                </li>
-              </ul>
+              <div class="border-t border-neutral-100 pt-6 mt-8">
+                <span class="text-xs text-neutral-400 font-mono">Biaya Operasional: Jutaan Rupiah &bull; Skala Terbatas</span>
+              </div>
             </div>
-            <div class="border-t border-neutral-100 pt-6 mt-8">
-              <span class="text-xs text-neutral-400 font-mono">Biaya Operasional: Jutaan Rupiah &bull; Skala Terbatas</span>
+
+            <!-- Column 2: OpenRiset Model -->
+            <div class="rounded-2xl border border-brand-200 bg-white p-6 sm:p-8 flex flex-col justify-between shadow-xl relative overflow-hidden group tech-corners">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-brand-50/60 rounded-full blur-xl group-hover:scale-125 transition-transform"></div>
+              <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-700 text-xs font-semibold mb-6">
+                  Ekosistem Kolaboratif / Open Source
+                </div>
+                <h3 class="text-lg font-bold text-ink mb-4">Ekosistem Sains Terbuka (OpenRiset)</h3>
+                <ul class="space-y-4">
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    <div>
+                      <span class="text-sm font-semibold text-ink block">Indeksasi Permanen dan Terbuka</span>
+                      <span class="text-xs text-neutral-500 leading-normal block mt-0.5">Menjamin rekam jejak riset generasi muda (SD s.d. Perguruan Tinggi) dapat diindeks, dirujuk, dan disitasi secara permanen.</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    <div>
+                      <span class="text-sm font-semibold text-ink block">Standar Metadata Skema Internasional</span>
+                      <span class="text-xs text-neutral-500 leading-normal block mt-0.5">Kompatibel penuh dengan standar internasional (SINTA, Crossref, DataCite) untuk pertukaran data yang mulus.</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    <div>
+                      <span class="text-sm font-semibold text-ink block">Kedaulatan Data Penuh</span>
+                      <span class="text-xs text-neutral-500 leading-normal block mt-0.5">Kode sumber berlisensi MIT. Institusi dapat men-deploy di server mereka sendiri secara independen tanpa biaya royalti.</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="border-t border-brand-100 pt-6 mt-8">
+                <span class="text-xs text-brand-600 font-mono font-medium">Skala Serverless: Cloud-Native &amp; Bebas Royalti</span>
+              </div>
             </div>
           </div>
 
-          <!-- Column 2: OpenRiset Model -->
-          <div class="rounded-2xl border border-brand-200 bg-white p-6 sm:p-8 flex flex-col justify-between shadow-xl relative overflow-hidden group">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-50/60 rounded-full blur-xl group-hover:scale-125 transition-transform"></div>
-            <div>
-              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-700 text-xs font-semibold mb-6">
-                Ekosistem Kolaboratif / Open Source
-              </div>
-              <h3 class="text-lg font-bold text-ink mb-4">Ekosistem Sains Terbuka (OpenRiset)</h3>
-              <ul class="space-y-4">
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                  <div>
-                    <span class="text-sm font-semibold text-ink block">Indeksasi Permanen dan Terbuka</span>
-                    <span class="text-xs text-neutral-500 leading-normal block mt-0.5">Menjamin rekam jejak riset generasi muda (SD s.d. Perguruan Tinggi) dapat diindeks, dirujuk, dan disitasi secara permanen.</span>
-                  </div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                  <div>
-                    <span class="text-sm font-semibold text-ink block">Standar Metadata Skema Internasional</span>
-                    <span class="text-xs text-neutral-500 leading-normal block mt-0.5">Kompatibel penuh dengan standar internasional (SINTA, Crossref, DataCite) untuk pertukaran data yang mulus.</span>
-                  </div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                  <div>
-                    <span class="text-sm font-semibold text-ink block">Kedaulatan Data Penuh</span>
-                    <span class="text-xs text-neutral-500 leading-normal block mt-0.5">Kode sumber berlisensi MIT. Institusi dapat men-deploy di server mereka sendiri secara independen tanpa biaya royalti.</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="border-t border-brand-100 pt-6 mt-8">
-              <span class="text-xs text-brand-600 font-mono font-medium">Skala Serverless: Cloud-Native &amp; Bebas Royalti</span>
-            </div>
+          <!-- Carousel Navigation Dots visible only on mobile -->
+          <div class="flex md:hidden justify-center gap-1.5 mt-4" id="why-carousel-dots">
+            <span class="w-3 h-1.5 rounded-full bg-brand-600 transition-all duration-300" data-index="0"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-neutral-300 transition-all duration-300" data-index="1"></span>
           </div>
+        </div>
+
+        <!-- Toggle button visible only on mobile -->
+        <div class="md:hidden mt-6 flex justify-center">
+          <button id="why-toggle-btn" class="font-mono text-xs font-bold text-brand-600 border border-brand-200 bg-brand-50/50 hover:bg-brand-50 px-4 py-2.5 rounded-lg flex items-center gap-2 cursor-pointer transition-all duration-300">
+            <span class="btn-text">[ BUKA PERBANDINGAN / EXPAND COMPARISON ]</span>
+            <span class="btn-icon text-[10px] transition-transform duration-300">+</span>
+          </button>
         </div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════ CORE PRODUCTS ═══════════════════════════════════════════ -->
-    <section id="products" class="py-16 sm:py-24 bg-white">
+    <section id="products" class="relative py-16 sm:py-24 bg-white overflow-visible">
+      <div class="absolute inset-0 bg-line-grid [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_20%,transparent_70%)] pointer-events-none" aria-hidden="true"></div>
+      
+      <!-- Products Technical Integration Background -->
+      <div class="absolute bottom-10 right-10 w-[40rem] h-[25rem] opacity-[0.16] pointer-events-none select-none hidden lg:block" aria-hidden="true">
+        <svg class="w-full h-full text-brand-600" viewBox="0 0 600 300" fill="none" stroke="currentColor" stroke-width="0.75">
+          <circle cx="300" cy="150" r="60" stroke-dasharray="4, 4" class="svg-orbit-slow" />
+          <circle cx="300" cy="150" r="40" />
+          <circle cx="300" cy="150" r="10" fill="currentColor" />
+          <line x1="300" y1="90" x2="300" y2="30" />
+          <line x1="300" y1="210" x2="300" y2="270" />
+          <line x1="240" y1="150" x2="180" y2="150" />
+          <line x1="360" y1="150" x2="420" y2="150" />
+          <rect x="270" y="10" width="60" height="20" rx="3" />
+          <rect x="270" y="270" width="60" height="20" rx="3" />
+          <rect x="110" y="140" width="70" height="20" rx="3" />
+          <rect x="420" y="140" width="70" height="20" rx="3" />
+          <text x="300" y="153" font-size="6" font-family="monospace" text-anchor="middle" fill="white" stroke="none">HUB</text>
+          <text x="300" y="22" font-size="6" font-family="monospace" text-anchor="middle" fill="currentColor" stroke="none">PLATFORM</text>
+          <text x="300" y="282" font-size="6" font-family="monospace" text-anchor="middle" fill="currentColor" stroke="none">INDEX</text>
+          <text x="145" y="152" font-size="6" font-family="monospace" text-anchor="middle" fill="currentColor" stroke="none">K-12 API</text>
+          <text x="455" y="152" font-size="6" font-family="monospace" text-anchor="middle" fill="currentColor" stroke="none">SCHEMAS</text>
+        </svg>
+      </div>
+
+      <!-- Products Metadata Parsing Pipeline Background (Left) -->
+      <div class="absolute top-10 left-10 w-[26rem] h-[26rem] opacity-[0.16] pointer-events-none select-none hidden lg:block" aria-hidden="true">
+        <svg class="w-full h-full text-brand-600" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.75">
+          <rect x="20" y="20" width="50" height="30" rx="3" />
+          <rect x="120" y="20" width="60" height="30" rx="3" stroke-dasharray="3, 3" />
+          <rect x="70" y="120" width="60" height="40" rx="3" />
+          <!-- Flow lines -->
+          <path d="M70 35 H120 M150 50 V120 M45 50 V140 H70" />
+          <text x="45" y="38" font-size="5" font-family="monospace" text-anchor="middle" fill="currentColor" stroke="none">PDF_IN</text>
+          <text x="150" y="38" font-size="5" font-family="monospace" text-anchor="middle" fill="currentColor" stroke="none">PARSER</text>
+          <text x="100" y="142" font-size="5" font-family="monospace" text-anchor="middle" fill="currentColor" stroke="none">JSON-LD_GRAPH</text>
+          <!-- Triple graphs -->
+          <circle cx="100" cy="130" r="3" fill="currentColor" />
+          <circle cx="85" cy="150" r="3" fill="currentColor" />
+          <circle cx="115" cy="150" r="3" fill="currentColor" />
+          <line x1="100" y1="130" x2="85" y2="150" />
+          <line x1="100" y1="130" x2="115" y2="150" />
+          <!-- Extra measurement line -->
+          <line x1="10" y1="10" x2="190" y2="10" stroke-dasharray="1, 4" />
+          <text x="15" y="8" font-size="4" font-family="monospace">PARSING_PIPELINE_ACTIVE</text>
+        </svg>
+      </div>
       <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <div class="text-center max-w-3xl mx-auto lg:mb-32 mb-16 reveal">
+          <div class="font-mono text-[10px] text-neutral-400 mb-2">[SEC_02 / PLATFORM_AND_INDEX]</div>
           <span class="text-brand-600 text-xs font-bold uppercase tracking-widest">Dua Pilar Utama</span>
           <h2 class="mt-3 text-2xl sm:text-4xl font-extrabold text-ink leading-tight">
             Menghubungkan Publikasi Ilmiah dengan Jejaring Sosial Kredibel
@@ -241,9 +404,9 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8 items-stretch reveal-slow">
+        <div class="grid md:grid-cols-2 gap-8 items-stretch reveal-slow lg:-mt-20 relative z-20 mobile-carousel" id="products-carousel">
           <!-- Card 1: OpenRiset Index -->
-          <div class="rounded-3xl border border-neutral-200 bg-gradient-to-br from-white to-slate-50/50 p-6 sm:p-8 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:border-brand-300 transition-colors duration-300">
+          <div class="rounded-3xl border border-neutral-200 bg-gradient-to-br from-white to-slate-50/50 p-6 sm:p-8 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:border-brand-300 transition-colors duration-300 tech-corners">
             <div class="absolute top-0 right-0 w-32 h-32 bg-brand-50/40 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-500"></div>
             <div>
               <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 text-brand-700 text-xs font-semibold mb-6">
@@ -278,7 +441,7 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
           </div>
 
           <!-- Card 2: OpenRiset Platform -->
-          <div class="rounded-3xl border border-neutral-200 bg-gradient-to-br from-white to-slate-50/50 p-6 sm:p-8 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:border-emerald-300 transition-colors duration-300">
+          <div class="rounded-3xl border border-neutral-200 bg-gradient-to-br from-white to-slate-50/50 p-6 sm:p-8 flex flex-col justify-between shadow-sm relative overflow-hidden group hover:border-emerald-300 transition-colors duration-300 tech-corners">
             <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-50/40 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-500"></div>
             <div>
               <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50/80 text-emerald-700 text-xs font-semibold mb-6">
@@ -312,12 +475,48 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
             </div>
           </div>
         </div>
+
+        <!-- Carousel Navigation Dots visible only on mobile -->
+        <div class="flex md:hidden justify-center gap-1.5 mt-2" id="products-carousel-dots">
+          <span class="w-3 h-1.5 rounded-full bg-brand-600 transition-all duration-300" data-index="0"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-neutral-300 transition-all duration-300" data-index="1"></span>
+        </div>
+      </section>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════ STAT BAR ═══════════════════════════════════════════ -->
-    <section class="relative overflow-hidden bg-ink py-12 sm:py-16 reveal">
+    <section class="relative overflow-hidden bg-ink pt-8 pb-6 sm:pt-10 sm:pb-8 reveal" id="stat-bar-section">
       <div class="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_50%_50%,rgba(37,99,235,0.12),transparent)]" aria-hidden="true"></div>
+      
+      <!-- Sine-wave Data Signal Background Overlay -->
+      <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-24 opacity-35" aria-hidden="true">
+        <svg class="w-full h-full" viewBox="0 0 1200 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path id="wave-primary" d="M0 50 Q 150 10, 300 50 T 600 50 T 900 50 T 1200 50" stroke="#3b82f6" stroke-width="1.5" class="svg-wave-flow" />
+          <path id="wave-secondary" d="M0 50 Q 150 90, 300 50 T 600 50 T 900 50 T 1200 50" stroke="#10b981" stroke-width="1" />
+          <circle cx="300" cy="50" r="3" fill="#3b82f6" />
+          <circle cx="600" cy="50" r="3" fill="#10b981" />
+          <circle cx="900" cy="50" r="3" fill="#8b5cf6" />
+        </svg>
+      </div>
+
+      <!-- Stat Bar Left/Right Active Telemetry Stream Background (Left & Right) -->
+      <div class="absolute inset-y-0 left-4 w-40 opacity-25 pointer-events-none select-none hidden lg:block" aria-hidden="true">
+        <div class="h-full flex flex-col justify-center font-mono text-[8px] text-brand-400 space-y-1 leading-none">
+          <div>[SYS_STAT_OK]</div>
+          <div>BAUD_RATE: 9600</div>
+          <div>STATUS: SYNCED</div>
+          <div id="telemetry-binary-left">01101001 01101110</div>
+        </div>
+      </div>
+      <div class="absolute inset-y-0 right-4 w-40 opacity-25 pointer-events-none select-none hidden lg:block" aria-hidden="true">
+        <div class="h-full flex flex-col justify-center font-mono text-[8px] text-brand-400 space-y-1 leading-none text-right">
+          <div>[REPUTATION: OK]</div>
+          <div id="telemetry-mem">MEM_LOAD: 12.4%</div>
+          <div>DB_POOL: ACTIVE</div>
+          <div id="telemetry-binary-right">11010011 00101100</div>
+        </div>
+      </div>
       <div class="relative max-w-5xl mx-auto px-5 sm:px-8 lg:px-10">
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
           <div>
@@ -337,13 +536,96 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
             <span class="block text-xs text-neutral-400 mt-2">Semua Bidang Ilmu.<br />Tanpa Batas.</span>
           </div>
         </div>
+
+        <!-- Interactive Fourier Signal Controls -->
+        <div class="mt-6 lg:mt-8 max-w-md lg:ml-40 lg:mr-auto mx-auto bg-neutral-900/60 backdrop-blur-sm border border-neutral-800 rounded-xl p-4 text-left relative z-10 tech-corners">
+          <div class="flex items-center justify-between border-b border-neutral-800 pb-2 mb-3">
+            <span class="text-[10px] font-mono text-cyan-glow tracking-widest">[ SIGNAL MONITORING CONSOLE ]</span>
+            <button id="btn-toggle-signal" class="text-[9px] font-mono font-bold bg-neutral-800 hover:bg-neutral-700 text-neutral-400 hover:text-white px-2 py-1 rounded border border-neutral-700 transition-colors uppercase cursor-none" type="button">
+              Test Audio: Off
+            </button>
+          </div>
+          <div class="grid grid-cols-3 gap-4">
+            <!-- Frequency Slider -->
+            <div>
+              <label for="slider-freq" class="block text-[8px] font-mono text-neutral-500 uppercase mb-1">Frequency</label>
+              <input type="range" id="slider-freq" min="1" max="10" step="0.5" value="2" class="w-full accent-brand-500 cursor-none h-1 bg-neutral-800 rounded-lg appearance-none" />
+              <div class="flex justify-between text-[7px] font-mono text-neutral-600 mt-0.5 select-none">
+                <span>1Hz</span>
+                <span id="val-freq" class="text-brand-400 font-bold">2.0Hz</span>
+                <span>10Hz</span>
+              </div>
+            </div>
+            <!-- Amplitude Slider -->
+            <div>
+              <label for="slider-amp" class="block text-[8px] font-mono text-neutral-500 uppercase mb-1">Amplitude</label>
+              <input type="range" id="slider-amp" min="10" max="80" step="2" value="40" class="w-full accent-brand-500 cursor-none h-1 bg-neutral-800 rounded-lg appearance-none" />
+              <div class="flex justify-between text-[7px] font-mono text-neutral-600 mt-0.5 select-none">
+                <span>Min</span>
+                <span id="val-amp" class="text-brand-400 font-bold">40px</span>
+                <span>Max</span>
+              </div>
+            </div>
+            <!-- Noise Slider -->
+            <div>
+              <label for="slider-noise" class="block text-[8px] font-mono text-neutral-500 uppercase mb-1">Signal Noise</label>
+              <input type="range" id="slider-noise" min="0" max="30" step="2" value="0" class="w-full accent-brand-500 cursor-none h-1 bg-neutral-800 rounded-lg appearance-none" />
+              <div class="flex justify-between text-[7px] font-mono text-neutral-600 mt-0.5 select-none">
+                <span>0%</span>
+                <span id="val-noise" class="text-brand-400 font-bold">0%</span>
+                <span>30%</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════ PROJECTS & STANDARDS (BENTO GRID) ═══════════════════════════════════════════ -->
-    <section id="projects" class="py-16 sm:py-24 relative">
-      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+    <section id="projects" class="py-16 sm:py-24 relative bg-soft border-y border-neutral-100 bg-dot-grid overflow-visible scroll-mt-24">
+      <div class="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white pointer-events-none" aria-hidden="true"></div>
+      
+      <!-- Projects Technical Blueprint Details -->
+      <div id="projects-blueprint" class="absolute -top-48 right-12 w-80 h-80 opacity-[0.35] mix-blend-difference z-20 pointer-events-none select-none hidden lg:block parallax-gpu" aria-hidden="true">
+        <svg class="w-full h-full text-white" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.75">
+          <rect x="10" y="10" width="180" height="180" stroke-dasharray="4, 4" />
+          <path d="M10 50 H190 M10 100 H190 M10 150 H190" />
+          <path d="M50 10 V190 M100 10 V190 M150 10 V190" />
+          <circle cx="50" cy="50" r="4" fill="currentColor" />
+          <circle cx="100" cy="100" r="4" fill="currentColor" />
+          <circle cx="150" cy="100" r="4" fill="currentColor" />
+          <circle cx="100" cy="150" r="4" fill="currentColor" />
+          <path d="M50 50 Q 75 75, 100 100 H150 M100 100 L100 150" stroke-width="1.5" />
+          <text x="58" y="48" font-size="5" font-family="monospace">commit: 5a2ef3</text>
+          <text x="108" y="98" font-size="5" font-family="monospace">origin/main</text>
+        </svg>
+      </div>
+
+      <!-- Projects Directory Structure Blueprint (Left) -->
+      <div class="absolute bottom-12 left-12 w-80 h-80 opacity-[0.16] pointer-events-none select-none hidden xl:block" aria-hidden="true">
+        <svg class="w-full h-full text-brand-600" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.75">
+          <!-- Folder boxes -->
+          <rect x="20" y="20" width="70" height="20" rx="2" />
+          <rect x="50" y="60" width="80" height="20" rx="2" stroke-dasharray="2, 2" />
+          <rect x="50" y="100" width="80" height="20" rx="2" stroke-dasharray="2, 2" />
+          <rect x="50" y="140" width="80" height="20" rx="2" />
+          <!-- Folder connectors -->
+          <path d="M35 40 V150 H50" />
+          <path d="M35 70 H50" />
+          <path d="M35 110 H50" />
+          <!-- Texts -->
+          <text x="25" y="32" font-size="5" font-family="monospace" fill="currentColor">openriset-monorepo/</text>
+          <text x="55" y="72" font-size="5" font-family="monospace" fill="currentColor">├── community/index (SvelteKit)</text>
+          <text x="55" y="112" font-size="5" font-family="monospace" fill="currentColor">├── community/platform (Qwik)</text>
+          <text x="55" y="152" font-size="5" font-family="monospace" fill="currentColor">└── spec/citation (Drizzle/PG)</text>
+          <!-- Engineering corner markers -->
+          <path d="M10 30 V10 H30 M170 10 H190 V30 M10 170 V190 H30 M170 190 H190 V170" />
+        </svg>
+      </div>
+
+      <div class="relative z-20 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         
+        <!-- Header -->
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16 reveal">
           <div class="max-w-xl">
             <span class="text-brand-600 text-xs font-bold uppercase tracking-widest">Eksplorasi Ekosistem</span>
@@ -351,230 +633,293 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
               Tiga repositori dasar, satu standar ekosistem terpadu
             </h2>
           </div>
-          <p class="text-sm text-neutral-500 max-w-xs md:text-right">
+          <p class="text-sm text-neutral-500 max-w-xs md:text-right text-balance">
             Dari monorepo aplikasi, dokumen spesifikasi arsitektur, hingga pustaka pengolahan sitasi terstandar.
           </p>
         </div>
 
-        <!-- Bento Grid -->
-        <div class="bento-grid">
-          
-          <!-- Bento Card 1: Interactive Terminal (Community & Specs) -->
-          <div class="bento-col-4 bento-row-2 rounded-2xl spotlight-card p-6 flex flex-col justify-between">
-            <div class="space-y-4">
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-brand-600 uppercase tracking-wider font-mono">01 / Code &amp; Repositories</span>
-                <span class="text-[10px] bg-brand-50 text-brand-600 font-semibold px-2 py-0.5 rounded-full">Interactive CLI</span>
+        <!-- Collapsible wrapper for mobile -->
+        <div id="projects-collapse" class="mobile-collapse-body">
+          <!-- Bento Grid -->
+          <div class="bento-grid perspective-1000">
+            <!-- Bento Card 1: Interactive Terminal (Community & Specs) -->
+            <div class="bento-col-4 bento-row-2 rounded-2xl spotlight-card p-6 flex flex-col justify-between tech-corners">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold text-brand-600 uppercase tracking-wider font-mono">01 / Code &amp; Repositories</span>
+                  <span class="text-[10px] bg-brand-50 text-brand-600 font-semibold px-2 py-0.5 rounded-full">Interactive CLI</span>
+                </div>
+                <h3 class="text-lg font-bold text-ink">Repositori Pengembang (Open Source)</h3>
+                <p class="text-xs sm:text-sm text-neutral-500 leading-relaxed">
+                  Pilih tab di bawah untuk melihat cuplikan perintah CLI, struktur instalasi, serta penggunaan repositori kami.
+                </p>
+                
+                <!-- Tabs selector -->
+                <div class="flex gap-2 p-1 bg-neutral-100 rounded-xl max-w-md">
+                  <button type="button" class="term-tab flex-1 py-1.5 px-3 rounded-lg text-xs font-semibold text-neutral-500 hover:text-ink active:scale-95 transition-all bg-white text-ink" data-target="community">Community</button>
+                  <button type="button" class="term-tab flex-1 py-1.5 px-3 rounded-lg text-xs font-semibold text-neutral-500 hover:text-ink active:scale-95 transition-all" data-target="spec">Spec</button>
+                  <button type="button" class="term-tab flex-1 py-1.5 px-3 rounded-lg text-xs font-semibold text-neutral-500 hover:text-ink active:scale-95 transition-all" data-target="citation">Citation</button>
+                </div>
+
+                <!-- Mock Terminal Display -->
+                <div class="mock-terminal rounded-xl p-4 text-xs overflow-x-auto text-neutral-300 min-h-[140px]">
+                  <!-- Tab Community content -->
+                  <div id="term-community" class="term-content space-y-2">
+                    <div class="flex items-center gap-1.5 text-neutral-500">
+                      <span class="text-emerald-500">$</span>
+                      <span class="term-cmd" data-cmd="git clone https://github.com/openriset/community.git">git clone https://github.com/openriset/community.git</span>
+                    </div>
+                    <div class="term-output text-neutral-500 font-mono text-[10px] leading-relaxed transition-opacity duration-300">
+                      Cloning into 'community'...<br />
+                      Resolving deltas: 100% (2314/2314), done.<br />
+                      $ cd community &amp;&amp; bun install
+                      <div class="text-brand-400 font-bold font-mono text-[10px] mt-1">
+                        # Monorepo OpenRiset: Qwik City (Platform) &amp; SvelteKit (Index) dengan PostgreSQL.
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Tab Spec content -->
+                  <div id="term-spec" class="term-content space-y-2 hidden">
+                    <div class="flex items-center gap-1.5 text-neutral-500">
+                      <span class="text-emerald-500">$</span>
+                      <span class="term-cmd" data-cmd="cat SPECIFICATION.md | head -n 4"></span>
+                    </div>
+                    <div class="term-output text-neutral-400 font-mono text-[10px] transition-opacity duration-300 opacity-0">
+                      # OpenRiset Schema &amp; Protocol Specification<br />
+                      Status: Draft v1.0.0-alpha<br />
+                      - ORID: OpenRiset Identifier (Unique hash string)<br />
+                      - Interoperability: JSON-LD formatted data graph
+                    </div>
+                  </div>
+
+                  <!-- Tab Citation content -->
+                  <div id="term-citation" class="term-content space-y-2 hidden">
+                    <div class="flex items-center gap-1.5 text-neutral-500">
+                      <span class="text-emerald-500">$</span>
+                      <span class="term-cmd" data-cmd="bun add @openriset/citation"></span>
+                    </div>
+                    <div class="term-output text-neutral-500 font-mono text-[10px] transition-opacity duration-300 opacity-0">
+                      + @openriset/citation@1.0.0
+                      <div class="text-brand-300 font-mono text-[10px] mt-1">
+                        import &#123; Citation &#125; from '@openriset/citation';<br />
+                        const verify = Citation.verify(paperMetadata);
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 class="text-lg font-bold text-ink">Repositori Pengembang (Open Source)</h3>
-              <p class="text-xs sm:text-sm text-neutral-500 leading-relaxed">
-                Pilih tab di bawah untuk melihat cuplikan perintah CLI, struktur instalasi, serta penggunaan repositori kami.
-              </p>
               
-              <!-- Tabs selector -->
-              <div class="flex gap-2 p-1 bg-neutral-100 rounded-xl max-w-md">
-                <button type="button" class="term-tab flex-1 py-1.5 px-3 rounded-lg text-xs font-semibold text-neutral-500 hover:text-ink active:scale-95 transition-all bg-white text-ink" data-target="community">Community</button>
-                <button type="button" class="term-tab flex-1 py-1.5 px-3 rounded-lg text-xs font-semibold text-neutral-500 hover:text-ink active:scale-95 transition-all" data-target="spec">Spec</button>
-                <button type="button" class="term-tab flex-1 py-1.5 px-3 rounded-lg text-xs font-semibold text-neutral-500 hover:text-ink active:scale-95 transition-all" data-target="citation">Citation</button>
+              <div class="flex items-center justify-between border-t border-neutral-100 pt-4 mt-6">
+                <span class="text-[11px] text-neutral-400">Teknologi: TypeScript &bull; bun</span>
+                <a href="https://github.com/openriset" target="_blank" rel="noopener" class="text-xs font-semibold text-brand-600 hover:text-brand-700 flex items-center gap-1">
+                  GitHub Organization
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+                </a>
               </div>
+            </div>
 
-              <!-- Mock Terminal Display -->
-              <div class="mock-terminal rounded-xl p-4 text-xs overflow-x-auto text-neutral-300">
-                <!-- Tab Community content -->
-                <div id="term-community" class="term-content space-y-2">
-                  <div class="flex items-center gap-1.5 text-neutral-500"><span class="text-emerald-500">$</span><span>git clone https://github.com/openriset/community.git</span></div>
-                  <div class="text-neutral-500 font-mono text-[10px] leading-relaxed">
-                    Cloning into 'community'...<br />
-                    Resolving deltas: 100% (2314/2314), done.<br />
-                    $ cd community &amp;&amp; bun install
-                  </div>
-                  <div class="text-brand-400 font-bold font-mono text-[10px]">
-                    # Monorepo OpenRiset: Qwik City (Platform) &amp; SvelteKit (Index) dengan PostgreSQL.
-                  </div>
+            <!-- Bento Card 2: Interactive Sandbox Form (colspan 2 / span 2) -->
+            <div class="bento-col-2 bento-row-2 rounded-2xl spotlight-card p-6 flex flex-col justify-between tech-corners">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold text-brand-600 uppercase tracking-wider font-mono">02 / Live Sandbox</span>
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 </div>
+                <h3 class="text-lg font-bold text-ink">Metadata Generator</h3>
+                <p class="text-xs text-neutral-500 leading-relaxed">
+                  Tulis data simulasi riset di formulir ini untuk melihat skema JSON-LD terbuat otomatis.
+                </p>
 
-                <!-- Tab Spec content -->
-                <div id="term-spec" class="term-content space-y-2 hidden">
-                  <div class="flex items-center gap-1.5 text-neutral-500"><span class="text-emerald-500">$</span><span>cat SPECIFICATION.md | head -n 4</span></div>
-                  <div class="text-neutral-400 font-mono text-[10px]">
-                    # OpenRiset Schema &amp; Protocol Specification<br />
-                    Status: Draft v1.0.0-alpha<br />
-                    - ORID: OpenRiset Identifier (Unique hash string)<br />
-                    - Interoperability: JSON-LD formatted data graph
-                  </div>
-                </div>
-
-                <!-- Tab Citation content -->
-                <div id="term-citation" class="term-content space-y-2 hidden">
-                  <div class="flex items-center gap-1.5 text-neutral-500"><span class="text-emerald-500">$</span><span>bun add @openriset/citation</span></div>
-                  <div class="text-neutral-500 font-mono text-[10px]">
-                    + @openriset/citation@1.0.0
-                  </div>
-                  <div class="text-brand-300 font-mono text-[10px]">
-                    import &#123; Citation &#125; from '@openriset/citation';<br />
-                    const verify = Citation.verify(paperMetadata);
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="flex items-center justify-between border-t border-neutral-100 pt-4 mt-6">
-              <span class="text-[11px] text-neutral-400">Teknologi: TypeScript &bull; bun</span>
-              <a href="https://github.com/openriset" target="_blank" rel="noopener" class="text-xs font-semibold text-brand-600 hover:text-brand-700 flex items-center gap-1">
-                GitHub Organization
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- Bento Card 2: Interactive Sandbox Form (colspan 2 / span 2) -->
-          <div class="bento-col-2 bento-row-2 rounded-2xl spotlight-card p-6 flex flex-col justify-between">
-            <div class="space-y-4">
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-brand-600 uppercase tracking-wider font-mono">02 / Live Sandbox</span>
-                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              </div>
-              <h3 class="text-lg font-bold text-ink">Metadata Generator</h3>
-              <p class="text-xs text-neutral-500 leading-relaxed">
-                Tulis data simulasi riset di formulir ini untuk melihat skema JSON-LD terbuat otomatis.
-              </p>
-
-              <!-- Inputs -->
-              <div class="space-y-2.5 pt-2">
-                <div>
-                  <label for="sandbox-title" class="block text-[10px] font-mono font-bold text-neutral-400 uppercase mb-1">Judul Riset</label>
-                  <input type="text" id="sandbox-title" class="w-full text-xs px-3 py-2 rounded-lg border border-neutral-200 focus:outline-none focus:border-brand-500 bg-white" value="Studi Ekstraksi Daun Kemangi" placeholder="Masukkan judul riset" />
-                </div>
-                <div>
-                  <label for="sandbox-author" class="block text-[10px] font-mono font-bold text-neutral-400 uppercase mb-1">Penulis</label>
-                  <input type="text" id="sandbox-author" class="w-full text-xs px-3 py-2 rounded-lg border border-neutral-200 focus:outline-none focus:border-brand-500 bg-white" value="Farhan Wijaya" placeholder="Masukkan nama penulis" />
-                </div>
-              </div>
-
-              <!-- Output JSON block -->
-              <div class="bg-neutral-900 rounded-xl p-3 font-mono text-[9px] text-neutral-400 overflow-x-auto max-h-[140px] overflow-y-auto">
-                <pre class="m-0 leading-tight" id="sandbox-output"></pre>
-              </div>
-            </div>
-
-            <div class="border-t border-neutral-100 pt-4 mt-6">
-              <span class="text-[10px] text-neutral-400 leading-normal block">Data di atas terstruktur menggunakan standar schema.org</span>
-            </div>
-          </div>
-
-          <!-- Bento Card 3: Interactive Citation Graph (colspan 3) -->
-          <div class="bento-col-3 rounded-2xl spotlight-card p-6 flex flex-col justify-between">
-            <div class="space-y-4">
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-brand-600 uppercase tracking-wider font-mono">03 / Citation Network</span>
-                <span class="text-[10px] text-neutral-400 font-mono">Visual Graph</span>
-              </div>
-              <h3 class="text-lg font-bold text-ink">Graf Sitasi &amp; Reputasi Terbuka</h3>
-              <p class="text-xs text-neutral-500 leading-relaxed">
-                Dekatkan kursor (*hover*) pada simpul berwarna di bawah untuk melihat keterkaitan reputasi dan rujukan literatur ilmiah.
-              </p>
-
-              <!-- SVG Interactive Graph -->
-              <div class="relative w-full h-[140px] border border-neutral-100 rounded-xl bg-neutral-50/50 flex items-center justify-center overflow-hidden">
-                <svg class="w-full h-full" viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg">
-                  <!-- Connection Lines -->
-                  <line x1="60" y1="70" x2="150" y2="35" stroke="#334155" stroke-width="1.5" class="graph-line transition-all duration-300" data-connects="nodeA,nodeB" />
-                  <line x1="150" y1="35" x2="240" y2="70" stroke="#334155" stroke-width="1.5" class="graph-line transition-all duration-300" data-connects="nodeB,nodeC" />
-                  <line x1="60" y1="70" x2="150" y2="105" stroke="#334155" stroke-width="1.5" class="graph-line transition-all duration-300" data-connects="nodeA,nodeD" />
-                  <line x1="150" y1="105" x2="240" y2="70" stroke="#334155" stroke-width="1.5" class="graph-line transition-all duration-300" data-connects="nodeD,nodeC" />
-                  <line x1="150" y1="35" x2="150" y2="105" stroke="#334155" stroke-width="1.5" class="graph-line transition-all duration-300" data-connects="nodeB,nodeD" />
-
-                  <!-- Nodes (Circle) -->
-                  <g class="graph-node" data-id="nodeA" data-label="Repositori Sekolah" data-desc="Data dasar riset siswa SD-SMA">
-                    <circle cx="60" cy="70" r="25" fill="none" pointer-events="all" />
-                    <circle cx="60" cy="70" r="10" fill="#3b82f6" stroke="white" stroke-width="2" />
-                    <text x="60" y="90" text-anchor="middle" fill="#0f172a" font-size="8" font-family="monospace">School</text>
-                  </g>
-                  <g class="graph-node" data-id="nodeB" data-label="Universitas (SIA)" data-desc="Simpul verifikasi tugas akhir &amp; skripsi">
-                    <circle cx="150" cy="35" r="25" fill="none" pointer-events="all" />
-                    <circle cx="150" cy="35" r="10" fill="#10b981" stroke="white" stroke-width="2" />
-                    <text x="150" y="20" text-anchor="middle" fill="#0f172a" font-size="8" font-family="monospace">Univ</text>
-                  </g>
-                  <g class="graph-node" data-id="nodeD" data-label="BRIDA Repository" data-desc="Jejak riset daerah dan independen">
-                    <circle cx="150" cy="105" r="25" fill="none" pointer-events="all" />
-                    <circle cx="150" cy="105" r="10" fill="#8b5cf6" stroke="white" stroke-width="2" />
-                    <text x="150" y="125" text-anchor="middle" fill="#0f172a" font-size="8" font-family="monospace">BRIDA</text>
-                  </g>
-                  <g class="graph-node" data-id="nodeC" data-label="Global Citation Graph" data-desc="Indeksasi publikasi riset internasional">
-                    <circle cx="240" cy="70" r="25" fill="none" pointer-events="all" />
-                    <circle cx="240" cy="70" r="10" fill="#f59e0b" stroke="white" stroke-width="2" />
-                    <text x="240" y="90" text-anchor="middle" fill="#0f172a" font-size="8" font-family="monospace">Global</text>
-                  </g>
-                </svg>
-              </div>
-
-              <!-- Node Info Display -->
-              <div id="graph-info" class="p-2.5 bg-neutral-900 rounded-lg text-[9px] font-mono text-neutral-300 leading-normal text-center min-h-[44px]">
-                Arahkan kursor ke node graf di atas untuk memeriksa jaringan rujukan ilmiah.
-              </div>
-            </div>
-            
-            <div class="border-t border-neutral-100 pt-4 mt-6">
-              <span class="text-[10px] text-neutral-400 block">Sitasi dihubungkan langsung melalui skema metadata terstandar.</span>
-            </div>
-          </div>
-
-          <!-- Bento Card 4: Standards / Multi-Level Verification (colspan 3) -->
-          <div class="bento-col-3 rounded-2xl spotlight-card p-6 flex flex-col justify-between">
-            <div class="space-y-4">
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-brand-600 uppercase tracking-wider font-mono">04 / Verification</span>
-                <span class="text-[10px] bg-purple-50 text-purple-700 px-2 py-0.5 rounded-full font-semibold">Tingkatan</span>
-              </div>
-              <h3 class="text-lg font-bold text-ink">Verifikasi Berjenjang Terbuka</h3>
-              <p class="text-xs sm:text-sm text-neutral-500 leading-relaxed">
-                Mematahkan sistem tinjauan eksklusif yang kaku. Kami menyediakan protokol verifikasi multi-level:
-              </p>
-
-              <!-- Step visualization -->
-              <div class="space-y-2 pt-1">
-                <div class="flex items-center gap-3 p-2 bg-neutral-50 rounded-lg border border-neutral-200/50">
-                  <span class="w-5 h-5 rounded-full bg-brand-500 text-white font-mono text-[9px] font-bold flex items-center justify-center">1</span>
+                <!-- Inputs -->
+                <div class="space-y-2.5 pt-2">
                   <div>
-                    <span class="text-xs font-bold text-ink block leading-none">Mentor / Guru</span>
-                    <span class="text-[9px] text-neutral-400 mt-0.5 block leading-none">Peninjau dasar karya ilmiah lokal</span>
+                    <label for="sandbox-title" class="block text-[10px] font-mono font-bold text-neutral-400 uppercase mb-1">Judul Riset</label>
+                    <input type="text" id="sandbox-title" class="w-full text-xs px-3 py-2 rounded-lg border border-neutral-200 focus:outline-none focus:border-brand-500 bg-white" value="Studi Ekstraksi Daun Kemangi" placeholder="Masukkan judul riset" />
                   </div>
-                </div>
-                <div class="flex items-center gap-3 p-2 bg-neutral-50 rounded-lg border border-neutral-200/50">
-                  <span class="w-5 h-5 rounded-full bg-emerald-500 text-white font-mono text-[9px] font-bold flex items-center justify-center">2</span>
                   <div>
-                    <span class="text-xs font-bold text-ink block leading-none">Sejawat / Peer Review</span>
-                    <span class="text-[9px] text-neutral-400 mt-0.5 block leading-none">Validasi keilmuan multidisiplin</span>
+                    <label for="sandbox-author" class="block text-[10px] font-mono font-bold text-neutral-400 uppercase mb-1">Penulis</label>
+                    <input type="text" id="sandbox-author" class="w-full text-xs px-3 py-2 rounded-lg border border-neutral-200 focus:outline-none focus:border-brand-500 bg-white" value="Farhan Wijaya" placeholder="Masukkan nama penulis" />
                   </div>
                 </div>
-                <div class="flex items-center gap-3 p-2 bg-neutral-50 rounded-lg border border-neutral-200/50">
-                  <span class="w-5 h-5 rounded-full bg-purple-500 text-white font-mono text-[9px] font-bold flex items-center justify-center">3</span>
-                  <div>
-                    <span class="text-xs font-bold text-ink block leading-none">Institusi Formal</span>
-                    <span class="text-[9px] text-neutral-400 mt-0.5 block leading-none">Pengakuan metadata pada indeks universitas</span>
-                  </div>
+
+                <!-- Output JSON block -->
+                <div class="bg-neutral-900 rounded-xl p-3 font-mono text-[9px] text-neutral-400 overflow-x-auto max-h-[140px] overflow-y-auto">
+                  <pre class="m-0 leading-tight" id="sandbox-output"></pre>
                 </div>
+              </div>
+
+              <div class="border-t border-neutral-100 pt-4 mt-6">
+                <span class="text-[10px] text-neutral-400 leading-normal block">Data di atas terstruktur menggunakan standar schema.org</span>
               </div>
             </div>
 
-            <div class="border-t border-neutral-100 pt-4 mt-6">
-              <span class="text-[10px] text-neutral-400 block leading-tight">Semua tingkat opsional — karya tetap terindeks sejak level 1.</span>
+            <!-- Bento Card 3: Interactive Citation Graph (colspan 3) -->
+            <div class="bento-col-3 rounded-2xl spotlight-card p-6 flex flex-col justify-between tech-corners">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold text-brand-600 uppercase tracking-wider font-mono">03 / Citation Network</span>
+                  <span class="text-[10px] text-neutral-400 font-mono">Visual Graph</span>
+                </div>
+                <h3 class="text-lg font-bold text-ink">Graf Sitasi &amp; Reputasi Terbuka</h3>
+                <p class="text-xs text-neutral-500 leading-relaxed">
+                  Dekatkan kursor (*hover*) pada simpul berwarna di bawah untuk melihat keterkaitan reputasi dan rujukan literatur ilmiah.
+                </p>
+
+                <!-- SVG Interactive Graph -->
+                <div class="relative w-full h-[140px] border border-neutral-100 rounded-xl bg-neutral-50/50 flex items-center justify-center overflow-hidden" style="touch-action: pan-y;">
+                  <svg class="w-full h-full" viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Connection Lines -->
+                    <line x1="60" y1="70" x2="150" y2="35" stroke="#334155" stroke-width="1.5" class="graph-line transition-all duration-300" data-connects="nodeA,nodeB" />
+                    <line x1="150" y1="35" x2="240" y2="70" stroke="#334155" stroke-width="1.5" class="graph-line transition-all duration-300" data-connects="nodeB,nodeC" />
+                    <line x1="60" y1="70" x2="150" y2="105" stroke="#334155" stroke-width="1.5" class="graph-line transition-all duration-300" data-connects="nodeA,nodeD" />
+                    <line x1="150" y1="105" x2="240" y2="70" stroke="#334155" stroke-width="1.5" class="graph-line transition-all duration-300" data-connects="nodeD,nodeC" />
+                    <line x1="150" y1="35" x2="150" y2="105" stroke="#334155" stroke-width="1.5" class="graph-line transition-all duration-300" data-connects="nodeB,nodeD" />
+
+                    <!-- Nodes (Circle) -->
+                    <g class="graph-node" data-id="nodeA" data-label="Repositori Sekolah" data-desc="Data dasar riset siswa SD-SMA">
+                      <circle cx="60" cy="70" r="25" fill="none" pointer-events="all" />
+                      <circle class="node-ripple" cx="60" cy="70" r="10" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0" />
+                      <circle cx="60" cy="70" r="10" fill="#3b82f6" stroke="white" stroke-width="2" />
+                      <text x="60" y="90" text-anchor="middle" fill="#0f172a" font-size="8" font-family="monospace">School</text>
+                    </g>
+                    <g class="graph-node" data-id="nodeB" data-label="Universitas (SIA)" data-desc="Simpul verifikasi tugas akhir &amp; skripsi">
+                      <circle cx="150" cy="35" r="25" fill="none" pointer-events="all" />
+                      <circle class="node-ripple" cx="150" cy="35" r="10" fill="none" stroke="#10b981" stroke-width="1.5" opacity="0" />
+                      <circle cx="150" cy="35" r="10" fill="#10b981" stroke="white" stroke-width="2" />
+                      <text x="150" y="20" text-anchor="middle" fill="#0f172a" font-size="8" font-family="monospace">Univ</text>
+                    </g>
+                    <g class="graph-node" data-id="nodeD" data-label="BRIDA Repository" data-desc="Jejak riset daerah dan independen">
+                      <circle cx="150" cy="105" r="25" fill="none" pointer-events="all" />
+                      <circle class="node-ripple" cx="150" cy="105" r="10" fill="none" stroke="#8b5cf6" stroke-width="1.5" opacity="0" />
+                      <circle cx="150" cy="105" r="10" fill="#8b5cf6" stroke="white" stroke-width="2" />
+                      <text x="150" y="125" text-anchor="middle" fill="#0f172a" font-size="8" font-family="monospace">BRIDA</text>
+                    </g>
+                    <g class="graph-node" data-id="nodeC" data-label="Global Citation Graph" data-desc="Indeksasi publikasi riset internasional">
+                      <circle cx="240" cy="70" r="25" fill="none" pointer-events="all" />
+                      <circle class="node-ripple" cx="240" cy="70" r="10" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0" />
+                      <circle cx="240" cy="70" r="10" fill="#f59e0b" stroke="white" stroke-width="2" />
+                      <text x="240" y="90" text-anchor="middle" fill="#0f172a" font-size="8" font-family="monospace">Global</text>
+                    </g>
+                  </svg>
+                </div>
+
+                <!-- Node Info Display -->
+                <div id="graph-info" class="p-2.5 bg-neutral-900 rounded-lg text-[9px] font-mono text-neutral-300 leading-normal text-center min-h-[44px]">
+                  Arahkan kursor ke node graf di atas untuk memeriksa jaringan rujukan ilmiah.
+                </div>
+              </div>
+              
+              <div class="border-t border-neutral-100 pt-4 mt-6">
+                <span class="text-[10px] text-neutral-400 block">Sitasi dihubungkan langsung melalui skema metadata terstandar.</span>
+              </div>
+            </div>
+
+            <!-- Bento Card 4: Standards / Multi-Level Verification (colspan 3) -->
+            <div class="bento-col-3 rounded-2xl spotlight-card p-6 flex flex-col justify-between tech-corners">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold text-brand-600 uppercase tracking-wider font-mono">04 / Verification</span>
+                  <span class="text-[10px] bg-purple-50 text-purple-700 px-2 py-0.5 rounded-full font-semibold">Tingkatan</span>
+                </div>
+                <h3 class="text-lg font-bold text-ink">Verifikasi Berjenjang Terbuka</h3>
+                <p class="text-xs sm:text-sm text-neutral-500 leading-relaxed">
+                  Mematahkan sistem tinjauan eksklusif yang kaku. Kami menyediakan protokol verifikasi multi-level:
+                </p>
+
+                <!-- Step visualization -->
+                <div class="space-y-2 pt-1">
+                  <div class="flex items-center gap-3 p-2 bg-neutral-50 rounded-lg border border-neutral-200/50">
+                    <span class="w-5 h-5 rounded-full bg-brand-500 text-white font-mono text-[9px] font-bold flex items-center justify-center">1</span>
+                    <div>
+                      <span class="text-xs font-bold text-ink block leading-none">Mentor / Guru</span>
+                      <span class="text-[9px] text-neutral-400 mt-0.5 block leading-none">Peninjau dasar karya ilmiah lokal</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3 p-2 bg-neutral-50 rounded-lg border border-neutral-200/50">
+                    <span class="w-5 h-5 rounded-full bg-emerald-500 text-white font-mono text-[9px] font-bold flex items-center justify-center">2</span>
+                    <div>
+                      <span class="text-xs font-bold text-ink block leading-none">Sejawat / Peer Review</span>
+                      <span class="text-[9px] text-neutral-400 mt-0.5 block leading-none">Validasi keilmuan multidisiplin</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3 p-2 bg-neutral-50 rounded-lg border border-neutral-200/50">
+                    <span class="w-5 h-5 rounded-full bg-purple-500 text-white font-mono text-[9px] font-bold flex items-center justify-center">3</span>
+                    <div>
+                      <span class="text-xs font-bold text-ink block leading-none">Institusi Formal</span>
+                      <span class="text-[9px] text-neutral-400 mt-0.5 block leading-none">Pengakuan metadata pada indeks universitas</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="border-t border-neutral-100 pt-4 mt-6">
+                <span class="text-[10px] text-neutral-400 block leading-tight">Semua tingkat opsional — karya tetap terindeks sejak level 1.</span>
+              </div>
             </div>
           </div>
-
         </div>
 
+        <!-- Toggle button visible only on mobile -->
+        <div class="md:hidden mt-6 flex justify-center">
+          <button id="projects-toggle-btn" class="font-mono text-xs font-bold text-brand-600 border border-brand-200 bg-brand-50/50 hover:bg-brand-50 px-4 py-2.5 rounded-lg flex items-center gap-2 cursor-pointer transition-all duration-300">
+            <span class="btn-text">[ BUKA PROYEK / EXPAND PROJECTS ]</span>
+            <span class="btn-icon text-[10px] transition-transform duration-300">+</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ STANDARDS ═══════════════════════════════════════════ -->
+    <section id="standards" class="py-16 sm:py-24 relative bg-white border-b border-neutral-100 bg-line-grid overflow-visible scroll-mt-24">
+      <div class="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white pointer-events-none" aria-hidden="true"></div>
+      
+      <!-- Standards Precision Drafting Circle Overlay -->
+      <div class="absolute bottom-10 left-10 w-[28rem] h-[28rem] opacity-[0.16] pointer-events-none select-none hidden xl:block" aria-hidden="true">
+        <svg class="w-full h-full text-brand-600" viewBox="0 0 300 300" fill="none" stroke="currentColor" stroke-width="0.75">
+          <circle cx="150" cy="150" r="120" />
+          <circle cx="150" cy="150" r="100" stroke-dasharray="3, 3" />
+          <circle cx="150" cy="150" r="40" />
+          <path d="M30 150 H270 M150 30 V270" />
+          <path d="M65 65 L235 235 M65 235 L235 65" stroke-dasharray="1, 4" />
+          <text x="155" y="45" font-size="6" font-family="monospace">VERIFY: ACCURACY_TOLERANCE</text>
+          <text x="215" y="145" font-size="6" font-family="monospace">R: 120.00mm</text>
+        </svg>
+      </div>
+
+      <div class="relative z-20 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+        
+        <!-- Standards RFC Citation Layers Blueprint (Right) -->
+        <div id="standards-blueprint" class="absolute -top-[16rem] right-10 w-[26rem] h-[26rem] opacity-[0.38] z-0 pointer-events-none select-none hidden lg:block parallax-gpu" aria-hidden="true">
+          <svg class="w-full h-full text-brand-400" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.75">
+            <!-- Stack levels -->
+            <rect x="50" y="40" width="100" height="25" rx="3" />
+            <rect x="50" y="80" width="100" height="25" rx="3" stroke-dasharray="3, 3" />
+            <rect x="50" y="120" width="100" height="25" rx="3" />
+            <!-- Connectors -->
+            <path d="M100 65 V80 M100 105 V120" />
+            <path d="M150 52 H170 V132 H150" stroke-dasharray="2, 2" />
+            <!-- Text labels -->
+            <text x="100" y="55" font-size="5" font-family="monospace" text-anchor="middle" fill="currentColor" stroke="none">LEVEL 3: PEER_REVIEWED</text>
+            <text x="100" y="95" font-size="5" font-family="monospace" text-anchor="middle" fill="currentColor" stroke="none">LEVEL 2: VERIFIED_K-12</text>
+            <text x="100" y="135" font-size="5" font-family="monospace" text-anchor="middle" fill="currentColor" stroke="none">LEVEL 1: OPEN_INDEX</text>
+            <text x="175" y="95" font-size="5" font-family="monospace" fill="currentColor" stroke="none">RFC-114</text>
+          </svg>
+        </div>
+        
         <!-- 6 Core Principles (Refined Spotlight Grid to replace former standards) -->
-        <div class="mt-16 sm:mt-24">
+        <div class="scroll-mt-24">
           <div class="max-w-2xl mb-12 sm:mb-16 reveal">
+            <div class="font-mono text-[10px] text-neutral-400 mb-2">[SEC_04 / CORE_PRINCIPLES]</div>
             <span class="text-brand-600 text-xs font-bold uppercase tracking-widest">Metodologi &amp; Prinsip</span>
             <h3 class="mt-2 text-xl sm:text-2xl font-bold text-ink">
               Enam pilar utama yang mendasari setiap baris kode
             </h3>
           </div>
 
-          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal-slow">
-            <div class="rounded-xl border border-neutral-200/80 bg-white p-5 spotlight-card">
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal-slow mobile-carousel" id="standards-carousel">
+            <div class="rounded-xl border border-neutral-200/50 bg-white/45 backdrop-blur-md p-5 spotlight-card tech-corners">
               <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-4">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
               </div>
@@ -584,7 +929,7 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
               </p>
             </div>
 
-            <div class="rounded-xl border border-neutral-200/80 bg-white p-5 spotlight-card">
+            <div class="rounded-xl border border-neutral-200/50 bg-white/45 backdrop-blur-md p-5 spotlight-card tech-corners">
               <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-4">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </div>
@@ -594,7 +939,7 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
               </p>
             </div>
 
-            <div class="rounded-xl border border-neutral-200/80 bg-white p-5 spotlight-card">
+            <div class="rounded-xl border border-neutral-200/50 bg-white/45 backdrop-blur-md p-5 spotlight-card tech-corners">
               <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-4">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
               </div>
@@ -604,7 +949,7 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
               </p>
             </div>
 
-            <div class="rounded-xl border border-neutral-200/80 bg-white p-5 spotlight-card">
+            <div class="rounded-xl border border-neutral-200/50 bg-white/45 backdrop-blur-md p-5 spotlight-card tech-corners">
               <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-4">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
               </div>
@@ -614,7 +959,7 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
               </p>
             </div>
 
-            <div class="rounded-xl border border-neutral-200/80 bg-white p-5 spotlight-card">
+            <div class="rounded-xl border border-neutral-200/50 bg-white/45 backdrop-blur-md p-5 spotlight-card tech-corners">
               <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-4">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </div>
@@ -624,7 +969,7 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
               </p>
             </div>
 
-            <div class="rounded-xl border border-neutral-200/80 bg-white p-5 spotlight-card">
+            <div class="rounded-xl border border-neutral-200/50 bg-white/45 backdrop-blur-md p-5 spotlight-card tech-corners">
               <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-4">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
               </div>
@@ -634,17 +979,82 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
               </p>
             </div>
           </div>
+
+          <!-- Carousel Navigation Dots visible only on mobile -->
+          <div class="flex md:hidden justify-center gap-1.5 mt-2" id="standards-carousel-dots">
+            <span class="w-3 h-1.5 rounded-full bg-brand-600 transition-all duration-300" data-index="0"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-neutral-300 transition-all duration-300" data-index="1"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-neutral-300 transition-all duration-300" data-index="2"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-neutral-300 transition-all duration-300" data-index="3"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-neutral-300 transition-all duration-300" data-index="4"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-neutral-300 transition-all duration-300" data-index="5"></span>
+          </div>
         </div>
 
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════ VISION ═══════════════════════════════════════════ -->
-    <section id="vision" class="py-16 sm:py-24 bg-soft border-y border-neutral-100 relative">
-      <div class="absolute top-0 right-0 w-80 h-80 bg-brand-50 rounded-full blur-3xl opacity-50" aria-hidden="true"></div>
+    <section id="vision" class="py-16 sm:py-24 bg-soft border-b border-neutral-100 bg-dot-grid relative overflow-visible scroll-mt-24">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(37,99,235,0.03),transparent)] pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute top-0 right-0 w-80 h-80 bg-brand-50/20 rounded-full blur-3xl opacity-50" aria-hidden="true"></div>
+      
+      <!-- Technical Diagram Background Overlay -->
+      <div id="vision-diagram" class="absolute top-1/4 left-10 w-96 h-96 opacity-[0.18] pointer-events-none select-none hidden lg:block parallax-gpu" aria-hidden="true">
+        <svg class="w-full h-full text-ink" viewBox="0 0 200 200" fill="none" stroke="currentColor">
+          <g class="svg-orbit-slow">
+            <circle cx="100" cy="100" r="80" stroke-width="0.5" stroke-dasharray="4, 4" />
+            <path d="M100 20 L180 100 L100 180 L20 100 Z" stroke-width="0.5" />
+          </g>
+          <circle cx="100" cy="100" r="50" stroke-width="0.5" />
+          <line x1="20" y1="100" x2="180" y2="100" stroke-width="0.5" />
+          <line x1="100" y1="20" x2="100" y2="180" stroke-width="0.5" />
+          <rect x="50" y="50" width="100" height="100" stroke-width="0.5" stroke-dasharray="2, 2" />
+          <path d="M100 20 L180 100 L100 180 L20 100 Z" stroke-width="0.5" />
+          <text x="105" y="30" font-size="6" font-family="monospace">R: 80.00</text>
+          <text x="105" y="60" font-size="6" font-family="monospace">R: 50.00</text>
+          <text x="145" y="95" font-size="6" font-family="monospace">A: 45°</text>
+        </svg>
+      </div>
+
+      <!-- Technical Code Metadata Blueprint Overlay (Right) -->
+      <div class="absolute bottom-1/4 right-5 w-80 h-80 opacity-[0.18] pointer-events-none select-none hidden xl:block" aria-hidden="true">
+        <svg class="w-full h-full text-ink" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.75">
+          <rect x="20" y="20" width="160" height="160" rx="6" stroke-dasharray="3, 3" />
+          <path d="M20 60 H180 M20 140 H180" />
+          <line x1="80" y1="60" x2="80" y2="140" />
+          <text x="25" y="35" font-size="6" font-family="monospace" fill="currentColor" stroke="none">JSON-LD PROTOCOL GRAPH</text>
+          <text x="25" y="50" font-size="5" font-family="monospace" fill="currentColor" stroke="none">schema:ScholarlyArticle</text>
+          <text x="25" y="75" font-size="5" font-family="monospace" fill="currentColor" stroke="none">id: orid:pub:12a88b</text>
+          <text x="25" y="90" font-size="5" font-family="monospace" fill="currentColor" stroke="none">author: "Farhan W."</text>
+          <text x="25" y="105" font-size="5" font-family="monospace" fill="currentColor" stroke="none">license: MIT</text>
+          <text x="25" y="120" font-size="5" font-family="monospace" fill="currentColor" stroke="none">status: VERIFIED</text>
+          <text x="25" y="155" font-size="6" font-family="monospace" fill="currentColor" stroke="none">METADATA SYNC STATUS: OK</text>
+        </svg>
+      </div>
+
+      <!-- Vision Ontology Map Background (Top-Right) -->
+      <div id="vision-lens" class="absolute top-10 right-10 w-[24rem] h-[24rem] opacity-[0.18] pointer-events-none select-none hidden xl:block parallax-gpu" aria-hidden="true">
+        <svg class="w-full h-full text-brand-600" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.75">
+          <!-- Overlapping ontology categories -->
+          <circle cx="90" cy="90" r="30" />
+          <circle cx="120" cy="100" r="35" stroke-dasharray="2, 2" class="svg-orbit-slow" />
+          <circle cx="100" cy="130" r="25" />
+          <!-- Intersection markers -->
+          <circle cx="107" cy="95" r="2" fill="currentColor" />
+          <circle cx="103" cy="115" r="2" fill="currentColor" />
+          <!-- Annotation labels -->
+          <text x="80" y="80" font-size="5" font-family="monospace">MATH_LOGIC</text>
+          <text x="135" y="90" font-size="5" font-family="monospace">PHYSICS</text>
+          <text x="100" y="145" font-size="5" font-family="monospace">CITATIONS</text>
+          <text x="10" y="180" font-size="5" font-family="monospace">KNOWLEDGE_REPRESENTATION: RDF</text>
+        </svg>
+      </div>
       <div class="relative max-w-4xl mx-auto px-5 sm:px-8 lg:px-10">
         
         <div class="text-center mb-12 reveal">
+          <div class="font-mono text-[10px] text-neutral-400 mb-2">[SEC_05 / VISION_STATEMENT]</div>
           <span class="text-brand-600 text-xs font-bold uppercase tracking-widest">Visi &amp; Misi</span>
           <h2 class="mt-3 text-2xl sm:text-4xl font-extrabold text-ink leading-tight">
             Menjamin kedaulatan data ilmiah masa depan Indonesia
@@ -847,7 +1257,7 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
           </div>
 
           <div class="grid sm:grid-cols-2 gap-6 sm:gap-8 reveal-slow">
-            <div class="bg-white rounded-2xl border border-neutral-200/80 p-6 sm:p-8 spotlight-card">
+            <div class="bg-white rounded-2xl border border-neutral-200/80 p-6 sm:p-8 spotlight-card tech-corners">
               <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-4">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
               </div>
@@ -857,7 +1267,7 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
               </p>
             </div>
             
-            <div class="bg-white rounded-2xl border border-neutral-200/80 p-6 sm:p-8 spotlight-card">
+            <div class="bg-white rounded-2xl border border-neutral-200/80 p-6 sm:p-8 spotlight-card tech-corners">
               <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-4">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
               </div>
@@ -874,10 +1284,52 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
     </section>
 
     <!-- ═══════════════════════════════════════════ AUDIENCE ═══════════════════════════════════════════ -->
-    <section id="audience" class="py-16 sm:py-24">
-      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+    <section id="audience" class="py-16 sm:py-24 bg-white border-b border-neutral-100 bg-line-grid relative overflow-visible scroll-mt-24">
+      <div class="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white pointer-events-none" aria-hidden="true"></div>
+      
+      <!-- Subtle Background Math/Grid Markings -->
+      <div class="absolute bottom-10 right-10 w-80 h-80 opacity-[0.18] pointer-events-none select-none hidden lg:block" aria-hidden="true">
+        <svg class="w-full h-full text-ink" viewBox="0 0 200 200" fill="none" stroke="currentColor">
+          <path d="M10 190 H190 M10 10 V190" stroke-width="0.75" />
+          <path d="M190 187 L193 190 L190 193 Z M7 10 L10 7 L13 10 Z" fill="currentColor" />
+          <path d="M10 190 L60 140 L110 110 L160 50" stroke-width="0.75" stroke-dasharray="3, 3" />
+          <circle cx="60" cy="140" r="2" fill="currentColor" />
+          <circle cx="110" cy="110" r="2" fill="currentColor" />
+          <circle cx="160" cy="50" r="2" fill="currentColor" />
+          <line x1="60" y1="140" x2="60" y2="190" stroke-width="0.5" stroke-dasharray="1, 2" />
+          <line x1="110" y1="110" x2="110" y2="190" stroke-width="0.5" stroke-dasharray="1, 2" />
+          <line x1="160" y1="50" x2="160" y2="190" stroke-width="0.5" stroke-dasharray="1, 2" />
+          <text x="175" y="185" font-size="6" font-family="monospace">t (time)</text>
+          <text x="15" y="15" font-size="6" font-family="monospace">f(x) (impact)</text>
+          <text x="63" y="137" font-size="5" font-family="monospace">K-12</text>
+          <text x="113" y="107" font-size="5" font-family="monospace">PT</text>
+          <text x="163" y="47" font-size="5" font-family="monospace">Global</text>
+        </svg>
+      </div>
+
+      <!-- Technical Matrix Grid Background Overlay (Left) -->
+      <div class="absolute top-10 left-10 w-72 h-72 opacity-[0.18] pointer-events-none select-none hidden lg:block" aria-hidden="true">
+        <svg class="w-full h-full text-ink" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.75">
+          <text x="10" y="25" font-size="7" font-family="monospace">MATRIX_A_PROJ [3x3]:</text>
+          <text x="20" y="45" font-size="7" font-family="monospace">[ 1.00  0.85  0.92 ]</text>
+          <text x="20" y="65" font-size="7" font-family="monospace">[ 0.12  1.00  0.74 ]</text>
+          <text x="20" y="85" font-size="7" font-family="monospace">[ 0.45  0.31  1.00 ]</text>
+          <path d="M15 35 V90 H18 M195 35 V90 H192" stroke-width="1.5" fill="none" />
+          <path d="M10 110 H190" stroke-width="0.5" stroke-dasharray="2, 2" />
+          <text x="10" y="130" font-size="6" font-family="monospace">Eigenvalue_λ_1 = 2.458</text>
+          <text x="10" y="145" font-size="6" font-family="monospace">Eigenvalue_λ_2 = 0.542</text>
+          <text x="10" y="160" font-size="6" font-family="monospace">Determinant_|A| = 0.812</text>
+        </svg>
+      </div>
+
+      <!-- Audience Geodesic Network Sphere Background (Centering Overlay for Mobile/Tablet/Desktop) -->
+      <div id="globe-3d-container" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-[26rem] sm:h-[26rem] md:w-[32rem] md:h-[32rem] opacity-[0.25] pointer-events-auto select-none z-10 parallax-gpu" aria-hidden="true">
+        <canvas id="globe-3d-canvas" class="w-full h-full" style="touch-action: pan-y;"></canvas>
+      </div>
+      <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         
         <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 reveal">
+          <div class="font-mono text-[10px] text-neutral-400 mb-2">[SEC_06 / INTENDED_USERS]</div>
           <span class="text-brand-600 text-xs font-bold uppercase tracking-widest">Pengguna Ekosistem</span>
           <h2 class="mt-3 text-2xl sm:text-4xl font-extrabold text-ink leading-tight">
             Dirancang untuk melayani seluruh spektrum komunitas riset
@@ -887,8 +1339,8 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
           </p>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-slow">
-          <div class="rounded-2xl border border-neutral-200/80 bg-white p-6 spotlight-card flex flex-col justify-between">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-slow mobile-carousel" id="audience-carousel">
+          <div class="rounded-2xl border border-neutral-200/80 bg-white p-6 spotlight-card flex flex-col justify-between tech-corners">
             <div class="space-y-4">
               <div class="w-10 h-10 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-600 shadow-sm">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
@@ -903,7 +1355,7 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
             </div>
           </div>
 
-          <div class="rounded-2xl border border-neutral-200/80 bg-white p-6 spotlight-card flex flex-col justify-between">
+          <div class="rounded-2xl border border-neutral-200/80 bg-white p-6 spotlight-card flex flex-col justify-between tech-corners">
             <div class="space-y-4">
               <div class="w-10 h-10 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-600 shadow-sm">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
@@ -918,7 +1370,7 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
             </div>
           </div>
 
-          <div class="rounded-2xl border border-neutral-200/80 bg-white p-6 spotlight-card flex flex-col justify-between">
+          <div class="rounded-2xl border border-neutral-200/80 bg-white p-6 spotlight-card flex flex-col justify-between tech-corners">
             <div class="space-y-4">
               <div class="w-10 h-10 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-600 shadow-sm">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
@@ -933,7 +1385,7 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
             </div>
           </div>
 
-          <div class="rounded-2xl border border-neutral-200/80 bg-white p-6 spotlight-card flex flex-col justify-between">
+          <div class="rounded-2xl border border-neutral-200/80 bg-white p-6 spotlight-card flex flex-col justify-between tech-corners">
             <div class="space-y-4">
               <div class="w-10 h-10 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-600 shadow-sm">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
@@ -948,14 +1400,58 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
             </div>
           </div>
         </div>
+
+        <!-- Carousel Navigation Dots visible only on mobile -->
+        <div class="flex md:hidden justify-center gap-1.5 mt-2" id="audience-carousel-dots">
+          <span class="w-3 h-1.5 rounded-full bg-brand-600 transition-all duration-300" data-index="0"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-neutral-300 transition-all duration-300" data-index="1"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-neutral-300 transition-all duration-300" data-index="2"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-neutral-300 transition-all duration-300" data-index="3"></span>
+        </div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════ FAQ (SMOOTH ACCORDION) ═══════════════════════════════════════════ -->
-    <section id="faq" class="py-16 sm:py-24 bg-soft border-t border-neutral-100">
-      <div class="max-w-3xl mx-auto px-5 sm:px-8 lg:px-10">
+    <section id="faq" class="py-16 sm:py-24 bg-white border-t border-neutral-100 relative overflow-visible">
+      <div class="absolute inset-0 bg-line-grid [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_20%,transparent_70%)] pointer-events-none" aria-hidden="true"></div>
+      
+      <!-- FAQ Technical Graphic Overlay -->
+      <div class="absolute bottom-10 left-5 w-80 h-80 opacity-[0.16] pointer-events-none select-none hidden xl:block" aria-hidden="true">
+        <svg class="w-full h-full text-brand-600" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.75">
+          <circle cx="100" cy="100" r="60" stroke-dasharray="2, 6" />
+          <circle cx="100" cy="100" r="30" />
+          <line x1="40" y1="40" x2="160" y2="160" />
+          <line x1="40" y1="160" x2="160" y2="40" />
+          <rect x="85" y="85" width="30" height="30" fill="white" stroke="currentColor" />
+          <text x="100" y="103" font-size="8" font-family="monospace" text-anchor="middle" fill="currentColor" stroke="none">?</text>
+        </svg>
+      </div>
+
+      <!-- FAQ Database Query Tree Blueprint (Right) -->
+      <div class="absolute top-10 right-10 w-[24rem] h-[24rem] opacity-[0.16] pointer-events-none select-none hidden xl:block" aria-hidden="true">
+        <svg class="w-full h-full text-brand-600" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.75">
+          <!-- Binary parsing tree -->
+          <circle cx="100" cy="40" r="6" />
+          <circle cx="60" cy="80" r="6" />
+          <circle cx="140" cy="80" r="6" fill="currentColor" />
+          <circle cx="40" cy="120" r="6" fill="currentColor" />
+          <circle cx="80" cy="120" r="6" />
+          <!-- Paths -->
+          <line x1="96" y1="45" x2="64" y2="75" />
+          <line x1="104" y1="45" x2="136" y2="75" />
+          <line x1="56" y1="85" x2="44" y2="115" />
+          <line x1="64" y1="85" x2="76" y2="115" />
+          <!-- Labels -->
+          <text x="100" y="30" font-size="5" font-family="monospace" text-anchor="middle">FAQ_SPEC_RESOLVER</text>
+          <text x="45" y="75" font-size="4" font-family="monospace">MATCH_Q</text>
+          <text x="150" y="75" font-size="4" font-family="monospace">EXEC_SQL</text>
+          <text x="10" y="140" font-size="4" font-family="monospace">DRIZZLE_SELECT_RESOLVED</text>
+        </svg>
+      </div>
+      <div class="relative max-w-3xl mx-auto px-5 sm:px-8 lg:px-10">
         
         <div class="text-center mb-12 reveal">
+          <div class="font-mono text-[10px] text-neutral-400 mb-2">[SEC_07 / COMMON_FAQ]</div>
           <span class="text-brand-600 text-xs font-bold uppercase tracking-widest">FAQ</span>
           <h2 class="mt-3 text-2xl sm:text-3xl font-bold text-ink">
             Pertanyaan yang sering diajukan
@@ -968,7 +1464,7 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
               <span>Apa sebenarnya OpenRiset itu?</span>
               <svg class="w-4 h-4 text-neutral-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
             </summary>
-            <div class="faq-content overflow-hidden max-height-0 transition-all duration-300">
+            <div class="faq-content overflow-hidden max-h-0 transition-all duration-300">
               <p class="mt-3.5 text-xs sm:text-sm text-neutral-500 leading-relaxed">
                 OpenRiset adalah <strong>proyek ekosistem terbuka</strong> yang menyediakan <strong>OpenRiset Index</strong> sebagai pencatat sitasi ramah K-12 dan <strong>OpenRiset Platform</strong> sebagai media jejaring sosial ilmiah terpercaya. Kami membangun jalan raya informasi sains terbuka yang bebas dari sekat vendor.
               </p>
@@ -980,7 +1476,7 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
               <span>Bagaimana OpenRiset membiayai operasionalnya?</span>
               <svg class="w-4 h-4 text-neutral-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
             </summary>
-            <div class="faq-content overflow-hidden max-height-0 transition-all duration-300">
+            <div class="faq-content overflow-hidden max-h-0 transition-all duration-300">
               <p class="mt-3.5 text-xs sm:text-sm text-neutral-500 leading-relaxed">
                 Seluruh pengembangan kode sumber dilakukan secara sukarela oleh para kontributor pengembang yang berdedikasi. Kami berkomitmen untuk mempertahankan lisensi bebas MIT tanpa sistem paywall berbayar. Dukungan operasional dikelola melalui sponsor proyek dan donasi publik.
               </p>
@@ -992,7 +1488,7 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
               <span>Apa perbedaan utama OpenRiset dengan SINTA?</span>
               <svg class="w-4 h-4 text-neutral-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
             </summary>
-            <div class="faq-content overflow-hidden max-height-0 transition-all duration-300">
+            <div class="faq-content overflow-hidden max-h-0 transition-all duration-300">
               <p class="mt-3.5 text-xs sm:text-sm text-neutral-500 leading-relaxed">
                 SINTA dikelola oleh pemerintah khusus untuk perguruan tinggi formal terdaftar. OpenRiset hadir sebagai <strong>platform dan indeks alternatif yang lebih inklusif</strong>, ramah untuk tingkat sekolah (K-12) guna menumbuhkan kecintaan terhadap literatur, serta mendukung portofolio riset bagi peneliti independen.
               </p>
@@ -1004,7 +1500,7 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
               <span>Bagaimana cara mengadopsinya di institusi saya?</span>
               <svg class="w-4 h-4 text-neutral-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
             </summary>
-            <div class="faq-content overflow-hidden max-height-0 transition-all duration-300">
+            <div class="faq-content overflow-hidden max-h-0 transition-all duration-300">
               <p class="mt-3.5 text-xs sm:text-sm text-neutral-500 leading-relaxed">
                 Anda dapat memulai dengan menyalin (*clone*) repositori <a href="https://github.com/openriset/community" target="_blank" rel="noopener" class="text-brand-600 font-semibold hover:underline">community</a> dan mengikuti panduan integrasi di berkas spesifikasi <a href="https://github.com/openriset/spec" target="_blank" rel="noopener" class="text-brand-600 font-semibold hover:underline">spec</a>. Seluruh program dapat digunakan tanpa royalti atau persetujuan pihak mana pun.
               </p>
@@ -1018,11 +1514,51 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
     </section>
 
     <!-- ═══════════════════════════════════════════ CTA ═══════════════════════════════════════════ -->
-    <section class="py-16 sm:py-24 bg-soft">
-      <div class="max-w-4xl mx-auto px-5 sm:px-8 lg:px-10">
-        <div class="relative overflow-hidden rounded-3xl bg-ink p-8 sm:p-12 lg:p-16 text-center reveal">
+    <section class="py-16 sm:py-24 bg-soft bg-dot-grid relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white pointer-events-none" aria-hidden="true"></div>
+      <div class="relative max-w-4xl mx-auto px-5 sm:px-8 lg:px-10">
+        <div class="relative overflow-hidden rounded-3xl bg-ink p-8 sm:p-12 lg:p-16 text-center reveal tech-corners">
           <div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_100%,rgba(37,99,235,0.14),transparent)]" aria-hidden="true"></div>
           <div class="absolute top-0 right-0 w-64 h-64 bg-brand-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" aria-hidden="true"></div>
+          
+          <!-- Engineering Node Graph Background -->
+          <div class="absolute inset-0 opacity-[0.24] mix-blend-screen pointer-events-none" aria-hidden="true">
+            <svg id="cta-graph" class="w-full h-full" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+              <!-- Grid Lines -->
+              <path d="M0 50 H800 M0 100 H800 M0 150 H800 M0 200 H800 M0 250 H800 M0 300 H800 M0 350 H800" stroke="#ffffff" stroke-width="0.5" />
+              <path d="M100 0 V400 M200 0 V400 M300 0 V400 M400 0 V400 M500 0 V400 M600 0 V400 M700 0 V400" stroke="#ffffff" stroke-width="0.5" />
+              <!-- Technical Crosshairs -->
+              <path d="M100 100 M90 100 H110 M100 90 V110" stroke="#3b82f6" stroke-width="0.75" />
+              <path d="M700 300 M690 300 H710 M700 290 V310" stroke="#3b82f6" stroke-width="0.75" />
+              <path d="M300 250 M290 250 H310 M300 240 V260" stroke="#10b981" stroke-width="0.75" />
+              <!-- Engineering Node Graph -->
+              <circle id="cta-node-1" cx="200" cy="150" r="4" fill="#3b82f6" class="transition-transform duration-700 ease-out" />
+              <circle id="cta-node-2" cx="350" cy="80" r="3" fill="#10b981" class="transition-transform duration-700 ease-out" />
+              <circle id="cta-node-3" cx="500" cy="280" r="5" fill="#8b5cf6" class="transition-transform duration-700 ease-out" />
+              <circle id="cta-node-4" cx="650" cy="120" r="4" fill="#ec4899" class="transition-transform duration-700 ease-out" />
+              <circle id="cta-node-5" cx="150" cy="300" r="3" fill="#f59e0b" class="transition-transform duration-700 ease-out" />
+              <!-- Connecting dashed lines -->
+              <path id="cta-line-1" d="M200 150 L350 80 L650 120 M200 150 L150 300 L500 280 L650 120" stroke="#ffffff" stroke-width="0.75" stroke-dasharray="4,4" class="transition-transform duration-700 ease-out" />
+              <path id="cta-line-2" d="M350 80 L500 280" stroke="#ffffff" stroke-width="0.5" class="transition-transform duration-700 ease-out" />
+              <!-- Annotations -->
+              <text x="210" y="153" fill="#ffffff" font-size="8" font-family="monospace">node_id: 0x8f2</text>
+              <text x="510" y="283" fill="#ffffff" font-size="8" font-family="monospace">ORID: index_graph</text>
+            </svg>
+          </div>
+
+          <!-- CTA Telemetry Logs Overlay (Left & Right Corners) -->
+          <div class="absolute bottom-4 left-4 text-left font-mono text-[7px] text-emerald-400 opacity-20 pointer-events-none select-none hidden md:block" aria-hidden="true">
+            <div>SECURE_SH_CONN: ESTABLISHED</div>
+            <div>PORT: 2222 // USER: dev@openriset</div>
+            <div id="cta-key-hash">RSA_KEY_HASH: 0x9f2a87bc12e</div>
+            <div>LOG_SYNC: ACTIVE_READY</div>
+          </div>
+          <div class="absolute bottom-4 right-4 text-right font-mono text-[7px] text-emerald-400 opacity-20 pointer-events-none select-none hidden md:block" aria-hidden="true">
+            <div id="cta-hash-val">HASH_VAL: 9e32a1df</div>
+            <div id="cta-timestamp">TIME: 2026-05-22T14:26:00Z</div>
+            <div>ECC: curve25519</div>
+            <div>STATUS_OK // 200</div>
+          </div>
           
           <div class="relative z-10 space-y-6">
             <h2 class="text-2xl sm:text-4xl font-bold text-white leading-tight font-display">
@@ -1032,7 +1568,7 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
               Seluruh rancangan kode bersifat publik. Buat pull request Anda, tulis spesifikasi bersama kami, atau ajukan pertanyaan di forum pengembang.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 pt-2">
-              <a href="https://github.com/openriset" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-ink font-semibold text-sm hover:bg-neutral-100 transition-colors group shadow-lg shadow-white/5">
+              <a id="cta-main-btn" href="https://github.com/openriset" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-ink font-semibold text-sm hover:bg-neutral-100 transition-colors group shadow-lg shadow-white/5">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 Lihat di GitHub
                 <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1048,7 +1584,30 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
     </section>
   </main>
 
+  <!-- Custom Magnetic Cursor Elements -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-circle"></div>
+
+  <!-- Hidden SVG Glitch Displacement Filter -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="hidden absolute w-0 h-0" aria-hidden="true" style="display: none;">
+    <defs>
+      <filter id="glitch-filter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="1" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="15" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </defs>
+  </svg>
+
   <Footer />
+
+  <!-- Floating Quick-Jump Nav Dock for Mobile -->
+  <div id="mobile-quick-dock" class="mobile-quick-dock dock-hidden">
+    <a href="#why" class="dock-item" data-section="why">WHY</a>
+    <a href="#projects" class="dock-item" data-section="projects">PRJ</a>
+    <a href="#standards" class="dock-item" data-section="standards">STD</a>
+    <a href="#vision" class="dock-item" data-section="vision">VIS</a>
+    <a href="#audience" class="dock-item" data-section="audience">USR</a>
+  </div>
 
   <!-- Interactive Client-side Script -->
   <script>
@@ -1076,13 +1635,53 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
       });
     });
 
-    // 3. Interactive Code Terminal tabs
+    // 3. Interactive Code Terminal tabs with typewriter effect
     const tabs = document.querySelectorAll('.term-tab');
     const contents = document.querySelectorAll('.term-content');
 
+    function typeWriter(element: HTMLElement, text: string, callback?: () => void) {
+      element.textContent = "";
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          element.textContent += text.charAt(i);
+          i++;
+          setTimeout(type, Math.random() * 15 + 10);
+        } else {
+          if (callback) callback();
+        }
+      }
+      type();
+    }
+
+    function runTerminalTypewriter(tabId: string) {
+      const activeContent = document.getElementById(`term-${tabId}`);
+      if (!activeContent) return;
+
+      const cmdSpan = activeContent.querySelector('.term-cmd') as HTMLElement;
+      const outputDiv = activeContent.querySelector('.term-output') as HTMLElement;
+
+      if (cmdSpan) {
+        const fullCmd = cmdSpan.getAttribute('data-cmd') || '';
+        if (outputDiv) {
+          outputDiv.classList.add('opacity-0');
+          outputDiv.style.display = 'none';
+        }
+        
+        typeWriter(cmdSpan, fullCmd, () => {
+          if (outputDiv) {
+            outputDiv.style.display = 'block';
+            // Trigger browser reflow to run CSS opacity transition
+            outputDiv.offsetHeight;
+            outputDiv.classList.remove('opacity-0');
+          }
+        });
+      }
+    }
+
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        const target = tab.getAttribute('data-target');
+        const target = tab.getAttribute('data-target') || '';
         
         tabs.forEach(t => {
           t.classList.remove('bg-white', 'text-ink');
@@ -1097,8 +1696,23 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
             c.classList.remove('hidden');
           }
         });
+
+        // Trigger glitch effect on terminal
+        const termContainer = document.querySelector('.mock-terminal');
+        if (termContainer) {
+          termContainer.classList.add('glitch-active');
+          setTimeout(() => {
+            termContainer.classList.remove('glitch-active');
+          }, 250);
+        }
+
+        // Trigger typewriter simulation for target tab
+        runTerminalTypewriter(target);
       });
     });
+
+    // Run typewriter once on initial community tab
+    runTerminalTypewriter('community');
 
     // 4. Live Metadata Schema Sandbox Logic
     const titleInput = document.getElementById('sandbox-title') as HTMLInputElement;
@@ -1147,43 +1761,1139 @@ const DESC = "OpenRiset membangun OpenRiset Index (pencatatan sitasi ramah K-12)
     const graphLines = document.querySelectorAll('.graph-line');
     const graphInfo = document.getElementById('graph-info');
 
-    graphNodes.forEach(node => {
-      node.addEventListener('mouseenter', () => {
-        const nodeId = node.getAttribute('data-id');
-        const label = node.getAttribute('data-label') || '';
-        const desc = node.getAttribute('data-desc') || '';
+    let hoveredNode: Element | null = null;
+    let selectedNode: Element | null = null;
+
+    function updateGraphState() {
+      const activeNode = selectedNode || hoveredNode;
+      if (activeNode) {
+        const nodeId = activeNode.getAttribute('data-id');
+        const label = activeNode.getAttribute('data-label') || '';
+        const desc = activeNode.getAttribute('data-desc') || '';
         
         if (graphInfo) {
           graphInfo.innerHTML = `<strong class="text-brand-400">${label}</strong><br /><span class="text-[10px] text-neutral-400">${desc}</span>`;
         }
 
-        // Highlight connected lines in cyan, others dim
+        // Highlight connected lines with fast dash flow, dim others heavily
         graphLines.forEach(line => {
-          const connects = line.getAttribute('data-connects')?.split(',') || [];
+          const htmlLine = line as SVGElement;
+          const connects = htmlLine.getAttribute('data-connects')?.split(',') || [];
           if (connects.includes(nodeId || '')) {
-            line.setAttribute('stroke', '#06b6d4');
-            line.setAttribute('stroke-width', '2.5');
-            line.setAttribute('stroke-dasharray', '4');
-            line.classList.add('animate-[dash_1s_linear_infinite]');
+            htmlLine.classList.add('graph-flow-active');
+            htmlLine.style.opacity = '1';
           } else {
-            line.setAttribute('stroke', '#1e293b');
-            line.setAttribute('stroke-width', '1');
+            htmlLine.classList.remove('graph-flow-active');
+            htmlLine.style.opacity = '0.12';
           }
         });
-      });
-
-      node.addEventListener('mouseleave', () => {
-        // Reset lines to default
+      } else {
+        // Reset to default styling (subtle, slow moving dashes)
         graphLines.forEach(line => {
-          line.setAttribute('stroke', '#334155');
-          line.setAttribute('stroke-width', '1.5');
-          line.removeAttribute('stroke-dasharray');
+          const htmlLine = line as SVGElement;
+          htmlLine.classList.remove('graph-flow-active');
+          htmlLine.style.opacity = ''; // Let CSS take over
         });
         if (graphInfo) {
           graphInfo.innerHTML = 'Arahkan kursor ke node graf di atas untuk memeriksa jaringan rujukan ilmiah.';
         }
+      }
+    }
+
+    graphNodes.forEach(node => {
+      // Hover event listeners for mouse-enabled devices
+      node.addEventListener('mouseenter', () => {
+        if (!selectedNode) {
+          hoveredNode = node;
+          updateGraphState();
+        }
+      });
+
+      node.addEventListener('mouseleave', () => {
+        if (hoveredNode === node) {
+          hoveredNode = null;
+          updateGraphState();
+        }
+      });
+
+      // Unified Click/Tap listener for touch screen devices
+      node.addEventListener('click', (e) => {
+        e.stopPropagation(); // Avoid triggering deselect on SVG canvas click
+        if (selectedNode === node) {
+          selectedNode = null; // Toggle selection off
+        } else {
+          selectedNode = node; // Set active selection
+        }
+        hoveredNode = null;
+        updateGraphState();
       });
     });
+
+    // Tap outside nodes to reset
+    const graphSvg = document.querySelector('.graph-node')?.parentElement;
+    if (graphSvg) {
+      graphSvg.addEventListener('click', () => {
+        selectedNode = null;
+        hoveredNode = null;
+        updateGraphState();
+      });
+    }
+
+
+    // 6. Live Telemetry Simulators
+    const memEl = document.getElementById('telemetry-mem');
+    const binLeftEl = document.getElementById('telemetry-binary-left');
+    const binRightEl = document.getElementById('telemetry-binary-right');
+    const ctaHashEl = document.getElementById('cta-hash-val');
+    const ctaKeyEl = document.getElementById('cta-key-hash');
+    const ctaTimeEl = document.getElementById('cta-timestamp');
+
+    function generateBinaryByte() {
+      let b = "";
+      for (let i = 0; i < 8; i++) {
+        b += Math.random() > 0.5 ? "1" : "0";
+      }
+      return b;
+    }
+
+    setInterval(() => {
+      // Memory load simulation (11.8% to 13.5%)
+      if (memEl) {
+        const value = (11.8 + Math.random() * 1.7).toFixed(1);
+        memEl.textContent = `MEM_LOAD: ${value}%`;
+      }
+      
+      // Binary flow simulation
+      if (binLeftEl) {
+        binLeftEl.textContent = `${generateBinaryByte()} ${generateBinaryByte()}`;
+      }
+      if (binRightEl) {
+        binRightEl.textContent = `${generateBinaryByte()} ${generateBinaryByte()}`;
+      }
+
+      // CTA logs simulation
+      if (ctaHashEl) {
+        const hex = Math.floor(Math.random() * 0xffffffff).toString(16).padEnd(8, '0');
+        ctaHashEl.textContent = `HASH_VAL: ${hex}...`;
+      }
+      if (ctaKeyEl) {
+        const part1 = Math.floor(Math.random() * 0xffff).toString(16);
+        const part2 = Math.floor(Math.random() * 0xffff).toString(16);
+        ctaKeyEl.textContent = `RSA_KEY_HASH: 0x${part1}a87bc${part2}`;
+      }
+      if (ctaTimeEl) {
+        ctaTimeEl.textContent = `TIME: ${new Date().toISOString().substring(0, 19)}Z`;
+      }
+    }, 3000);
+
+    // 7. Custom Magnetic Cursor Logic (Desktop only)
+    let mouseX = 0, mouseY = 0;
+    let dotX = 0, dotY = 0;
+    let circleX = 0, circleY = 0;
+    let magneticTarget: HTMLElement | null = null;
+
+    const cursorDot = document.getElementById('cursor-dot');
+    const cursorCircle = document.getElementById('cursor-circle');
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    const interactiveSelectors = 'a, button, select, input, textarea, [role="button"], .term-tab, .spotlight-card, .graph-node';
+    const magneticSelectors = 'a, button, .term-tab';
+
+    function initCursorEvents() {
+      document.querySelectorAll(interactiveSelectors).forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          cursorCircle?.classList.add('cursor-hover');
+        });
+        el.addEventListener('mouseleave', () => {
+          cursorCircle?.classList.remove('cursor-hover');
+        });
+      });
+
+      document.querySelectorAll(magneticSelectors).forEach(el => {
+        const htmlEl = el as HTMLElement;
+        htmlEl.addEventListener('mouseenter', () => {
+          magneticTarget = htmlEl;
+          cursorCircle?.classList.add('cursor-magnetic');
+          cursorDot?.classList.add('cursor-magnetic-dot');
+        });
+        htmlEl.addEventListener('mouseleave', () => {
+          magneticTarget = null;
+          cursorCircle?.classList.remove('cursor-magnetic');
+          cursorDot?.classList.remove('cursor-magnetic-dot');
+        });
+      });
+    }
+
+    const lerp = (start: number, end: number, amt: number) => (1 - amt) * start + amt * end;
+
+    function updateCursor() {
+      if (magneticTarget && cursorCircle) {
+        const rect = magneticTarget.getBoundingClientRect();
+        const targetX = rect.left + rect.width / 2;
+        const targetY = rect.top + rect.height / 2;
+
+        circleX = lerp(circleX, targetX, 0.25);
+        circleY = lerp(circleY, targetY, 0.25);
+
+        cursorCircle.style.transform = `translate3d(-50%, -50%, 0) translate3d(${circleX}px, ${circleY}px, 0)`;
+        
+        const padding = 12;
+        cursorCircle.style.width = `${rect.width + padding}px`;
+        cursorCircle.style.height = `${rect.height + padding}px`;
+        cursorCircle.style.borderRadius = '6px';
+
+        const dotTargetX = targetX + (mouseX - targetX) * 0.35;
+        const dotTargetY = targetY + (mouseY - targetY) * 0.35;
+
+        dotX = lerp(dotX, dotTargetX, 0.3);
+        dotY = lerp(dotY, dotTargetY, 0.3);
+        if (cursorDot) {
+          cursorDot.style.transform = `translate3d(-50%, -50%, 0) translate3d(${dotX}px, ${dotY}px, 0)`;
+        }
+      } else {
+        dotX = mouseX;
+        dotY = mouseY;
+
+        circleX = lerp(circleX, mouseX, 0.15);
+        circleY = lerp(circleY, mouseY, 0.15);
+
+        if (cursorDot) {
+          cursorDot.style.transform = `translate3d(-50%, -50%, 0) translate3d(${dotX}px, ${dotY}px, 0)`;
+        }
+        if (cursorCircle) {
+          cursorCircle.style.transform = `translate3d(-50%, -50%, 0) translate3d(${circleX}px, ${circleY}px, 0)`;
+          cursorCircle.style.width = '32px';
+          cursorCircle.style.height = '32px';
+          cursorCircle.style.borderRadius = '50%';
+        }
+      }
+
+      requestAnimationFrame(updateCursor);
+    }
+
+    if (window.matchMedia('(min-width: 1024px)').matches) {
+      initCursorEvents();
+      requestAnimationFrame(updateCursor);
+    }
+
+    // 8. Stat Bar Fourier Oscilloscope Sandbox & Audio Synthesizer Logic
+    const sliderFreq = document.getElementById('slider-freq') as HTMLInputElement;
+    const sliderAmp = document.getElementById('slider-amp') as HTMLInputElement;
+    const sliderNoise = document.getElementById('slider-noise') as HTMLInputElement;
+
+    const valFreq = document.getElementById('val-freq');
+    const valAmp = document.getElementById('val-amp');
+    const valNoise = document.getElementById('val-noise');
+
+    const wavePrimary = document.getElementById('wave-primary');
+    const waveSecondary = document.getElementById('wave-secondary');
+    const btnToggleSignal = document.getElementById('btn-toggle-signal');
+    const statSection = document.getElementById('stat-bar-section');
+
+    let oscilloscopeVelocityMultiplier = 1.0;
+
+    function updateOscilloscope() {
+      if (!sliderFreq || !sliderAmp || !sliderNoise || !wavePrimary || !waveSecondary) return;
+      const width = 1200;
+      const height = 100;
+      const midY = height / 2;
+
+      const freq = parseFloat(sliderFreq.value);
+      const amp = parseFloat(sliderAmp.value) * oscilloscopeVelocityMultiplier;
+      const noise = parseFloat(sliderNoise.value);
+
+      if (valFreq) valFreq.textContent = `${freq.toFixed(1)}Hz`;
+      if (valAmp) valAmp.textContent = `${Math.round(amp)}px`;
+      if (valNoise) valNoise.textContent = `${Math.round((noise / 30) * 100)}%`;
+
+      // Draw primary wave (sine + harmonics)
+      let d1 = `M 0 ${midY}`;
+      for (let x = 0; x <= width; x += 4) {
+        let angle = (x / width) * Math.PI * 2 * freq;
+        let sineVal = Math.sin(angle) + 0.25 * Math.sin(angle * 3);
+        let noiseVal = (Math.random() - 0.5) * noise;
+        let y = midY - (sineVal * amp * 0.8) + noiseVal;
+        d1 += ` L ${x} ${y}`;
+      }
+      wavePrimary.setAttribute('d', d1);
+
+      // Draw secondary wave (cosine + harmonics, offset phase)
+      let d2 = `M 0 ${midY}`;
+      for (let x = 0; x <= width; x += 4) {
+        let angle = (x / width) * Math.PI * 2 * freq + Math.PI / 4;
+        let cosineVal = Math.cos(angle) + 0.15 * Math.cos(angle * 2);
+        let noiseVal = (Math.random() - 0.5) * noise;
+        let y = midY - (cosineVal * amp * 0.6) + noiseVal;
+        d2 += ` L ${x} ${y}`;
+      }
+      waveSecondary.setAttribute('d', d2);
+    }
+
+    // Attach slider listeners
+    if (sliderFreq && sliderAmp && sliderNoise) {
+      sliderFreq.addEventListener('input', () => {
+        updateOscilloscope();
+        if (oscillator && audioCtx) {
+          const freq = parseFloat(sliderFreq.value);
+          oscillator.frequency.setValueAtTime(220 + freq * 44, audioCtx.currentTime);
+        }
+      });
+      sliderAmp.addEventListener('input', () => {
+        updateOscilloscope();
+        if (primaryGain && audioCtx) {
+          const amp = parseFloat(sliderAmp.value);
+          primaryGain.gain.setValueAtTime((amp / 80) * 0.05, audioCtx.currentTime);
+        }
+      });
+      sliderNoise.addEventListener('input', () => {
+        updateOscilloscope();
+        if (noiseGain && audioCtx) {
+          const noise = parseFloat(sliderNoise.value);
+          noiseGain.gain.setValueAtTime((noise / 30) * 0.015, audioCtx.currentTime);
+        }
+      });
+    }
+
+    // Web Audio Synthesis Logic
+    let audioCtx: AudioContext | null = null;
+    let oscillator: OscillatorNode | null = null;
+    let noiseSource: AudioBufferSourceNode | null = null;
+    let primaryGain: GainNode | null = null;
+    let noiseGain: GainNode | null = null;
+    let isAudioPlaying = false;
+
+    function initAudio() {
+      try {
+        const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+        audioCtx = new AudioContextClass();
+
+        // 1. Primary oscillator for wave hum
+        oscillator = audioCtx.createOscillator();
+        oscillator.type = 'sine';
+        const freq = parseFloat(sliderFreq.value || '2');
+        oscillator.frequency.value = 220 + freq * 44;
+
+        primaryGain = audioCtx.createGain();
+        const amp = parseFloat(sliderAmp.value || '40');
+        primaryGain.gain.value = (amp / 80) * 0.05; // Keep it low and gentle
+
+        oscillator.connect(primaryGain);
+        primaryGain.connect(audioCtx.destination);
+        oscillator.start();
+
+        // 2. White noise buffer source
+        const bufferSize = audioCtx.sampleRate * 2;
+        const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = Math.random() * 2 - 1;
+        }
+
+        noiseSource = audioCtx.createBufferSource();
+        noiseSource.buffer = buffer;
+        noiseSource.loop = true;
+
+        noiseGain = audioCtx.createGain();
+        const noiseVal = parseFloat(sliderNoise.value || '0');
+        noiseGain.gain.value = (noiseVal / 30) * 0.015;
+
+        noiseSource.connect(noiseGain);
+        noiseGain.connect(audioCtx.destination);
+        noiseSource.start();
+
+        isAudioPlaying = true;
+        if (btnToggleSignal) {
+          btnToggleSignal.textContent = "Test Audio: On";
+          btnToggleSignal.classList.add('bg-brand-600', 'text-white', 'border-brand-500');
+          btnToggleSignal.classList.remove('bg-neutral-800', 'text-neutral-400', 'border-neutral-700');
+        }
+      } catch (err) {
+        console.error('Failed to initialize audio', err);
+      }
+    }
+
+    function stopAudio() {
+      if (oscillator) {
+        try { oscillator.stop(); } catch(e){}
+        oscillator.disconnect();
+        oscillator = null;
+      }
+      if (noiseSource) {
+        try { noiseSource.stop(); } catch(e){}
+        noiseSource.disconnect();
+        noiseSource = null;
+      }
+      if (audioCtx) {
+        try { audioCtx.close(); } catch(e){}
+        audioCtx = null;
+      }
+      isAudioPlaying = false;
+      if (btnToggleSignal) {
+        btnToggleSignal.textContent = "Test Audio: Off";
+        btnToggleSignal.classList.remove('bg-brand-600', 'text-white', 'border-brand-500');
+        btnToggleSignal.classList.add('bg-neutral-800', 'text-neutral-400', 'border-neutral-700');
+      }
+    }
+
+    if (btnToggleSignal) {
+      btnToggleSignal.addEventListener('click', () => {
+        if (isAudioPlaying) {
+          stopAudio();
+        } else {
+          initAudio();
+        }
+      });
+    }
+
+    // UX Safety: intersection observer to turn off audio when scrolled out
+    if (statSection) {
+      const audioObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting && isAudioPlaying) {
+            stopAudio();
+          }
+        });
+      }, { threshold: 0 });
+      audioObserver.observe(statSection);
+    }
+
+    // Initialize oscilloscope drawing on mount
+    updateOscilloscope();
+
+    // 9. WebGL 3D Globe with Three.js (Lazy Loaded)
+    const audienceSection = document.getElementById('audience');
+    const globeCanvas = document.getElementById('globe-3d-canvas') as HTMLCanvasElement;
+    let globeLoaded = false;
+
+    function init3DGlobe(THREE: any) {
+      if (!globeCanvas) return;
+
+      const container = document.getElementById('globe-3d-container');
+      if (!container) return;
+
+      const width = container.clientWidth || 384;
+      const height = container.clientHeight || 384;
+
+      // Scene, Camera, WebGLRenderer Setup
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+      camera.position.z = 150;
+
+      const renderer = new THREE.WebGLRenderer({
+        canvas: globeCanvas,
+        alpha: true,
+        antialias: true
+      });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setSize(width, height);
+
+      // Create a master group to hold the globe, nodes, and curves
+      const globeGroup = new THREE.Group();
+      scene.add(globeGroup);
+
+      // Earth sphere wireframe
+      const sphereRadius = 45;
+      const sphereGeo = new THREE.SphereGeometry(sphereRadius, 30, 30);
+      const sphereMat = new THREE.MeshBasicMaterial({
+        color: 0x0891b2, // cyan-600
+        wireframe: true,
+        transparent: true,
+        opacity: 0.12
+      });
+      const sphereMesh = new THREE.Mesh(sphereGeo, sphereMat);
+      globeGroup.add(sphereMesh);
+
+      // Inner sphere for volume
+      const innerSphereGeo = new THREE.SphereGeometry(sphereRadius - 0.5, 16, 16);
+      const innerSphereMat = new THREE.MeshBasicMaterial({
+        color: 0x06b6d4,
+        transparent: true,
+        opacity: 0.03
+      });
+      const innerSphereMesh = new THREE.Mesh(innerSphereGeo, innerSphereMat);
+      globeGroup.add(innerSphereMesh);
+
+      // Lat/Lon to Vector3 conversion
+      function latLonToVector3(lat: number, lon: number, radius: number) {
+        const phi = (90 - lat) * (Math.PI / 180);
+        const theta = (lon + 180) * (Math.PI / 180);
+
+        const x = -(radius * Math.sin(phi) * Math.sin(theta));
+        const y = radius * Math.cos(phi);
+        const z = radius * Math.sin(phi) * Math.cos(theta);
+
+        return new THREE.Vector3(x, y, z);
+      }
+
+      const cities = [
+        { name: 'Jakarta', lat: -6.2088, lon: 106.8456 },
+        { name: 'Bandung', lat: -6.9175, lon: 107.6191 },
+        { name: 'Kyoto', lat: 35.0116, lon: 135.7681 },
+        { name: 'Geneva', lat: 46.2044, lon: 6.1432 }
+      ];
+
+      const nodeGroup = new THREE.Group();
+      globeGroup.add(nodeGroup);
+
+      const nodePositions: any[] = [];
+      const nodeMats: any[] = [];
+
+      cities.forEach(city => {
+        const pos = latLonToVector3(city.lat, city.lon, sphereRadius);
+        nodePositions.push({ name: city.name, pos });
+
+        // Small solid core
+        const nodeCoreGeo = new THREE.SphereGeometry(1.2, 8, 8);
+        const nodeCoreMat = new THREE.MeshBasicMaterial({
+          color: 0x22d3ee, // cyan-400 glowing
+          transparent: true,
+          opacity: 0.9
+        });
+        const nodeCore = new THREE.Mesh(nodeCoreGeo, nodeCoreMat);
+        nodeCore.position.copy(pos);
+        nodeGroup.add(nodeCore);
+
+        // Glow ring
+        const nodeGlowGeo = new THREE.SphereGeometry(2.2, 8, 8);
+        const nodeGlowMat = new THREE.MeshBasicMaterial({
+          color: 0x06b6d4, // cyan-500
+          transparent: true,
+          opacity: 0.3
+        });
+        const nodeGlow = new THREE.Mesh(nodeGlowGeo, nodeGlowMat);
+        nodeGlow.position.copy(pos);
+        nodeGroup.add(nodeGlow);
+
+        nodeMats.push({ core: nodeCoreMat, glow: nodeGlowMat });
+      });
+
+      // Glowing connection arcs
+      function createConnectionArc(p1: any, p2: any) {
+        const distance = p1.distanceTo(p2);
+        const midPoint = new THREE.Vector3().addVectors(p1, p2).multiplyScalar(0.5);
+        const extrudeHeight = sphereRadius + (distance * 0.25);
+        midPoint.normalize().multiplyScalar(extrudeHeight);
+
+        const curve = new THREE.QuadraticBezierCurve3(p1, midPoint, p2);
+        const curvePoints = curve.getPoints(40);
+
+        const curveGeo = new THREE.BufferGeometry().setFromPoints(curvePoints);
+        const curveMat = new THREE.LineBasicMaterial({
+          color: 0x06b6d4,
+          transparent: true,
+          opacity: 0.5
+        });
+
+        const line = new THREE.Line(curveGeo, curveMat);
+        globeGroup.add(line);
+      }
+
+      // Connect Jakarta to other cities
+      const jkt = nodePositions.find(n => n.name === 'Jakarta');
+      if (jkt) {
+        nodePositions.forEach(cityNode => {
+          if (cityNode.name !== 'Jakarta') {
+            createConnectionArc(jkt.pos, cityNode.pos);
+          }
+        });
+      }
+
+      // Connect Geneva and Kyoto
+      const geneva = nodePositions.find(n => n.name === 'Geneva');
+      const kyoto = nodePositions.find(n => n.name === 'Kyoto');
+      if (geneva && kyoto) {
+        createConnectionArc(geneva.pos, kyoto.pos);
+      }
+
+      // Mouse drag controls with LERP inertia
+      let isDragging = false;
+      let previousPointerPosition = { x: 0, y: 0 };
+      let targetRotationX = 0.2;
+      let targetRotationY = 0;
+
+      globeGroup.rotation.x = targetRotationX;
+      globeGroup.rotation.y = targetRotationY;
+
+      globeCanvas.addEventListener('pointerdown', (e) => {
+        isDragging = true;
+        previousPointerPosition = { x: e.clientX, y: e.clientY };
+        try {
+          globeCanvas.setPointerCapture(e.pointerId);
+        } catch (err) {}
+      });
+
+      globeCanvas.addEventListener('pointermove', (e) => {
+        if (!isDragging) return;
+
+        const deltaMove = {
+          x: e.clientX - previousPointerPosition.x,
+          y: e.clientY - previousPointerPosition.y
+        };
+
+        targetRotationY += deltaMove.x * 0.006;
+        targetRotationX += deltaMove.y * 0.006;
+
+        previousPointerPosition = { x: e.clientX, y: e.clientY };
+      });
+
+      const handlePointerUp = (e: PointerEvent) => {
+        isDragging = false;
+        try {
+          globeCanvas.releasePointerCapture(e.pointerId);
+        } catch (err) {}
+      };
+
+      globeCanvas.addEventListener('pointerup', handlePointerUp);
+      globeCanvas.addEventListener('pointercancel', handlePointerUp);
+
+      globeCanvas.addEventListener('mouseenter', () => {
+        if (cursorCircle) cursorCircle.classList.add('cursor-hover');
+      });
+      globeCanvas.addEventListener('mouseleave', () => {
+        if (cursorCircle) cursorCircle.classList.remove('cursor-hover');
+        isDragging = false;
+      });
+
+      // Animation Loop
+      let animFrameId: number;
+      const clock = new THREE.Clock();
+
+      function animate() {
+        const time = clock.getElapsedTime();
+
+        if (!isDragging) {
+          targetRotationY += 0.0018; // Slow rotation auto-orbit
+        }
+
+        // Clamp vertical slant
+        targetRotationX = Math.max(-Math.PI / 3, Math.min(Math.PI / 3, targetRotationX));
+
+        // LERP rotations
+        globeGroup.rotation.y = lerp(globeGroup.rotation.y, targetRotationY, 0.08);
+        globeGroup.rotation.x = lerp(globeGroup.rotation.x, targetRotationX, 0.08);
+
+        // Glow nodes pulse
+        nodeMats.forEach((mat, idx) => {
+          const pulse = 0.5 + 0.4 * Math.sin(time * 4.5 + idx);
+          mat.core.opacity = 0.6 + 0.4 * pulse;
+          mat.glow.opacity = 0.1 + 0.35 * pulse;
+        });
+
+        renderer.render(scene, camera);
+        animFrameId = requestAnimationFrame(animate);
+      }
+
+      animate();
+
+      // Responsiveness
+      const resizeObserver = new ResizeObserver((entries) => {
+        for (let entry of entries) {
+          const w = entry.contentRect.width || width;
+          const h = entry.contentRect.height || height;
+          
+          camera.aspect = w / h;
+          camera.updateProjectionMatrix();
+          renderer.setSize(w, h);
+        }
+      });
+
+      resizeObserver.observe(container);
+
+      return () => {
+        cancelAnimationFrame(animFrameId);
+        resizeObserver.disconnect();
+        renderer.dispose();
+      };
+    }
+
+    // Lazy load IntersectionObserver
+    if (audienceSection && globeCanvas) {
+      const globeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(async (entry) => {
+          if (entry.isIntersecting && !globeLoaded) {
+            globeLoaded = true;
+            globeObserver.unobserve(audienceSection);
+
+            try {
+              const THREE = await import('three');
+              init3DGlobe(THREE);
+            } catch (err) {
+              console.error('Failed to dynamic import Three.js', err);
+            }
+          }
+        });
+      }, { rootMargin: '200px' });
+
+      globeObserver.observe(audienceSection);
+    }
+
+    // --- Advanced Parallax, 3D Tilt & Velocity Modulation Logic ---
+
+    // 1. Check for reduced motion and touch capability
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+
+    if (!prefersReducedMotion) {
+      // 2. Hero Mouse dual-axis parallax setup variables
+      const heroSection = document.getElementById('hero-section');
+      const heroGrid = document.getElementById('hero-grid');
+      const heroBlueprintLeft = document.getElementById('hero-blueprint-left');
+      const heroBlueprintRight = document.getElementById('hero-blueprint-right');
+
+      let heroTargetMX = 0, heroTargetMY = 0;
+      let heroCurrentMX = 0, heroCurrentMY = 0;
+
+      if (isDesktop && heroSection) {
+        heroSection.addEventListener('mousemove', (e) => {
+          const rect = heroSection.getBoundingClientRect();
+          heroTargetMX = (e.clientX - rect.left) / rect.width - 0.5;
+          heroTargetMY = (e.clientY - rect.top) / rect.height - 0.5;
+        });
+
+        heroSection.addEventListener('mouseleave', () => {
+          heroTargetMX = 0;
+          heroTargetMY = 0;
+        });
+      }
+
+      // 3. Why Section scroll drawing setup
+      const whySection = document.getElementById('why');
+      const whyFlowchart = document.getElementById('why-flowchart');
+      const whySwarm = document.getElementById('why-swarm');
+      const whyPath1 = document.getElementById('why-path-1') as SVGPathElement | null;
+      const whyPath2 = document.getElementById('why-path-2') as SVGPathElement | null;
+      const whyPath3 = document.getElementById('why-path-3') as SVGPathElement | null;
+
+      let whyPath1Len = 0, whyPath2Len = 0, whyPath3Len = 0;
+      if (whyPath1) {
+        whyPath1Len = whyPath1.getTotalLength();
+        whyPath1.style.strokeDasharray = `${whyPath1Len}`;
+        whyPath1.style.strokeDashoffset = `${whyPath1Len}`;
+      }
+      if (whyPath2) {
+        whyPath2Len = whyPath2.getTotalLength();
+        whyPath2.style.strokeDasharray = `${whyPath2Len}`;
+        whyPath2.style.strokeDashoffset = `${whyPath2Len}`;
+      }
+      if (whyPath3) {
+        whyPath3Len = whyPath3.getTotalLength();
+        whyPath3.style.strokeDasharray = `${whyPath3Len}`;
+        whyPath3.style.strokeDashoffset = `${whyPath3Len}`;
+      }
+
+      // Helper function to measure element position ratio inside viewport
+      function getSectionScrollRatio(el: HTMLElement) {
+        const rect = el.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const sectionHeight = rect.height;
+        const entry = viewportHeight;
+        const exit = -sectionHeight;
+        
+        const current = rect.top;
+        if (current > entry) return 0;
+        if (current < exit) return 1;
+        
+        return 1 - (current - exit) / (entry - exit);
+      }
+
+      // 4. Stat Bar Scroll Velocity setup
+      let lastScrollY = window.scrollY;
+      let targetVelocityMultiplier = 1.0;
+      let currentVelocityMultiplier = 1.0;
+
+      // 5. Projects Bento Grid 3D Tilt setup
+      const projectsSection = document.getElementById('projects');
+      const projectsBlueprint = document.getElementById('projects-blueprint');
+      const standardsSection = document.getElementById('standards');
+      const standardsBlueprint = document.getElementById('standards-blueprint');
+
+      if (isDesktop) {
+        const bentoCards = document.querySelectorAll('.hover-3d-card');
+        bentoCards.forEach((card) => {
+          const htmlCard = card as HTMLElement;
+          htmlCard.addEventListener('mousemove', (e) => {
+            const rect = htmlCard.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const rx = -(y / rect.height - 0.5) * 1.5; // rotation limit 1.5 deg
+            const ry = (x / rect.width - 0.5) * 1.5;
+
+            htmlCard.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+          });
+
+          htmlCard.addEventListener('mouseleave', () => {
+            htmlCard.style.transform = 'rotateX(0deg) rotateY(0deg)';
+          });
+        });
+      }
+
+      // 6. Vision concentric circles target lens setup
+      const visionSection = document.getElementById('vision');
+      const visionLens = document.getElementById('vision-lens');
+      const visionDiagram = document.getElementById('vision-diagram');
+
+      // 8. Audience Section & Three.js Globe setup
+      const audienceSection = document.getElementById('audience');
+      const globe3DContainer = document.getElementById('globe-3d-container');
+
+      // 7. CTA gravitative network pull setup
+      const ctaMainBtn = document.getElementById('cta-main-btn');
+      const ctaNode1 = document.getElementById('cta-node-1');
+      const ctaNode2 = document.getElementById('cta-node-2');
+      const ctaNode3 = document.getElementById('cta-node-3');
+      const ctaNode4 = document.getElementById('cta-node-4');
+      const ctaNode5 = document.getElementById('cta-node-5');
+      const ctaLine1 = document.getElementById('cta-line-1');
+      const ctaLine2 = document.getElementById('cta-line-2');
+
+      if (isDesktop && ctaMainBtn) {
+        ctaMainBtn.addEventListener('mouseenter', () => {
+          if (ctaNode1) ctaNode1.style.transform = 'translate3d(50px, 15px, 0)';
+          if (ctaNode2) ctaNode2.style.transform = 'translate3d(15px, 35px, 0)';
+          if (ctaNode3) ctaNode3.style.transform = 'translate3d(-40px, -35px, 0)';
+          if (ctaNode4) ctaNode4.style.transform = 'translate3d(-70px, 25px, 0)';
+          if (ctaNode5) ctaNode5.style.transform = 'translate3d(80px, -35px, 0)';
+          if (ctaLine1) ctaLine1.style.transform = 'scale(0.85) translate3d(50px, 20px, 0)';
+          if (ctaLine2) ctaLine2.style.transform = 'scale(0.85) translate3d(-10px, 10px, 0)';
+        });
+
+        ctaMainBtn.addEventListener('mouseleave', () => {
+          if (ctaNode1) ctaNode1.style.transform = '';
+          if (ctaNode2) ctaNode2.style.transform = '';
+          if (ctaNode3) ctaNode3.style.transform = '';
+          if (ctaNode4) ctaNode4.style.transform = '';
+          if (ctaNode5) ctaNode5.style.transform = '';
+          if (ctaLine1) ctaLine1.style.transform = '';
+          if (ctaLine2) ctaLine2.style.transform = '';
+        });
+      }
+
+      // Centralized animation tick loop (requestAnimationFrame throttled)
+      let lastAnimScrollY = -1;
+      let whyScrollRatio = 0;
+      let whyTargetRatio = 0;
+
+      function animationTick() {
+        if (isDesktop) {
+          // Hero Mouse movements LERP inertia
+          heroCurrentMX = lerp(heroCurrentMX, heroTargetMX, 0.08);
+          heroCurrentMY = lerp(heroCurrentMY, heroTargetMY, 0.08);
+
+          if (heroGrid) {
+            heroGrid.style.transform = `translate3d(${heroCurrentMX * -25}px, ${heroCurrentMY * -25}px, 0)`;
+          }
+          if (heroBlueprintLeft) {
+            heroBlueprintLeft.style.transform = `translate3d(${heroCurrentMX * -15}px, ${heroCurrentMY * -15}px, 0) translateY(${Math.sin(Date.now() / 1500) * 8}px)`;
+          }
+          if (heroBlueprintRight) {
+            heroBlueprintRight.style.transform = `translate3d(${heroCurrentMX * -10}px, ${heroCurrentMY * -10}px, 0) translateY(${Math.cos(Date.now() / 2000) * 12}px)`;
+          }
+        }
+
+        // Scroll velocity wave modulation
+        const currentScrollY = window.scrollY;
+        const deltaY = currentScrollY - lastScrollY;
+        lastScrollY = currentScrollY;
+
+        const velocityFactor = Math.abs(deltaY) * 0.12;
+        targetVelocityMultiplier = 1.0 + Math.min(2.5, velocityFactor);
+        currentVelocityMultiplier = lerp(currentVelocityMultiplier, targetVelocityMultiplier, 0.08);
+        targetVelocityMultiplier = lerp(targetVelocityMultiplier, 1.0, 0.05);
+
+        oscilloscopeVelocityMultiplier = currentVelocityMultiplier;
+        if (Math.abs(oscilloscopeVelocityMultiplier - 1.0) > 0.01 || deltaY !== 0) {
+          updateOscilloscope();
+        }
+
+        // Scroll ratio calculations (Why & Vision sections)
+        if (currentScrollY !== lastAnimScrollY) {
+          lastAnimScrollY = currentScrollY;
+
+          // Why section scrub-drawing & vertical parallax
+          if (whySection) {
+            whyTargetRatio = getSectionScrollRatio(whySection);
+            whyScrollRatio = lerp(whyScrollRatio, whyTargetRatio, 0.1);
+
+            if (whyFlowchart) {
+              whyFlowchart.style.transform = `translate3d(0, ${(whyScrollRatio - 0.5) * 130}px, 0)`;
+            }
+            if (whySwarm) {
+              whySwarm.style.transform = `translate3d(0, ${(whyScrollRatio - 0.5) * -110}px, 0)`;
+            }
+
+            const drawRatio = Math.max(0, Math.min(1, (whyScrollRatio - 0.15) / 0.5));
+            if (whyPath1) {
+              whyPath1.style.strokeDashoffset = `${whyPath1Len * (1 - drawRatio)}`;
+            }
+            if (whyPath2) {
+              whyPath2.style.strokeDashoffset = `${whyPath2Len * (1 - drawRatio)}`;
+            }
+            if (whyPath3) {
+              whyPath3.style.strokeDashoffset = `${whyPath3Len * (1 - drawRatio)}`;
+            }
+          }
+
+          // Projects section vertical parallax
+          if (projectsSection && projectsBlueprint) {
+            const projectsRatio = getSectionScrollRatio(projectsSection);
+            projectsBlueprint.style.transform = `translate3d(0, ${(projectsRatio - 0.5) * -165}px, 0)`;
+          }
+
+          // Standards section vertical parallax
+          if (standardsSection && standardsBlueprint) {
+            const standardsRatio = getSectionScrollRatio(standardsSection);
+            standardsBlueprint.style.transform = `translate3d(0, ${(standardsRatio - 0.5) * -150}px, 0)`;
+          }
+
+          // Vision section focus lens zoom
+          if (visionSection) {
+            const visionRatio = getSectionScrollRatio(visionSection);
+            const focusFactor = Math.max(0, 1.0 - Math.abs(visionRatio - 0.5) * 2);
+
+            if (visionLens) {
+              visionLens.style.transform = `scale(${1.0 + focusFactor * 0.08}) translate3d(0, ${(visionRatio - 0.5) * -120}px, 0)`;
+            }
+            if (visionDiagram) {
+              visionDiagram.style.transform = `scale(${1.0 + focusFactor * 0.05}) translate3d(0, ${(visionRatio - 0.5) * 90}px, 0)`;
+            }
+          }
+
+          // Audience section 3D Globe vertical parallax (with vertical centering offset)
+          if (audienceSection && globe3DContainer) {
+            const audienceRatio = getSectionScrollRatio(audienceSection);
+            globe3DContainer.style.transform = `translate3d(-50%, calc(-50% + ${(audienceRatio - 0.5) * -125}px), 0)`;
+          }
+        }
+
+        requestAnimationFrame(animationTick);
+      }
+
+      // Launch loop
+      requestAnimationFrame(animationTick);
+    }
+
+    // --- Mobile Collapsible Accordion Sections ---
+    const collapsibles = [
+      {
+        btnId: 'why-toggle-btn',
+        collapseId: 'why-collapse',
+        secId: 'why',
+        expandText: '[ BUKA PERBANDINGAN / EXPAND COMPARISON ]',
+        collapseText: '[ TUTUP PERBANDINGAN / COLLAPSE COMPARISON ]'
+      },
+      {
+        btnId: 'projects-toggle-btn',
+        collapseId: 'projects-collapse',
+        secId: 'projects',
+        expandText: '[ BUKA PROYEK / EXPAND PROJECTS ]',
+        collapseText: '[ TUTUP PROYEK / COLLAPSE PROJECTS ]'
+      }
+    ];
+
+    collapsibles.forEach(cfg => {
+      const btn = document.getElementById(cfg.btnId);
+      const collapse = document.getElementById(cfg.collapseId);
+      const section = document.getElementById(cfg.secId);
+      if (!btn || !collapse) return;
+
+      btn.addEventListener('click', () => {
+        const isExpanded = collapse.classList.contains('expanded');
+        
+        if (isExpanded) {
+          // Collapse
+          collapse.classList.remove('expanded');
+          const btnText = btn.querySelector('.btn-text');
+          const btnIcon = btn.querySelector('.btn-icon') as HTMLElement | null;
+          if (btnText) btnText.textContent = cfg.expandText;
+          if (btnIcon) {
+            btnIcon.textContent = '+';
+            btnIcon.style.transform = 'rotate(0deg)';
+          }
+          // Smooth scroll back to section header so user isn't lost
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+          }
+        } else {
+          // Expand
+          collapse.classList.add('expanded');
+          const btnText = btn.querySelector('.btn-text');
+          const btnIcon = btn.querySelector('.btn-icon') as HTMLElement | null;
+          if (btnText) btnText.textContent = cfg.collapseText;
+          if (btnIcon) {
+            btnIcon.textContent = '−'; // minus sign
+            btnIcon.style.transform = 'rotate(180deg)';
+          }
+        }
+      });
+    });
+
+    // --- Mobile Horizontal Swipe Carousel Dot Sync ---
+    const carousels = [
+      {
+        carouselId: 'why-carousel',
+        dotsId: 'why-carousel-dots'
+      },
+      {
+        carouselId: 'products-carousel',
+        dotsId: 'products-carousel-dots'
+      },
+      {
+        carouselId: 'standards-carousel',
+        dotsId: 'standards-carousel-dots'
+      },
+      {
+        carouselId: 'audience-carousel',
+        dotsId: 'audience-carousel-dots'
+      }
+    ];
+
+    carousels.forEach(cfg => {
+      const container = document.getElementById(cfg.carouselId);
+      const dotsContainer = document.getElementById(cfg.dotsId);
+      if (!container || !dotsContainer) return;
+
+      const dots = dotsContainer.querySelectorAll('span');
+
+      // Handle Scroll sync
+      let carouselScrollTimeout: number | undefined;
+      container.addEventListener('scroll', () => {
+        if (carouselScrollTimeout) window.cancelAnimationFrame(carouselScrollTimeout);
+        carouselScrollTimeout = window.requestAnimationFrame(() => {
+          const card = container.firstElementChild as HTMLElement | null;
+          if (!card) return;
+
+          const cardWidth = card.getBoundingClientRect().width;
+          const gap = parseFloat(window.getComputedStyle(container).gap) || 0;
+          const activeIndex = Math.round(container.scrollLeft / (cardWidth + gap));
+          
+          dots.forEach((dot, idx) => {
+            if (idx === activeIndex) {
+              dot.className = 'w-3 h-1.5 rounded-full bg-brand-600 transition-all duration-300';
+            } else {
+              dot.className = 'w-1.5 h-1.5 rounded-full bg-neutral-300 transition-all duration-300';
+            }
+          });
+        });
+      }, { passive: true });
+
+      // Handle Click dots to scroll
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          const idxAttr = dot.getAttribute('data-index');
+          if (idxAttr === null) return;
+          const idx = parseInt(idxAttr);
+          const card = container.firstElementChild as HTMLElement | null;
+          if (!card) return;
+
+          const cardWidth = card.getBoundingClientRect().width;
+          const gap = parseFloat(window.getComputedStyle(container).gap) || 0;
+
+          container.scrollTo({
+            left: idx * (cardWidth + gap),
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+
+    // --- Mobile Floating Quick-Jump Dock ---
+    const quickDock = document.getElementById('mobile-quick-dock');
+    if (quickDock) {
+      const dockItems = quickDock.querySelectorAll('.dock-item');
+      
+      const updateDockState = () => {
+        const scrollY = window.scrollY;
+        const viewportHeight = window.innerHeight;
+        const totalHeight = document.documentElement.scrollHeight;
+        
+        // Footer threshold
+        const isNearFooter = (scrollY + viewportHeight) >= (totalHeight - 160);
+        const isNearHero = scrollY < 200;
+        
+        if (isNearHero || isNearFooter) {
+          quickDock.classList.add('dock-hidden');
+        } else {
+          quickDock.classList.remove('dock-hidden');
+        }
+      };
+
+      const sectionsConfig = [
+        { id: 'why', navId: 'why' },
+        { id: 'projects', navId: 'projects' },
+        { id: 'standards', navId: 'standards' },
+        { id: 'vision', navId: 'vision' },
+        { id: 'audience', navId: 'audience' }
+      ];
+
+      const updateActiveDockItem = () => {
+        const targetLine = window.innerHeight / 2; // middle of viewport is very reliable for quick-dock
+        let activeNavId: string | null = null;
+
+        for (const section of sectionsConfig) {
+          const el = document.getElementById(section.id);
+          if (el) {
+            const rect = el.getBoundingClientRect();
+            if (rect.top <= targetLine && rect.bottom >= targetLine) {
+              activeNavId = section.navId;
+              break;
+            }
+          }
+        }
+
+        // Fallback: Closest section if none matches exactly
+        if (!activeNavId) {
+          let minDistance = Infinity;
+          for (const section of sectionsConfig) {
+            const el = document.getElementById(section.id);
+            if (el) {
+              const rect = el.getBoundingClientRect();
+              const distance = Math.abs(rect.top - targetLine);
+              if (distance < minDistance) {
+                minDistance = distance;
+                activeNavId = section.navId;
+              }
+            }
+          }
+        }
+
+        dockItems.forEach(item => {
+          const itemSection = item.getAttribute('data-section');
+          item.classList.toggle('active', itemSection === activeNavId);
+        });
+      };
+
+      let dockScrollTimeout: number | undefined;
+      window.addEventListener('scroll', () => {
+        updateDockState();
+        
+        if (dockScrollTimeout) window.cancelAnimationFrame(dockScrollTimeout);
+        dockScrollTimeout = window.requestAnimationFrame(() => {
+          updateActiveDockItem();
+        });
+      }, { passive: true });
+
+      // Initial check
+      updateDockState();
+      updateActiveDockItem();
+
+      // Smooth click handling
+      dockItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = item.getAttribute('href');
+          if (!targetId) return;
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    }
   </script>
 
   <script type="application/ld+json" is:inline>
