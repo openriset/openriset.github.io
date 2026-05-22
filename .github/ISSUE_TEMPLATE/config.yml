@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Diskusi
+    url: https://github.com/openriset/openriset.github.io/discussions
+    about: Tanyakan sesuatu atau diskusikan ide sebelum membuat issue
+  - name: 📧 Kontak Langsung
+    url: mailto:openriset@proton.me
+    about: Untuk hal sensitif atau keamanan, hubungi via email
