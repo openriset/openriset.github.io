@@ -47,3 +47,63 @@
     @apply transition-colors duration-150;
   }
 }
+
+/* ── Horizontal snap scroll for card grids on mobile ── */
+@layer components {
+  .snap-grid {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 0.25rem;
+  }
+  .snap-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .snap-grid > * {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 85vw;
+    max-width: 320px;
+  }
+
+  /* Snap indicator dots */
+  .snap-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+  .snap-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: var(--color-or-slate-300);
+    transition: background 0.2s;
+  }
+  .snap-dot.active {
+    background: var(--color-or-slate-600);
+    width: 16px;
+  }
+
+  /* Desktop: reset to grid */
+  @media (min-width: 640px) {
+    .snap-grid {
+      display: grid;
+      overflow-x: visible;
+      scroll-snap-type: none;
+      padding-bottom: 0;
+    }
+    .snap-grid > * {
+      width: auto;
+      max-width: none;
+      scroll-snap-align: none;
+      flex-shrink: 1;
+    }
+    .snap-dots {
+      display: none;
+    }
+  }
+}

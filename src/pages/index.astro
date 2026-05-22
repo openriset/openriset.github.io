@@ -5,6 +5,7 @@ import Hero from '../components/Hero.astro';
 import Section from '../components/Section.astro';
 import Card from '../components/Card.astro';
 import RepoCard from '../components/RepoCard.astro';
+import MobileTOC from '../components/MobileTOC.astro';
 import Footer from '../components/Footer.astro';
 
 const TITLE = "OpenRiset — Infrastruktur Sains Terbuka untuk Indonesia";
@@ -12,263 +13,138 @@ const DESC = "OpenRiset membangun standar, perangkat lunak, dan ekosistem publik
 ---
 
 <Layout title={TITLE} description={DESC}>
+  <div id="top"></div>
   <Nav />
   <main>
     <Hero />
 
-    <!-- ==================== MENGAPA ==================== -->
+    <!-- ==================== MENGAPA — terbuka default ==================== -->
     <Section id="mengapa" title="Mengapa OpenRiset Hadir" subtitle="Indonesia membutuhkan infrastruktur riset yang terbuka dan independen — bukan platform yang terikat vendor, institusi, atau disiplin tertentu.">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        <Card
-          title="Riset Hilang Tanpa Jejak"
-          description="Karya ilmiah siswa dan peneliti sering hilang begitu saja setelah lomba atau publikasi — tidak terindeks, tidak bisa diverifikasi, tidak bisa disitasi."
-          icon="🔍"
-        />
-        <Card
-          title="Tidak Ada Standar Terbuka"
-          description="Setiap institusi punya sistem sendiri. Metadata tidak konsisten. Tidak interoperabel. Peneliti tidak bisa membangun di atas karya sebelumnya."
-          icon="📐"
-        />
-        <Card
-          title="Platform yang Ada Tertutup"
-          description="Platform publikasi yang ada dimiliki vendor dengan biaya tinggi dan data yang tidak bisa diakses publik — mengunci riset di balik paywall."
-          icon="🔒"
-        />
-        <Card
-          title="Tidak Ada untuk K-12"
-          description="Platform seperti SINTA hanya melayani akademisi perguruan tinggi. Belum ada infrastruktur yang serius untuk karya ilmiah tingkat sekolah."
-          icon="🏫"
-        />
-        <Card
-          title="Kolaborasi Terfragmentasi"
-          description="Peneliti di institusi berbeda tidak bisa berkolaborasi dengan mudah karena tidak ada platform bersama dengan identitas tunggal."
-          icon="🧩"
-        />
-        <Card
-          title="Portofolio Tidak Terverifikasi"
-          description="Siswa dan peneliti tidak punya rekam jejak riset yang bisa dibawa ke manapun — untuk daftar kuliah, beasiswa, atau karir."
-          icon="📋"
-        />
+      <div class="snap-grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
+        <Card title="Riset Hilang Tanpa Jejak" description="Karya ilmiah siswa dan peneliti sering hilang begitu saja setelah lomba atau publikasi — tidak terindeks, tidak bisa diverifikasi, tidak bisa disitasi." icon="🔍" />
+        <Card title="Tidak Ada Standar Terbuka" description="Setiap institusi punya sistem sendiri. Metadata tidak konsisten. Tidak interoperabel. Tidak bisa membangun di atas karya sebelumnya." icon="📐" />
+        <Card title="Platform Tertutup" description="Platform yang ada dimiliki vendor dengan biaya tinggi dan data yang tidak bisa diakses publik — mengunci riset di balik paywall." icon="🔒" />
+        <Card title="Tidak Ada untuk K-12" description="SINTA hanya melayani akademisi perguruan tinggi. Belum ada infrastruktur serius untuk karya ilmiah tingkat sekolah." icon="🏫" />
+        <Card title="Kolaborasi Terfragmentasi" description="Peneliti di institusi berbeda tidak bisa berkolaborasi dengan mudah karena tidak ada platform bersama." icon="🧩" />
+        <Card title="Portofolio Tidak Terverifikasi" description="Siswa dan peneliti tidak punya rekam jejak riset yang bisa dibawa untuk daftar kuliah, beasiswa, atau karir." icon="📋" />
       </div>
     </Section>
 
-    <!-- ==================== VISI & MISI ==================== -->
+    <!-- ==================== VISI — terbuka default ==================== -->
     <Section id="visi" title="Visi & Misi" subtitle="Apa yang kami perjuangkan dan bagaimana kami mewujudkannya.">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-        <Card
-          title="Visi"
-          description="Menjadi fondasi infrastruktur saintifik terbuka Indonesia — di mana setiap karya ilmiah terindeks, terverifikasi, dan dapat disitasi, tanpa memandang usia, institusi, atau disiplin ilmu penelitinya."
-          icon="🎯"
-        />
-        <Card
-          title="Misi"
-          description="Mengembangkan perangkat lunak open-source, standar metadata, dan protokol verifikasi yang memungkinkan institusi manapun membangun platform riset mereka sendiri — gratis, mandiri, tanpa batasan."
-          icon="🚀"
-        />
-        <Card
-          title="Independen"
-          description="Tidak terafiliasi dengan institusi atau pendanaan pihak manapun. Keputusan teknis dan arah pengembangan ditentukan semata-mata oleh kebutuhan komunitas riset."
-          icon="🛡️"
-        />
-        <Card
-          title="Terbuka untuk Semua"
-          description="Tidak terbatas pada satu disiplin, satu jenjang, satu institusi. Dari siswa SD yang baru menulis laporan eksperimen pertama, hingga profesor yang mempublikasikan paper — semua punya tempat."
-          icon="🌏"
-        />
+      <div class="snap-grid sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
+        <Card title="Visi" description="Menjadi fondasi infrastruktur saintifik terbuka Indonesia — setiap karya terindeks, terverifikasi, dan dapat disitasi, tanpa memandang usia, institusi, atau disiplin." icon="🎯" />
+        <Card title="Misi" description="Mengembangkan perangkat lunak open-source, standar metadata, dan protokol verifikasi untuk institusi manapun membangun platform riset sendiri." icon="🚀" />
+        <Card title="Independen" description="Tidak terafiliasi institusi atau pendanaan manapun. Keputusan ditentukan oleh kebutuhan komunitas riset." icon="🛡️" />
+        <Card title="Terbuka untuk Semua" description="Dari siswa SD hingga profesor — semua punya tempat. Tidak terbatas satu disiplin, satu jenjang, satu institusi." icon="🌏" />
       </div>
     </Section>
 
-    <!-- ==================== PROYEK ==================== -->
-    <Section id="proyek" title="Proyek Kami" subtitle="Tiga pilar yang sedang kami bangun sebagai fondasi ekosistem riset terbuka.">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        <RepoCard
-          name="community"
-          description="Monorepo utama — berisi seluruh kode sumber aplikasi, shared packages, konfigurasi Docker, dan pipeline CI/CD."
-          language="TypeScript"
-          stars={0}
-          url="https://github.com/openriset/community"
-        />
-        <RepoCard
-          name="spec"
-          description="Dokumen spesifikasi teknis, keputusan arsitektur, standar metadata, dan protokol verifikasi untuk interoperabilitas."
-          language="Markdown"
-          stars={0}
-          url="https://github.com/openriset/spec"
-        />
-        <RepoCard
-          name="citation"
-          description="Standar dan library sitasi terbuka — format interoperabel untuk pertukaran data referensi antar platform."
-          language="TypeScript"
-          stars={0}
-          url="https://github.com/openriset/citation"
-        />
-        <Card
-          title="Indeksasi Karya Ilmiah"
-          description="Sistem untuk mendaftarkan, mengindeks, dan mencari karya ilmiah dengan metadata terstandarisasi — kompatibel dengan Crossref dan DataCite."
-          icon="📑"
-        />
-        <Card
-          title="Verifikasi Bertingkat"
-          description="Mekanisme verifikasi berjenjang: mentor → peer → institusi. Setiap tingkat menambah bobot kredibilitas karya."
-          icon="✅"
-        />
-        <Card
-          title="Portofolio Peneliti"
-          description="Setiap peneliti memiliki profil terverifikasi dengan rekam jejak karya, sitasi, dan kontribusi — portabel ke manapun."
-          icon="👤"
-          href="https://github.com/openriset"
-        />
+    <!-- ==================== PROYEK — collapsed default ==================== -->
+    <Section id="proyek" title="Proyek Kami" subtitle="Tiga pilar fondasi ekosistem riset terbuka yang sedang kami bangun." collapsed>
+      <div class="snap-grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
+        <RepoCard name="community" description="Monorepo utama — seluruh kode sumber aplikasi, shared packages, konfigurasi Docker, pipeline CI/CD." language="TypeScript" stars={0} url="https://github.com/openriset/community" />
+        <RepoCard name="spec" description="Spesifikasi teknis, keputusan arsitektur, standar metadata, dan protokol verifikasi untuk interoperabilitas." language="Markdown" stars={0} url="https://github.com/openriset/spec" />
+        <RepoCard name="citation" description="Standar dan library sitasi terbuka — format interoperabel untuk pertukaran data referensi antar platform." language="TypeScript" stars={0} url="https://github.com/openriset/citation" />
+        <Card title="Indeksasi Karya Ilmiah" description="Sistem pendaftaran, indeksasi, dan pencarian karya ilmiah dengan metadata terstandarisasi — kompatibel Crossref & DataCite." icon="📑" />
+        <Card title="Verifikasi Bertingkat" description="Mekanisme verifikasi berjenjang: mentor → peer → institusi. Setiap tingkat menambah kredibilitas." icon="✅" />
+        <Card title="Portofolio Peneliti" description="Profil terverifikasi dengan rekam jejak karya, sitasi, dan kontribusi — portabel ke manapun." icon="👤" href="https://github.com/openriset" />
       </div>
     </Section>
 
-    <!-- ==================== SIAPA PENGGUNA ==================== -->
-    <Section id="siapa" title="Siapa yang Bisa Menggunakan" subtitle="OpenRiset dirancang untuk melayani seluruh spektrum komunitas riset — tanpa batasan disiplin, jenjang, atau institusi.">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-        <Card
-          title="Universitas &amp; Perguruan Tinggi"
-          description="Indeksasi karya mahasiswa dan dosen. Integrasi dengan sistem informasi akademik yang sudah ada. Dashboard analitik riset institusi."
-          icon="🎓"
-        />
-        <Card
-          title="Lembaga Riset"
-          description="Platform publikasi mandiri untuk BRIN, LIPI, atau lembaga riset independen. Data tetap milik Anda, kode bisa dimodifikasi."
-          icon="🔬"
-        />
-        <Card
-          title="Sekolah (K-12)"
-          description="Satu-satunya platform indeksasi yang serius menangani karya ilmiah siswa SD hingga SMA/SMK. Standar verifikasi disesuaikan usia."
-          icon="🏫"
-        />
-        <Card
-          title="Peneliti Independen"
-          description="Peneliti tanpa afiliasi institusi bisa mempublikasikan karya, membangun portofolio, dan mendapatkan sitasi — setara dengan yang lain."
-          icon="🧑‍🔬"
-        />
+    <!-- ==================== SIAPA — collapsed default ==================== -->
+    <Section id="siapa" title="Siapa yang Bisa Menggunakan" subtitle="Melayani seluruh spektrum komunitas riset — tanpa batasan disiplin, jenjang, atau institusi." collapsed>
+      <div class="snap-grid sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
+        <Card title="Universitas &amp; PT" description="Indeksasi karya mahasiswa dan dosen. Integrasi dengan SIA. Dashboard analitik riset institusi." icon="🎓" />
+        <Card title="Lembaga Riset" description="Platform mandiri untuk BRIN, lembaga riset independen. Data milik Anda, kode bisa dimodifikasi." icon="🔬" />
+        <Card title="Sekolah (K-12)" description="Satu-satunya platform indeksasi serius untuk karya ilmiah siswa SD hingga SMA/SMK. Verifikasi sesuai usia." icon="🏫" />
+        <Card title="Peneliti Independen" description="Peneliti tanpa afiliasi bisa mempublikasikan, membangun portofolio, dan mendapatkan sitasi — setara dengan yang lain." icon="🧑‍🔬" />
       </div>
     </Section>
 
-    <!-- ==================== STANDAR & PENDEKATAN ==================== -->
-    <Section id="standar" title="Standar & Pendekatan" subtitle="Prinsip yang memandu setiap keputusan dalam membangun infrastruktur ini.">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        <Card
-          title="Metadata Terstandarisasi"
-          description="Karya ilmiah diindeks dengan format metadata yang konsisten dan interoperabel — kompatibel dengan SINTA, Crossref, DataCite."
-          icon="📋"
-        />
-        <Card
-          title="Verifikasi Bertingkat"
-          description="Setiap karya melewati proses verifikasi berjenjang: mentor/guru → peer review → publik. Kredibilitas dibangun dari bawah."
-          icon="✅"
-        />
-        <Card
-          title="Sitasi Terbuka"
-          description="Standar sitasi transparan dan machine-readable. Setiap referensi dapat dilacak dan diverifikasi — tidak ada kutipan fiktif."
-          icon="🔗"
-        />
-        <Card
-          title="API Publik"
-          description="Data riset dapat diakses melalui REST API terdokumentasi. Integrasi mudah dengan sistem informasi akademik dan repositori yang sudah ada."
-          icon="🔌"
-        />
-        <Card
-          title="Lisensi MIT"
-          description="Semua kode bebas digunakan, dimodifikasi, dan didistribusikan — termasuk untuk keperluan komersial. Tanpa biaya, tanpa vendor lock-in."
-          icon="📜"
-        />
-        <Card
-          title="Semua Jenjang"
-          description="Dirancang untuk peneliti dari SD hingga profesor. Standar verifikasi disesuaikan dengan usia dan tingkat — tidak ada yang terlalu muda."
-          icon="🎓"
-        />
+    <!-- ==================== STANDAR — collapsed default ==================== -->
+    <Section id="standar" title="Standar & Pendekatan" subtitle="Prinsip yang memandu setiap keputusan dalam membangun infrastruktur ini." collapsed>
+      <div class="snap-grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
+        <Card title="Metadata Terstandarisasi" description="Format metadata konsisten dan interoperabel — kompatibel dengan SINTA, Crossref, DataCite." icon="📋" />
+        <Card title="Verifikasi Bertingkat" description="Verifikasi berjenjang: mentor/guru → peer review → publik. Kredibilitas dibangun dari bawah." icon="✅" />
+        <Card title="Sitasi Terbuka" description="Standar sitasi transparan dan machine-readable. Setiap referensi dapat dilacak — tidak ada kutipan fiktif." icon="🔗" />
+        <Card title="API Publik" description="Data riset diakses via REST API terdokumentasi. Integrasi dengan SIA dan repositori yang sudah ada." icon="🔌" />
+        <Card title="Lisensi MIT" description="Semua kode bebas digunakan, dimodifikasi, dan didistribusikan — termasuk komersial. Tanpa biaya." icon="📜" />
+        <Card title="Semua Jenjang" description="Dari SD hingga profesor. Standar verifikasi disesuaikan usia — tidak ada yang terlalu muda." icon="🎓" />
       </div>
     </Section>
 
-    <!-- ==================== KONTRIBUSI ==================== -->
-    <Section id="kontribusi" title="Berkontribusi" subtitle="OpenRiset terbuka untuk kontribusi dari siapa pun — developer, peneliti, atau organisasi.">
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-        <Card
-          title="Developer"
-          description="Bantu kami membangun infrastruktur. TypeScript, SvelteKit, PostgreSQL — kontribusi kode, code review, dan testing sangat diterima di repositori community."
-          icon="💻"
-          href="https://github.com/openriset/community"
-        />
-        <Card
-          title="Peneliti &amp; Akademisi"
-          description="Gunakan dan uji standar kami. Berikan masukan tentang format metadata, alur verifikasi, dan kebutuhan nyata komunitas riset Anda."
-          icon="🔬"
-          href="https://github.com/openriset/spec"
-        />
-        <Card
-          title="Organisasi &amp; Institusi"
-          description="Adopsi infrastruktur OpenRiset untuk institusi Anda. Kami menyediakan dokumentasi lengkap dan dukungan untuk deployment mandiri."
-          icon="🏛️"
-          href="https://github.com/openriset"
-        />
+    <!-- ==================== KONTRIBUSI — collapsed default ==================== -->
+    <Section id="kontribusi" title="Berkontribusi" subtitle="OpenRiset terbuka untuk kontribusi dari siapa pun — developer, peneliti, atau organisasi." collapsed>
+      <div class="snap-grid sm:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
+        <Card title="Developer" description="Bantu kami membangun infrastruktur. TypeScript, SvelteKit, PostgreSQL — kontribusi kode dan review diterima." icon="💻" href="https://github.com/openriset/community" />
+        <Card title="Peneliti &amp; Akademisi" description="Gunakan dan uji standar kami. Berikan masukan format metadata, alur verifikasi, dan kebutuhan komunitas." icon="🔬" href="https://github.com/openriset/spec" />
+        <Card title="Organisasi &amp; Institusi" description="Adopsi infrastruktur OpenRiset. Dokumentasi lengkap dan dukungan deployment mandiri." icon="🏛️" href="https://github.com/openriset" />
       </div>
     </Section>
 
-    <!-- ==================== FAQ ==================== -->
-    <Section id="faq" title="Pertanyaan Umum">
-      <div class="max-w-2xl mx-auto space-y-3 sm:space-y-4">
-        <details class="group border border-or-slate-200 rounded-xl p-4 sm:p-5 hover:border-or-blue-300 transition-colors">
+    <!-- ==================== FAQ — collapsed default ==================== -->
+    <Section id="faq" title="Pertanyaan Umum" collapsed>
+      <div class="max-w-2xl mx-auto space-y-2 sm:space-y-3">
+        <details class="group border border-or-slate-200 rounded-xl p-3.5 sm:p-5 hover:border-or-blue-300 transition-colors">
           <summary class="font-semibold text-sm sm:text-base text-or-slate-900 cursor-pointer group-open:text-or-blue-700 transition-colors marker:text-or-blue-500">
             Apa bedanya OpenRiset dengan platform riset lain?
           </summary>
           <p class="mt-2 sm:mt-3 text-xs sm:text-sm text-or-slate-600 leading-relaxed">
-            OpenRiset bukan platform — kami adalah <strong>infrastruktur</strong>. Kami membangun fondasi teknis dan standar yang dapat digunakan <strong>institusi manapun</strong> untuk menjalankan platform riset mereka sendiri. Open source, self-hostable, tanpa vendor lock-in. Tidak terikat satu disiplin atau jenjang.
+            OpenRiset bukan platform — kami adalah <strong>infrastruktur</strong>. Kami membangun fondasi teknis dan standar yang dapat digunakan <strong>institusi manapun</strong> untuk menjalankan platform riset mereka sendiri. Open source, tanpa vendor lock-in.
           </p>
         </details>
-        <details class="group border border-or-slate-200 rounded-xl p-4 sm:p-5 hover:border-or-blue-300 transition-colors">
+        <details class="group border border-or-slate-200 rounded-xl p-3.5 sm:p-5 hover:border-or-blue-300 transition-colors">
           <summary class="font-semibold text-sm sm:text-base text-or-slate-900 cursor-pointer group-open:text-or-blue-700 transition-colors marker:text-or-blue-500">
             Apakah OpenRiset berbayar?
           </summary>
           <p class="mt-2 sm:mt-3 text-xs sm:text-sm text-or-slate-600 leading-relaxed">
-            <strong>Tidak.</strong> Semua kode berlisensi MIT — bebas digunakan, dimodifikasi, dan didistribusikan, termasuk untuk keperluan komersial. Kami tidak memungut biaya. Biaya hosting dan operasional ditanggung sendiri oleh institusi yang menggunakannya.
+            <strong>Tidak.</strong> Semua kode berlisensi MIT — bebas digunakan, termasuk komersial. Biaya hosting ditanggung sendiri oleh institusi pengguna.
           </p>
         </details>
-        <details class="group border border-or-slate-200 rounded-xl p-4 sm:p-5 hover:border-or-blue-300 transition-colors">
+        <details class="group border border-or-slate-200 rounded-xl p-3.5 sm:p-5 hover:border-or-blue-300 transition-colors">
           <summary class="font-semibold text-sm sm:text-base text-or-slate-900 cursor-pointer group-open:text-or-blue-700 transition-colors marker:text-or-blue-500">
             Siapa di balik OpenRiset?
           </summary>
           <p class="mt-2 sm:mt-3 text-xs sm:text-sm text-or-slate-600 leading-relaxed">
-            OpenRiset dibangun oleh kontributor independen yang percaya bahwa infrastruktur riset harus terbuka. Kami tidak terafiliasi dengan institusi atau pendanaan pihak manapun. Semua pengembangan dilakukan secara terbuka di <a href="https://github.com/openriset" class="underline text-or-blue-600" target="_blank" rel="noopener">GitHub</a>.
+            Kontributor independen yang percaya infrastruktur riset harus terbuka. Tidak terafiliasi institusi atau pendanaan manapun. Semua pengembangan di <a href="https://github.com/openriset" class="underline text-or-blue-600" target="_blank" rel="noopener">GitHub</a>.
           </p>
         </details>
-        <details class="group border border-or-slate-200 rounded-xl p-4 sm:p-5 hover:border-or-blue-300 transition-colors">
+        <details class="group border border-or-slate-200 rounded-xl p-3.5 sm:p-5 hover:border-or-blue-300 transition-colors">
           <summary class="font-semibold text-sm sm:text-base text-or-slate-900 cursor-pointer group-open:text-or-blue-700 transition-colors marker:text-or-blue-500">
             Apakah bisa untuk semua disiplin ilmu?
           </summary>
           <p class="mt-2 sm:mt-3 text-xs sm:text-sm text-or-slate-600 leading-relaxed">
-            <strong>Ya.</strong> OpenRiset tidak terbatas pada sains atau fisika. Kami mendukung semua disiplin — ilmu sosial, humaniora, teknik, seni, kedokteran, dan seterusnya. Metadata kami fleksibel untuk berbagai format karya ilmiah.
+            <strong>Ya.</strong> Tidak terbatas sains atau fisika — ilmu sosial, humaniora, teknik, seni, kedokteran, semua didukung. Metadata fleksibel untuk berbagai format karya.
           </p>
         </details>
-        <details class="group border border-or-slate-200 rounded-xl p-4 sm:p-5 hover:border-or-blue-300 transition-colors">
+        <details class="group border border-or-slate-200 rounded-xl p-3.5 sm:p-5 hover:border-or-blue-300 transition-colors">
           <summary class="font-semibold text-sm sm:text-base text-or-slate-900 cursor-pointer group-open:text-or-blue-700 transition-colors marker:text-or-blue-500">
             Bagaimana cara memulai?
           </summary>
           <p class="mt-2 sm:mt-3 text-xs sm:text-sm text-or-slate-600 leading-relaxed">
-            Clone <a href="https://github.com/openriset/community" class="underline text-or-blue-600" target="_blank" rel="noopener">community</a>, baca dokumentasi di <a href="https://github.com/openriset/spec" class="underline text-or-blue-600" target="_blank" rel="noopener">spec</a>, dan jalankan. Untuk pertanyaan, buka <a href="https://github.com/openriset/openriset.github.io/discussions" class="underline text-or-blue-600" target="_blank" rel="noopener">discussion</a> atau issue.
+            Clone <a href="https://github.com/openriset/community" class="underline text-or-blue-600" target="_blank" rel="noopener">community</a>, baca dokumentasi di <a href="https://github.com/openriset/spec" class="underline text-or-blue-600" target="_blank" rel="noopener">spec</a>. Untuk pertanyaan, buka <a href="https://github.com/openriset/openriset.github.io/discussions" class="underline text-or-blue-600" target="_blank" rel="noopener">discussion</a>.
           </p>
         </details>
       </div>
     </Section>
 
     <!-- ==================== CTA ==================== -->
-    <section class="py-16 sm:py-20 lg:py-28">
+    <section class="py-12 sm:py-16 lg:py-24">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="rounded-2xl sm:rounded-3xl bg-gradient-to-br from-or-slate-900 via-or-slate-800 to-or-slate-900 p-8 sm:p-12 lg:p-16 shadow-2xl shadow-or-slate-900/20 text-center">
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
+        <div class="rounded-2xl sm:rounded-3xl bg-gradient-to-br from-or-slate-900 via-or-slate-800 to-or-slate-900 p-6 sm:p-10 lg:p-14 shadow-2xl shadow-or-slate-900/20 text-center">
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white leading-tight">
             Mari bangun masa depan riset Indonesia
           </h2>
-          <p class="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg text-or-slate-300 max-w-xl mx-auto leading-relaxed">
+          <p class="mt-2 sm:mt-3 text-sm sm:text-base lg:text-lg text-or-slate-300 max-w-xl mx-auto leading-relaxed">
             Infrastruktur terbuka, standar yang jelas, kolaborasi tanpa batas — untuk semua disiplin, semua jenjang, semua institusi.
           </p>
-          <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-            <a href="https://github.com/openriset" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white text-or-slate-900 font-semibold text-sm sm:text-base hover:bg-or-slate-100 transition-colors">
+          <div class="mt-5 sm:mt-7 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+            <a href="https://github.com/openriset" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white text-or-slate-900 font-semibold text-sm hover:bg-or-slate-100 transition-colors">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
               Mulai di GitHub
             </a>
-            <a href="mailto:openriset@proton.me" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-or-slate-600 text-or-slate-200 font-semibold text-sm sm:text-base hover:bg-or-slate-700/50 transition-colors">
+            <a href="mailto:openriset@proton.me" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-or-slate-600 text-or-slate-200 font-semibold text-sm hover:bg-or-slate-700/50 transition-colors">
               Hubungi Kami
             </a>
           </div>
@@ -277,7 +153,28 @@ const DESC = "OpenRiset membangun standar, perangkat lunak, dan ekosistem publik
     </section>
   </main>
 
+  <!-- Floating TOC for mobile -->
+  <MobileTOC />
+
   <Footer />
+
+  <!-- Collapsible section toggle script -->
+  <script>
+    document.querySelectorAll('.section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.closest('section');
+        const content = section?.querySelector('.section-content');
+        const icon = btn.querySelector('.toggle-icon');
+        if (!content) return;
+        
+        content.classList.toggle('expanded');
+        icon?.classList.toggle('rotate-180');
+        
+        const isExpanded = content.classList.contains('expanded');
+        btn.setAttribute('aria-expanded', String(isExpanded));
+      });
+    });
+  </script>
 
   <!-- JSON-LD -->
   <script type="application/ld+json" is:inline>

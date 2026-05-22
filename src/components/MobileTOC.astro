@@ -1,0 +1,68 @@
+---
+const sections = [
+  { id: 'mengapa', label: 'Mengapa' },
+  { id: 'visi', label: 'Visi' },
+  { id: 'proyek', label: 'Proyek' },
+  { id: 'siapa', label: 'Pengguna' },
+  { id: 'standar', label: 'Standar' },
+  { id: 'kontribusi', label: 'Kontribusi' },
+  { id: 'faq', label: 'FAQ' },
+];
+---
+
+<nav class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-white/90 backdrop-blur-lg border-t border-or-slate-200 safe-area-bottom" id="mobile-toc">
+  <div class="flex items-center overflow-x-auto scrollbar-hide px-1" id="toc-scroll">
+    {sections.map(({ id, label }) => (
+      <a
+        href={`#${id}`}
+        class="toc-link shrink-0 px-2.5 py-2 text-[11px] font-medium text-or-slate-500 hover:text-or-slate-900 whitespace-nowrap transition-colors"
+      >
+        {label}
+      </a>
+    ))}
+    <!-- Scroll to top -->
+    <a
+      href="#top"
+      class="toc-link shrink-0 px-2.5 py-2 text-[11px] font-medium text-or-slate-400 hover:text-or-slate-900 whitespace-nowrap transition-colors"
+      aria-label="Back to top"
+    >
+      ↑ Top
+    </a>
+  </div>
+</nav>
+
+<!-- Add padding so content doesn't hide behind TOC -->
+<div class="md:hidden h-10" aria-hidden="true"></div>
+
+<style>
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+</style>
+
+<script>
+  // Highlight active section on scroll
+  const tocLinks = document.querySelectorAll('.toc-link');
+  const sections = document.querySelectorAll('section[id]');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tocLinks.forEach(link => {
+          link.classList.toggle('text-or-slate-900', link.getAttribute('href') === `#${id}`);
+          link.classList.toggle('text-or-slate-500', link.getAttribute('href') !== `#${id}`);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
