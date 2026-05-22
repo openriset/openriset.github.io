@@ -31,9 +31,7 @@ jobs:
       - run: bun install
 
       - name: Build with Astro
-        run: |
-          export PATH="./node_modules/.bin:$PATH"
-          astro build
+        run: PATH="./node_modules/.bin:$PATH" astro build
 
       - uses: actions/upload-pages-artifact@v3
         with:
