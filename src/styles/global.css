@@ -161,22 +161,59 @@
   .graph-node text {
     pointer-events: none;
   }
-  .graph-node circle {
+  .graph-node circle:not([fill="none"]) {
     transform-box: fill-box;
     transform-origin: center;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s;
   }
-  .graph-node:hover circle {
-    transform: scale(1.25);
-    filter: drop-shadow(0 0 8px var(--color-brand-400));
+  .graph-node:hover circle:not([fill="none"]) {
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.6));
   }
-  .graph-link {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation: draw 2s ease forwards;
+  .graph-line {
+    stroke: #64748b;
+    stroke-width: 1.5;
+    stroke-dasharray: 6 4;
+    stroke-dashoffset: 0;
+    animation: graph-dash 6s linear infinite;
+    opacity: 0.4;
+    transition: stroke 0.4s cubic-bezier(0.16, 1, 0.3, 1), stroke-width 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  @keyframes draw {
-    to { stroke-dashoffset: 0; }
+  .spotlight-card:hover .graph-line {
+    opacity: 0.75;
+    stroke: #475569;
+    animation-duration: 4s;
+  }
+  @keyframes graph-dash {
+    to {
+      stroke-dashoffset: -20;
+    }
+  }
+  .graph-flow-active {
+    stroke: #06b6d4 !important;
+    stroke-width: 2.5 !important;
+    stroke-dasharray: 6 4 !important;
+    animation: graph-dash 0.8s linear infinite !important;
+    opacity: 1 !important;
+  }
+  .node-ripple {
+    transform-box: fill-box;
+    transform-origin: center;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .graph-node:hover .node-ripple {
+    animation: node-ping 1.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  }
+  @keyframes node-ping {
+    0% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
   }
 
   /* Desktop side ornaments */
@@ -205,8 +242,426 @@
   .section-body { max-height: none !important; overflow: visible !important; opacity: 1 !important; }
 }
 
-/* FAQ Accordion expansion */
-details[open] .faq-content {
-  max-height: 24rem;
+/* FAQ Accordion expansion & smooth transitions */
+details.group .faq-content {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
 }
+details.group[open] .faq-content {
+  max-height: 24rem;
+  opacity: 1;
+}
+
+/* --- Micro-Animations for background SVGs --- */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes spin-reverse {
+
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+@keyframes wave-flow {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -120; }
+}
+
+.svg-orbit-slow {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spin 120s linear infinite;
+}
+.svg-orbit-reverse-slow {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spin-reverse 90s linear infinite;
+}
+.svg-wave-flow {
+  stroke-dasharray: 8, 4;
+  animation: wave-flow 12s linear infinite;
+}
+
+/* --- UI/UX Premium Accents --- */
+
+/* Scientific Dot Grid & Line Grid */
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(15, 23, 42, 0.04) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+.bg-line-grid {
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Elegant tech corner brackets */
+.tech-corners {
+  position: relative;
+}
+.tech-corners::before,
+.tech-corners::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: rgba(15, 23, 42, 0.15);
+  border-style: solid;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+}
+.tech-corners::before {
+  top: -1px;
+  left: -1px;
+  border-width: 1.5px 0 0 1.5px;
+}
+.tech-corners::after {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 1.5px 1.5px 0;
+}
+.tech-corners:hover::before,
+.tech-corners:hover::after {
+  border-color: var(--color-brand-500);
+  width: 14px;
+  height: 14px;
+}
+
+/* Light corners for dark background containers */
+.bg-ink.tech-corners::before,
+.bg-ink.tech-corners::after,
+.bg-neutral-900.tech-corners::before,
+.bg-neutral-900.tech-corners::after {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+.bg-ink.tech-corners:hover::before,
+.bg-ink.tech-corners:hover::after,
+.bg-neutral-900.tech-corners:hover::before,
+.bg-neutral-900.tech-corners:hover::after {
+  border-color: var(--color-brand-400) !important;
+}
+
+/* Nav Link Active States */
+.link-underline.active {
+  color: var(--color-ink) !important;
+  font-weight: 600;
+}
+.link-underline.active::after {
+  width: 100% !important;
+  background-color: var(--color-brand-600) !important;
+}
+
+/* Mobile Nav Link Active State */
+.mobile-nav-link.active {
+  color: var(--color-brand-700) !important;
+  background-color: var(--color-brand-50) !important;
+  font-weight: 600;
+}
+
+/* Custom Cursor & Glitch Effects */
+@media (min-width: 1024px) {
+  html, body {
+    cursor: none;
+  }
+  a, button, select, input, textarea, [role="button"], .term-tab {
+    cursor: none;
+  }
+}
+
+#cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-brand-600);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate3d(-50%, -50%, 0);
+  transition: background-color 0.2s, width 0.2s, height 0.2s;
+  display: none;
+}
+
+#cursor-circle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid rgba(37, 99, 235, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate3d(-50%, -50%, 0);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, background-color 0.3s, border-radius 0.3s;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  #cursor-dot, #cursor-circle {
+    display: block;
+  }
+}
+
+#cursor-circle.cursor-hover {
+  border-color: transparent;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(6, 182, 212, 0.05);
+}
+
+/* Spin animation applied only to pseudo-element ::after so it does not conflict with main element's JS positioning transform */
+#cursor-circle.cursor-hover::after {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  border: 1.5px dashed var(--color-cyan-glow);
+  border-radius: 50%;
+  animation: spin 20s linear infinite;
+  pointer-events: none;
+}
+
+#cursor-circle.cursor-magnetic {
+  border-color: var(--color-brand-500);
+  border-radius: 4px;
+  border-style: solid;
+  background-color: rgba(59, 130, 246, 0.08);
+}
+
+#cursor-circle.cursor-magnetic::after {
+  content: none !important;
+  display: none !important;
+}
+
+#cursor-dot.cursor-magnetic-dot {
+  width: 9px;
+  height: 9px;
+  background-color: var(--color-brand-500);
+}
+
+
+/* SVG Glitch Displacement Filter */
+@keyframes glitch-shake {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0, 0); }
+}
+
+.glitch-active {
+  filter: url(#glitch-filter);
+  animation: glitch-shake 0.25s linear infinite;
+}
+
+/* --- Parallax and Advanced Animation Tuning Support --- */
+.parallax-gpu {
+  will-change: transform;
+  transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.hover-3d-card {
+  transform-style: preserve-3d;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s, border-color 0.3s;
+}
+
+.hover-3d-card > * {
+  transform: translateZ(10px);
+}
+
+/* Accessibility: respect user prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  .reveal, .reveal-slow, .spotlight-card, .hover-3d-card, .parallax-gpu {
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+  #cursor-dot, #cursor-circle {
+    display: none !important;
+  }
+  html, body, a, button, select, input, textarea, [role="button"], .term-tab {
+    cursor: auto !important;
+  }
+}
+
+/* Make standards and audience cards semi-transparent with a premium soft blur (glassmorphism) */
+#standards .spotlight-card,
+#audience .spotlight-card {
+  background: rgba(255, 255, 255, 0.22) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+/* Custom premium styling for range inputs (telemetry sliders) */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #1e293b; /* slate-800 */
+  height: 4px;
+  border-radius: 9999px;
+  outline: none;
+  padding: 8px 0; /* Area sentuh ekstra tanpa mempertebal lintasan visual */
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Chrome, Safari, Opera, Edge */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-cyan-glow);
+  border: 2px solid #0b0f19; /* mock-terminal bg ink */
+  box-shadow: 0 0 8px var(--color-cyan-glow);
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+  transform: scale(1.3);
+  background: var(--color-brand-400);
+  box-shadow: 0 0 12px var(--color-brand-400);
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-cyan-glow);
+  border: 2px solid #0b0f19;
+  box-shadow: 0 0 8px var(--color-cyan-glow);
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+input[type="range"]:active::-moz-range-thumb {
+  transform: scale(1.3);
+  background: var(--color-brand-400);
+  box-shadow: 0 0 12px var(--color-brand-400);
+}
+
+/* --- Mobile Layout Optimization & Anti-Doom Scrolling --- */
+
+@media (max-width: 767px) {
+  /* Mobile Collapsible Accordion sections */
+  .mobile-collapse-body {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  }
+  
+  .mobile-collapse-body.expanded {
+    max-height: 4000px; /* High enough to contain layout */
+    opacity: 1;
+  }
+  
+  /* Mobile Horizontal Swipe Carousel */
+  .mobile-carousel {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 1.25rem !important;
+    padding-bottom: 1.5rem !important;
+    padding-top: 0.5rem !important;
+  }
+  
+  .mobile-carousel > * {
+    scroll-snap-align: start !important;
+    flex: 0 0 86% !important;
+    margin: 0 !important;
+  }
+  
+  /* Hide scrollbars for carousel to look like a clean slider */
+  .mobile-carousel::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .mobile-carousel {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Touch Safe Scrolling Indicators & protection layout */
+.touch-safe-overlay {
+  pointer-events: none;
+}
+
+@media (max-width: 1023px) {
+  /* Floating Mobile Quick-Jump Nav Dock */
+  .mobile-quick-dock {
+    position: fixed;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(11, 15, 25, 0.9);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(6, 182, 212, 0.35);
+    border-radius: 9999px;
+    padding: 0.4rem 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    z-index: 9999;
+    box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.3), inset 0 0 8px rgba(6, 182, 212, 0.1);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  }
+  
+  .mobile-quick-dock.dock-hidden {
+    transform: translate(-50%, 150%);
+    opacity: 0;
+  }
+  
+  .dock-item {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 700;
+    color: #64748b;
+    text-decoration: none;
+    padding: 0.35rem 0.65rem;
+    border-radius: 9999px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid transparent;
+  }
+  
+  .dock-item.active {
+    color: #ffffff;
+    background: rgba(6, 182, 212, 0.2);
+    border-color: rgba(6, 182, 212, 0.4);
+    text-shadow: 0 0 8px rgba(6, 182, 212, 0.6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-quick-dock {
+    display: none !important;
+  }
+}
+
+
+
+
+
 
