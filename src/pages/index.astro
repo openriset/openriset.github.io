@@ -4,7 +4,7 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
 const TITLE = "OpenRiset — Infrastruktur Sains Terbuka untuk Indonesia";
-const DESC = "OpenRiset membangun standar, perangkat lunak, dan ekosistem publikasi ilmiah terbuka untuk semua disiplin ilmu.";
+const DESC = "OpenRiset membangun standar, perangkat lunak, dan ekosistem publikasi ilmiah terbuka untuk semua disiplin ilmu — dari universitas, lembaga riset, sekolah, hingga peneliti independen.";
 ---
 
 <Layout title={TITLE} description={DESC}>
@@ -12,26 +12,28 @@ const DESC = "OpenRiset membangun standar, perangkat lunak, dan ekosistem publik
   <Nav />
 
   <main>
-    <!-- ═══════════ HERO ═══════════ -->
-    <section class="relative overflow-hidden pt-20 sm:pt-28 lg:pt-36 pb-16 sm:pb-20 lg:pb-24">
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_10%,rgba(37,99,235,0.06),transparent)]"></div>
-      <div class="absolute top-0 right-0 w-96 h-96 bg-brand-100/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+    <!-- ═══════════════════════════════════════════ HERO ═══════════════════════════════════════════ -->
+    <section class="relative overflow-hidden pt-12 sm:pt-20 lg:pt-26 pb-12 sm:pb-16 lg:pb-20">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_10%,rgba(37,99,235,0.05),transparent)]"></div>
+      <div class="absolute top-16 right-0 w-80 sm:w-[30rem] h-80 sm:h-[30rem] bg-brand-100/25 rounded-full blur-3xl -translate-y-1/4 translate-x-1/4"></div>
+      <div class="absolute bottom-0 left-0 w-72 sm:w-[28rem] h-72 sm:h-[28rem] bg-amber-50/40 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4"></div>
+      <div class="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:6rem_6rem] [mask-image:radial-gradient(ellipse_60%_40%_at_50%_0%,#000_20%,transparent_60%)]"></div>
 
       <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div class="max-w-3xl">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-ink leading-[1.06] tracking-tight text-balance">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-ink leading-[1.06] tracking-tight text-balance">
             <span class="block reveal">Infrastruktur riset</span>
             <span class="block reveal" style="animation-delay: 0.1s">untuk Indonesia.</span>
-            <span class="block reveal text-neutral-400 font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2 sm:mt-3" style="animation-delay: 0.2s">
+            <span class="block reveal text-neutral-400 font-semibold text-2xl sm:text-3xl lg:text-[2.5rem] mt-2 sm:mt-3" style="animation-delay: 0.2s">
               Terbuka. Independen.<br class="sm:hidden" /> Untuk semua.
             </span>
           </h1>
 
-          <p class="mt-6 sm:mt-8 text-base sm:text-lg text-neutral-500 leading-relaxed max-w-lg reveal text-pretty" style="animation-delay: 0.3s">
-            Kami membangun fondasi teknis untuk publikasi ilmiah yang bisa dipakai siapa saja — universitas, sekolah, lembaga riset, atau peneliti independen. Tanpa terikat vendor. Tanpa biaya.
+          <p class="mt-5 sm:mt-7 text-base sm:text-lg text-neutral-500 leading-relaxed max-w-xl reveal text-pretty" style="animation-delay: 0.3s">
+            Kami membangun fondasi teknis untuk publikasi dan indeksasi karya ilmiah — perangkat lunak, standar metadata, dan protokol verifikasi — yang dapat diadopsi oleh universitas, sekolah, lembaga riset, atau peneliti independen. Tanpa terikat vendor. Tanpa biaya lisensi. Tanpa batasan disiplin ilmu.
           </p>
 
-          <div class="mt-7 sm:mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4 reveal" style="animation-delay: 0.4s">
+          <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 reveal" style="animation-delay: 0.4s">
             <a href="#why" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-ink text-white font-semibold text-sm hover:bg-brand-700 transition-colors shadow-xl shadow-ink/10 group">
               Kenapa ini penting
               <svg class="w-4 h-4 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
@@ -43,153 +45,217 @@ const DESC = "OpenRiset membangun standar, perangkat lunak, dan ekosistem publik
           </div>
         </div>
 
-        <div class="mt-14 sm:mt-18 lg:mt-22 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 max-w-xl reveal-slow" style="animation-delay: 0.5s">
-          <div class="border-l-2 border-brand-200 pl-4">
-            <span class="text-xl sm:text-2xl font-bold text-ink">MIT</span>
-            <span class="block text-[11px] sm:text-xs text-neutral-400 mt-0.5">Lisensi</span>
-          </div>
-          <div class="border-l-2 border-brand-200 pl-4">
-            <span class="text-xl sm:text-2xl font-bold text-ink">100%</span>
-            <span class="block text-[11px] sm:text-xs text-neutral-400 mt-0.5">Open source</span>
-          </div>
-          <div class="border-l-2 border-brand-200 pl-4">
-            <span class="text-xl sm:text-2xl font-bold text-ink">Rp0</span>
-            <span class="block text-[11px] sm:text-xs text-neutral-400 mt-0.5">Biaya</span>
-          </div>
-          <div class="border-l-2 border-brand-200 pl-4">
-            <span class="text-xl sm:text-2xl font-bold text-ink">Semua</span>
-            <span class="block text-[11px] sm:text-xs text-neutral-400 mt-0.5">Disiplin</span>
-          </div>
+        <div class="mt-12 sm:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 max-w-xl reveal-slow" style="animation-delay: 0.5s">
+          <div class="border-l-2 border-brand-200 pl-4"><span class="text-xl sm:text-2xl font-bold text-ink">MIT</span><span class="block text-[11px] sm:text-xs text-neutral-400 mt-0.5">Lisensi</span></div>
+          <div class="border-l-2 border-brand-200 pl-4"><span class="text-xl sm:text-2xl font-bold text-ink">100%</span><span class="block text-[11px] sm:text-xs text-neutral-400 mt-0.5">Open source</span></div>
+          <div class="border-l-2 border-brand-200 pl-4"><span class="text-xl sm:text-2xl font-bold text-ink">Rp0</span><span class="block text-[11px] sm:text-xs text-neutral-400 mt-0.5">Biaya</span></div>
+          <div class="border-l-2 border-brand-200 pl-4"><span class="text-xl sm:text-2xl font-bold text-ink">Semua</span><span class="block text-[11px] sm:text-xs text-neutral-400 mt-0.5">Disiplin</span></div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════ WHY ═══════════ -->
-    <section id="why" class="py-14 sm:py-20 lg:py-28 section-collapsible bg-soft">
+    <!-- ═══════════════════════════════════════════ WHY ═══════════════════════════════════════════ -->
+    <section id="why" class="py-12 sm:py-16 lg:py-24 section-collapsible bg-soft">
       <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-        <div class="max-w-2xl mb-12 sm:mb-16 reveal">
-          <span class="text-brand-600 text-xs font-semibold uppercase tracking-widest">Masalah</span>
-          <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-bold text-ink leading-[1.15] tracking-tight">
-            Riset Indonesia butuh fondasi, <br class="hidden sm:block">bukan platform tertutup
+        <button type="button" class="section-toggle-btn w-full text-left md:cursor-default block mb-10 sm:mb-14 reveal" aria-expanded="true">
+          <span class="text-brand-600 text-xs font-semibold uppercase tracking-widest">Mengapa OpenRiset Hadir</span>
+          <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-bold text-ink leading-[1.12] tracking-tight">
+            Riset Indonesia butuh fondasi, bukan platform tertutup yang dijual sebagai layanan
           </h2>
-        </div>
+          <p class="mt-3 sm:mt-4 text-sm sm:text-base text-neutral-500 leading-relaxed max-w-xl">
+            Di Indonesia, infrastruktur riset masih menjadi barang mewah. Institusi besar mampu berlangganan platform publikasi internasional. Sisanya — sekolah, kampus kecil, peneliti independen — tidak punya akses. OpenRiset hadir untuk mengubah itu: membangun fondasi teknis yang bisa dipakai siapa saja, tanpa biaya, tanpa batasan.
+          </p>
+        </button>
 
         <div class="section-body expanded space-y-12 sm:space-y-20">
-          <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center reveal">
+
+          <!-- Problem 1 -->
+          <div class="grid lg:grid-cols-5 gap-8 lg:gap-14 items-start reveal">
             <div class="lg:col-span-3">
-              <p class="text-brand-600 text-sm font-bold mb-2">01</p>
-              <h3 class="text-xl sm:text-2xl font-bold text-ink mb-3">Karya hilang. Jejak lenyap.</h3>
-              <p class="text-neutral-500 leading-relaxed max-w-lg">
-                Setelah lomba atau publikasi, karya siswa dan peneliti hilang begitu saja. Tidak terindeks. Tidak bisa diverifikasi. Tidak bisa disitasi. <span class="text-ink font-medium">Indonesia kehilangan jejak intelektualnya sendiri.</span>
+              <span class="text-brand-600 text-sm font-bold tracking-wider">01</span>
+              <h3 class="mt-2 text-xl sm:text-2xl font-bold text-ink">Karya ilmiah hilang. Jejak intelektual lenyap.</h3>
+              <p class="mt-3 text-sm sm:text-base text-neutral-500 leading-relaxed">
+                Setiap tahun, ribuan siswa dan mahasiswa menghasilkan karya ilmiah — laporan eksperimen, paper kompetisi, tugas akhir, skripsi. Tapi setelah dinilai, karya-karya ini lenyap tanpa jejak. Tidak ada sistem yang mengindeksnya. Tidak bisa diverifikasi. Tidak bisa disitasi oleh peneliti lain. Padahal di dalamnya ada data, metodologi, dan temuan yang bisa menjadi fondasi riset selanjutnya. <span class="text-ink font-medium">Indonesia kehilangan jejak intelektual generasinya sendiri — dan ini terjadi setiap tahun.</span>
               </p>
             </div>
-            <div class="lg:col-span-2 bg-white rounded-2xl border border-neutral-100 p-6 shadow-sm">
-              <div class="flex items-center gap-2 text-red-500 text-sm font-mono mb-4">
+            <div class="lg:col-span-2 bg-white rounded-2xl border border-neutral-200/60 p-6 shadow-sm">
+              <div class="flex items-center gap-2 text-red-500 text-sm font-mono font-medium mb-4">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
                 Riset tidak ditemukan
               </div>
               <div class="space-y-2">
-                <div class="flex items-center gap-3 p-3 bg-neutral-50 rounded-lg">
-                  <span class="w-2 h-2 rounded-full bg-red-300 shrink-0"></span>
-                  <span class="text-xs text-neutral-400">Laporan eksperimen fisika — hilang</span>
-                </div>
-                <div class="flex items-center gap-3 p-3 bg-neutral-50 rounded-lg">
-                  <span class="w-2 h-2 rounded-full bg-red-300 shrink-0"></span>
-                  <span class="text-xs text-neutral-400">Paper pemenang kompetisi — hilang</span>
-                </div>
-                <div class="flex items-center gap-3 p-3 bg-neutral-50 rounded-lg">
-                  <span class="w-2 h-2 rounded-full bg-red-300 shrink-0"></span>
-                  <span class="text-xs text-neutral-400">Tugas akhir terbaik — hilang</span>
-                </div>
+                <div class="flex items-center gap-3 p-3 bg-neutral-50 rounded-lg"><span class="w-2 h-2 rounded-full bg-red-300 shrink-0"></span><span class="text-xs text-neutral-500">Laporan eksperimen fisika — <span class="text-red-400">hilang</span></span></div>
+                <div class="flex items-center gap-3 p-3 bg-neutral-50 rounded-lg"><span class="w-2 h-2 rounded-full bg-red-300 shrink-0"></span><span class="text-xs text-neutral-500">Paper pemenang kompetisi sains — <span class="text-red-400">hilang</span></span></div>
+                <div class="flex items-center gap-3 p-3 bg-neutral-50 rounded-lg"><span class="w-2 h-2 rounded-full bg-red-300 shrink-0"></span><span class="text-xs text-neutral-500">Tugas akhir riset terbaik — <span class="text-red-400">hilang</span></span></div>
+                <div class="flex items-center gap-3 p-3 bg-neutral-50 rounded-lg"><span class="w-2 h-2 rounded-full bg-red-300 shrink-0"></span><span class="text-xs text-neutral-500">Proyek penelitian mandiri — <span class="text-red-400">hilang</span></span></div>
               </div>
             </div>
           </div>
 
-          <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center reveal">
-            <div class="lg:col-span-2 order-last lg:order-first bg-white rounded-2xl border border-neutral-100 p-6 shadow-sm">
-              <div class="space-y-3">
-                <div class="flex items-center gap-3 p-3">
-                  <svg class="w-5 h-5 text-green-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                  <span class="text-sm text-neutral-700">Format metadata yang sama</span>
+          <!-- Problem 2 -->
+          <div class="grid lg:grid-cols-5 gap-8 lg:gap-14 items-start reveal">
+            <div class="lg:col-span-2 order-last lg:order-first bg-white rounded-2xl border border-neutral-200/60 p-6 shadow-sm">
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                  <div>
+                    <span class="text-sm font-medium text-ink block">Metadata yang terstandarisasi</span>
+                    <span class="text-xs text-neutral-400">Satu format untuk semua — kompatibel dengan standar internasional</span>
+                  </div>
                 </div>
-                <div class="flex items-center gap-3 p-3">
-                  <svg class="w-5 h-5 text-green-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                  <span class="text-sm text-neutral-700">Kompatibel Crossref &amp; DataCite</span>
+                <div class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                  <div>
+                    <span class="text-sm font-medium text-ink block">Interoperabel antar institusi</span>
+                    <span class="text-xs text-neutral-400">Data bisa dibaca dan dipertukarkan lintas sistem tanpa konversi manual</span>
+                  </div>
                 </div>
-                <div class="flex items-center gap-3 p-3">
-                  <svg class="w-5 h-5 text-green-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                  <span class="text-sm text-neutral-700">Ditemukan dalam hitungan detik</span>
+                <div class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                  <div>
+                    <span class="text-sm font-medium text-ink block">Ditemukan dalam hitungan detik</span>
+                    <span class="text-xs text-neutral-400">Pencarian terstruktur — bukan scrolling PDF 50 halaman</span>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="lg:col-span-3">
-              <p class="text-brand-600 text-sm font-bold mb-2">02</p>
-              <h3 class="text-xl sm:text-2xl font-bold text-ink mb-3">Setiap institusi bikin standar sendiri.</h3>
-              <p class="text-neutral-500 leading-relaxed max-w-lg">
-                Satu pakai format A, satunya format B. Metadata tersebar di sistem yang tidak kompatibel. <span class="text-ink font-medium">Peneliti tidak bisa membangun di atas karya sebelumnya.</span>
+              <span class="text-brand-600 text-sm font-bold tracking-wider">02</span>
+              <h3 class="mt-2 text-xl sm:text-2xl font-bold text-ink">Tidak ada standar metadata yang seragam. Setiap institusi pakai format sendiri.</h3>
+              <p class="mt-3 text-sm sm:text-base text-neutral-500 leading-relaxed">
+                Bayangkan: satu kampus menyimpan metadata riset dalam format A, kampus lain dalam format B, sekolah dalam spreadsheet Excel. Saat peneliti ingin mencari karya relevan, mereka harus membuka puluhan sistem berbeda dengan format yang tidak kompatibel. Tidak ada jembatan antar sistem. <span class="text-ink font-medium">Akibatnya, peneliti selalu mulai dari nol — tidak bisa membangun di atas fondasi yang sudah ada.</span> Standar metadata yang seragam adalah langkah pertama yang paling mendasar, dan ironisnya, belum ada yang menyediakannya secara terbuka.
               </p>
             </div>
           </div>
 
-          <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center reveal">
+          <!-- Problem 3 -->
+          <div class="grid lg:grid-cols-5 gap-8 lg:gap-14 items-start reveal">
             <div class="lg:col-span-3">
-              <p class="text-brand-600 text-sm font-bold mb-2">03</p>
-              <h3 class="text-xl sm:text-2xl font-bold text-ink mb-3">Platform yang ada dijual, bukan dibangun.</h3>
-              <p class="text-neutral-500 leading-relaxed max-w-lg">
-                Vendor mengunci data Anda. Biaya langganan mencekik. <span class="text-ink font-medium">Kalau infrastruktur riset itu bisnis, yang kecil akan selalu tersingkir.</span>
+              <span class="text-brand-600 text-sm font-bold tracking-wider">03</span>
+              <h3 class="mt-2 text-xl sm:text-2xl font-bold text-ink">Platform riset yang ada dijual sebagai produk, bukan dibangun sebagai infrastruktur publik.</h3>
+              <p class="mt-3 text-sm sm:text-base text-neutral-500 leading-relaxed">
+                Vendor platform publikasi ilmiah membebankan biaya langganan ribuan dolar per tahun. Data riset dikunci di server mereka. Institusi kecil, sekolah, dan peneliti independen tersingkir karena tidak mampu membayar. Yang lebih buruk: ketika kontrak habis, akses ke data riset Anda sendiri bisa hilang. <span class="text-ink font-medium">Ini bukan model yang sehat untuk ekosistem riset sebuah negara.</span> Infrastruktur riset seharusnya seperti jalan raya — milik publik, bisa dipakai semua orang, tidak dimiliki oleh satu perusahaan.
               </p>
             </div>
-            <div class="lg:col-span-2 bg-white rounded-2xl border border-neutral-100 p-6 shadow-sm">
+            <div class="lg:col-span-2 bg-white rounded-2xl border border-neutral-200/60 p-6 shadow-sm">
               <div class="flex flex-wrap gap-1.5 mb-4">
                 <span class="px-2.5 py-1 bg-red-50 text-red-600 text-[11px] font-semibold rounded-md">Vendor lock-in</span>
-                <span class="px-2.5 py-1 bg-red-50 text-red-600 text-[11px] font-semibold rounded-md">$5k/tahun</span>
-                <span class="px-2.5 py-1 bg-red-50 text-red-600 text-[11px] font-semibold rounded-md">Data tertutup</span>
+                <span class="px-2.5 py-1 bg-red-50 text-red-600 text-[11px] font-semibold rounded-md">Langganan mahal</span>
+                <span class="px-2.5 py-1 bg-red-50 text-red-600 text-[11px] font-semibold rounded-md">Data tidak portabel</span>
               </div>
+              <p class="text-xs text-red-400 mb-3">Model platform komersial →</p>
               <div class="h-px bg-neutral-100 my-4"></div>
-              <div class="flex flex-wrap gap-1.5">
+              <div class="flex flex-wrap gap-1.5 mb-4">
                 <span class="px-2.5 py-1 bg-green-50 text-green-600 text-[11px] font-semibold rounded-md">Gratis selamanya</span>
                 <span class="px-2.5 py-1 bg-green-50 text-green-600 text-[11px] font-semibold rounded-md">MIT License</span>
                 <span class="px-2.5 py-1 bg-green-50 text-green-600 text-[11px] font-semibold rounded-md">Data milik Anda</span>
               </div>
+              <p class="text-xs text-green-500 font-medium">Model OpenRiset →</p>
+            </div>
+          </div>
+
+          <!-- Problem 4 -->
+          <div class="grid lg:grid-cols-5 gap-8 lg:gap-14 items-start reveal">
+            <div class="lg:col-span-2 order-last lg:order-first bg-white rounded-2xl border border-neutral-200/60 p-6 shadow-sm">
+              <div class="text-center py-4">
+                <span class="text-4xl font-black text-neutral-100">K-12</span>
+                <p class="text-xs text-neutral-400 mt-2">Tidak ada platform indeksasi riset<br>yang serius menangani karya ilmiah<br>siswa SD hingga SMA/SMK</p>
+                <div class="mt-4 w-full h-1 bg-neutral-100 rounded-full overflow-hidden">
+                  <div class="w-0 h-full bg-brand-500 rounded-full"></div>
+                </div>
+                <p class="text-[10px] text-neutral-300 mt-1">Cakupan saat ini: 0%</p>
+              </div>
+            </div>
+            <div class="lg:col-span-3">
+              <span class="text-brand-600 text-sm font-bold tracking-wider">04</span>
+              <h3 class="mt-2 text-xl sm:text-2xl font-bold text-ink">Peneliti muda — dari siswa SD hingga mahasiswa — tidak punya rekam jejak riset yang bisa dibawa seumur hidup.</h3>
+              <p class="mt-3 text-sm sm:text-base text-neutral-500 leading-relaxed">
+                Seorang siswa SMA yang meneliti efektivitas tanaman lokal sebagai pestisida alami — ke mana karyanya setelah lomba selesai? Seorang mahasiswa yang membuat paper brilian tentang machine learning — bagaimana calon pemberi beasiswa tahu bahwa karya itu ada? Tanpa sistem indeksasi dan portofolio riset yang terverifikasi, <span class="text-ink font-medium">setiap generasi peneliti muda Indonesia memulai dari nol — tanpa bisa membuktikan apa yang sudah mereka capai.</span>
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════ VISION ═══════════ -->
-    <section id="vision" class="py-14 sm:py-20 lg:py-28 section-collapsible relative">
-      <div class="absolute top-0 right-0 w-72 h-72 bg-brand-50 rounded-full blur-3xl opacity-60"></div>
-      <div class="relative max-w-4xl mx-auto px-5 sm:px-8 lg:px-10">
-        <div class="text-center mb-10 sm:mb-14 reveal">
-          <span class="text-brand-600 text-xs font-semibold uppercase tracking-widest">Visi &amp; Misi</span>
+    <!-- ═══════════════════════════════════════════ STAT BAR ═══════════════════════════════════════════ -->
+    <section class="relative overflow-hidden bg-ink py-10 sm:py-14 lg:py-16 reveal">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_50%_50%,rgba(37,99,235,0.1),transparent)]"></div>
+      <!-- Isometric cubes illustration -->
+      <div class="absolute right-0 top-1/2 -translate-y-1/2 opacity-[0.07] hidden lg:block pointer-events-none" aria-hidden="true">
+        <img src="/illustrations/isometric-cubes.svg" alt="" class="w-72 lg:w-80" loading="lazy" />
+      </div>
+      <div class="relative max-w-5xl mx-auto px-5 sm:px-8 lg:px-10">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10 text-center">
+          <div>
+            <span class="block text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">0</span>
+            <span class="block text-xs sm:text-sm text-neutral-400 mt-1.5">Biaya lisensi.<br>Selamanya.</span>
+          </div>
+          <div>
+            <span class="block text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">MIT</span>
+            <span class="block text-xs sm:text-sm text-neutral-400 mt-1.5">Lisensi terbuka.<br>Bebas untuk apapun.</span>
+          </div>
+          <div>
+            <span class="block text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">100%</span>
+            <span class="block text-xs sm:text-sm text-neutral-400 mt-1.5">Kode publik.<br>Transparan.</span>
+          </div>
+          <div>
+            <span class="block text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">∞</span>
+            <span class="block text-xs sm:text-sm text-neutral-400 mt-1.5">Disiplin ilmu.<br>Tanpa batas.</span>
+          </div>
         </div>
+        <p class="text-center text-xs sm:text-sm text-neutral-500 mt-8 max-w-lg mx-auto leading-relaxed">
+          Ini adalah komitmen kami. Bukan jargon marketing. Tertulis di lisensi. Terbuka untuk diaudit.
+        </p>
+      </div>
+    </section>
 
-        <div class="section-body expanded space-y-10 sm:space-y-14">
-          <blockquote class="text-center reveal">
-            <p class="text-xl sm:text-2xl lg:text-3xl font-medium text-ink leading-relaxed max-w-2xl mx-auto text-balance">
-              &ldquo;Setiap karya ilmiah &mdash; dari laporan eksperimen siswa SD sampai disertasi doktoral &mdash; <span class="text-brand-600">layak diindeks, diverifikasi, dan disitasi.</span>&rdquo;
-            </p>
-            <footer class="mt-4 text-sm text-neutral-400">— Prinsip OpenRiset</footer>
-          </blockquote>
+    <!-- ═══════════════════════════════════════════ VISION ═══════════════════════════════════════════ -->
+    <section id="vision" class="py-12 sm:py-16 lg:py-24 section-collapsible relative">
+      <div class="absolute top-0 right-0 w-80 h-80 bg-brand-50 rounded-full blur-3xl opacity-50"></div>
+      <div class="relative max-w-4xl mx-auto px-5 sm:px-8 lg:px-10">
+        <button type="button" class="section-toggle-btn w-full text-center md:cursor-default block mb-8 sm:mb-12 reveal" aria-expanded="true">
+          <span class="text-brand-600 text-xs font-semibold uppercase tracking-widest">Visi &amp; Misi</span>
+          <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-bold text-ink leading-[1.12] tracking-tight">
+            Fondasi riset Indonesia yang terbuka, terverifikasi, dan aksesibel — untuk siapa saja, dari mana saja
+          </h2>
+        </button>
+
+        <div class="section-body expanded space-y-8 sm:space-y-12">
+          <!-- Network illustration + blockquote row -->
+          <div class="grid lg:grid-cols-5 gap-8 lg:gap-10 items-center reveal max-w-2xl mx-auto lg:max-w-none">
+            <div class="lg:col-span-3">
+              <blockquote class="text-center lg:text-left">
+                <p class="text-lg sm:text-xl lg:text-2xl font-medium text-ink leading-relaxed text-balance">
+                  &ldquo;Kami percaya bahwa <span class="text-brand-600">setiap karya ilmiah</span> — dari laporan eksperimen siswa SD yang baru belajar metode ilmiah, hingga disertasi doktoral yang mendorong batas pengetahuan manusia — <span class="text-brand-600">layak diindeks, diverifikasi, dan disitasi.</span> Bukan hanya karya dari institusi besar. Bukan hanya karya dari peneliti mapan. Setiap orang yang berkontribusi pada pengetahuan, sekecil apapun, berhak mendapatkan rekam jejak intelektual yang tidak bisa dihapus.&rdquo;
+                </p>
+                <footer class="mt-4 text-sm text-neutral-400 font-medium">— Prinsip dasar OpenRiset</footer>
+              </blockquote>
+            </div>
+            <div class="lg:col-span-2 flex justify-center lg:justify-end">
+              <img src="/illustrations/network-nodes.svg" alt="" class="w-48 sm:w-56 lg:w-64 opacity-80" loading="lazy" aria-hidden="true" />
+            </div>
+          </div>
 
           <div class="grid sm:grid-cols-2 gap-5 sm:gap-8 reveal">
-            <div class="bg-white rounded-2xl border border-neutral-100 p-6 sm:p-8 card-lift">
-              <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-5">
+            <div class="bg-white rounded-2xl border border-neutral-200/60 p-6 sm:p-8">
+              <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-4">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
               </div>
-              <h3 class="text-lg font-bold text-ink mb-2">Apa yang kami lakukan</h3>
-              <p class="text-sm text-neutral-500 leading-relaxed">
-                Kami menulis kode. Membuat standar. Mendokumentasikan protokol. Semuanya terbuka di GitHub, supaya <strong class="text-ink">institusi manapun bisa menjalankan platform risetnya sendiri.</strong>
+              <h3 class="text-lg font-bold text-ink mb-2">Misi kami — apa yang kami bangun</h3>
+              <p class="text-sm sm:text-base text-neutral-500 leading-relaxed">
+                Kami mengembangkan perangkat lunak open-source, menulis standar metadata, mendokumentasikan protokol verifikasi, dan merancang format sitasi yang interoperabel. Semua pekerjaan kami ada di GitHub — terbuka untuk diaudit, dimodifikasi, dan digunakan oleh <strong class="text-ink">institusi manapun yang ingin menjalankan platform risetnya sendiri.</strong> Kami tidak menjual layanan. Kami membangun fondasi. Apa yang institusi lakukan di atas fondasi itu sepenuhnya milik mereka.
               </p>
             </div>
-            <div class="bg-white rounded-2xl border border-neutral-100 p-6 sm:p-8 card-lift">
-              <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-5">
+            <div class="bg-white rounded-2xl border border-neutral-200/60 p-6 sm:p-8">
+              <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-4">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
               </div>
-              <h3 class="text-lg font-bold text-ink mb-2">Apa yang kami percaya</h3>
-              <p class="text-sm text-neutral-500 leading-relaxed">
-                Infrastruktur riset harus <strong class="text-ink">independen</strong> &mdash; tidak di bawah institusi atau pendanaan siapapun. Harus <strong class="text-ink">terbuka</strong> &mdash; semua kode MIT. Harus <strong class="text-ink">inklusif</strong> &mdash; dari siswa SD sampai profesor.
+              <h3 class="text-lg font-bold text-ink mb-2">Nilai kami — apa yang kami percaya</h3>
+              <p class="text-sm sm:text-base text-neutral-500 leading-relaxed">
+                <strong class="text-ink">Independen.</strong> OpenRiset tidak terafiliasi dengan institusi pendidikan, lembaga pemerintah, atau pendanaan dari pihak manapun. Keputusan teknis dan arah pengembangan ditentukan oleh kebutuhan komunitas riset, bukan kepentingan sponsor.<br><br>
+                <strong class="text-ink">Terbuka.</strong> Semua kode berlisensi MIT. Semua diskusi teknis dilakukan di ruang publik. Tidak ada "enterprise edition" yang disembunyikan di balik paywall.<br><br>
+                <strong class="text-ink">Inklusif.</strong> Dari siswa SD yang baru menulis laporan eksperimen pertamanya, hingga profesor yang mempublikasikan paper di jurnal internasional — semua punya tempat di infrastruktur ini.
               </p>
             </div>
           </div>
@@ -197,195 +263,285 @@ const DESC = "OpenRiset membangun standar, perangkat lunak, dan ekosistem publik
       </div>
     </section>
 
-    <!-- ═══════════ PROJECTS ═══════════ -->
-    <section id="projects" class="py-14 sm:py-20 lg:py-28 section-collapsible bg-soft">
+    <!-- ═══════════════════════════════════════════ PROJECTS ═══════════════════════════════════════════ -->
+    <section id="projects" class="py-12 sm:py-16 lg:py-24 section-collapsible bg-soft">
       <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-        <div class="max-w-2xl mb-10 sm:mb-14 reveal">
+        <button type="button" class="section-toggle-btn w-full text-left md:cursor-default block mb-8 sm:mb-12 reveal">
           <span class="text-brand-600 text-xs font-semibold uppercase tracking-widest">Proyek</span>
-          <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-bold text-ink leading-[1.15] tracking-tight">
-            Tiga repositori. Satu fondasi.
+          <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-bold text-ink leading-[1.12] tracking-tight">
+            Tiga repositori yang menjadi fondasi ekosistem
           </h2>
-        </div>
+          <p class="mt-3 text-sm sm:text-base text-neutral-500 leading-relaxed">
+            Setiap repositori punya peran spesifik. Bersama-sama, ketiganya membentuk fondasi teknis yang bisa dipakai institusi manapun untuk membangun platform risetnya sendiri.
+          </p>
+        </button>
 
         <div class="section-body">
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 reveal">
-            <a href="https://github.com/openriset/community" target="_blank" rel="noopener" class="group bg-white rounded-2xl border border-neutral-100 p-6 sm:p-8 card-lift shadow-sm">
-              <span class="text-5xl sm:text-6xl font-black text-neutral-100 tracking-tighter">01</span>
+            <a href="https://github.com/openriset/community" target="_blank" rel="noopener" class="group bg-white rounded-2xl border border-neutral-200/60 p-6 sm:p-8 card-lift shadow-sm">
+              <span class="text-6xl sm:text-7xl font-black text-neutral-100 tracking-tighter select-none">01</span>
               <h3 class="text-lg font-bold text-ink mt-1 group-hover:text-brand-700 transition-colors">Community</h3>
-              <p class="text-sm text-neutral-500 leading-relaxed mt-2 mb-5">Monorepo utama. Semua kode sumber, shared packages, Docker config, CI/CD. Mulai dari sini.</p>
-              <span class="inline-flex items-center gap-1 text-xs font-semibold text-brand-600 group-hover:gap-2 transition-all">
-                TypeScript <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </span>
+              <p class="text-sm text-neutral-500 leading-relaxed mt-2">
+                Monorepo utama OpenRiset. Berisi seluruh kode sumber aplikasi, shared packages, konfigurasi Docker, dan pipeline CI/CD. Ini adalah tempat di mana semua pengembangan terjadi — dari pull request pertama hingga deployment production. Mulai dari sini jika Anda ingin berkontribusi kode.
+              </p>
+              <div class="mt-5 flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-500 ring-1 ring-black/5"></span>
+                <span class="text-xs font-medium text-neutral-500">TypeScript</span>
+                <svg class="w-3.5 h-3.5 ml-auto text-neutral-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
             </a>
-            <a href="https://github.com/openriset/spec" target="_blank" rel="noopener" class="group bg-white rounded-2xl border border-neutral-100 p-6 sm:p-8 card-lift shadow-sm">
-              <span class="text-5xl sm:text-6xl font-black text-neutral-100 tracking-tighter">02</span>
+            <a href="https://github.com/openriset/spec" target="_blank" rel="noopener" class="group bg-white rounded-2xl border border-neutral-200/60 p-6 sm:p-8 card-lift shadow-sm">
+              <span class="text-6xl sm:text-7xl font-black text-neutral-100 tracking-tighter select-none">02</span>
               <h3 class="text-lg font-bold text-ink mt-1 group-hover:text-brand-700 transition-colors">Spec</h3>
-              <p class="text-sm text-neutral-500 leading-relaxed mt-2 mb-5">Spesifikasi teknis, arsitektur, standar metadata, protokol verifikasi. Dokumen yang jadi acuan.</p>
-              <span class="inline-flex items-center gap-1 text-xs font-semibold text-brand-600 group-hover:gap-2 transition-all">
-                Markdown <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </span>
+              <p class="text-sm text-neutral-500 leading-relaxed mt-2">
+                Dokumen spesifikasi teknis, keputusan arsitektur, standar metadata, dan protokol verifikasi. Repositori ini adalah &ldquo;single source of truth&rdquo; — acuan untuk memastikan semua komponen dalam ekosistem OpenRiset saling kompatibel. Baca ini untuk memahami mengapa kami membuat keputusan teknis tertentu.
+              </p>
+              <div class="mt-5 flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-neutral-400 ring-1 ring-black/5"></span>
+                <span class="text-xs font-medium text-neutral-500">Markdown</span>
+                <svg class="w-3.5 h-3.5 ml-auto text-neutral-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
             </a>
-            <a href="https://github.com/openriset/citation" target="_blank" rel="noopener" class="group bg-white rounded-2xl border border-neutral-100 p-6 sm:p-8 card-lift shadow-sm sm:col-span-2 lg:col-span-1">
-              <span class="text-5xl sm:text-6xl font-black text-neutral-100 tracking-tighter">03</span>
+            <a href="https://github.com/openriset/citation" target="_blank" rel="noopener" class="group bg-white rounded-2xl border border-neutral-200/60 p-6 sm:p-8 card-lift shadow-sm sm:col-span-2 lg:col-span-1">
+              <span class="text-6xl sm:text-7xl font-black text-neutral-100 tracking-tighter select-none">03</span>
               <h3 class="text-lg font-bold text-ink mt-1 group-hover:text-brand-700 transition-colors">Citation</h3>
-              <p class="text-sm text-neutral-500 leading-relaxed mt-2 mb-5">Standar dan library sitasi terbuka. Format interoperabel antar platform. Sitasi yang bisa diverifikasi.</p>
-              <span class="inline-flex items-center gap-1 text-xs font-semibold text-brand-600 group-hover:gap-2 transition-all">
-                TypeScript <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </span>
+              <p class="text-sm text-neutral-500 leading-relaxed mt-2">
+                Standar dan library sitasi terbuka. Format interoperabel untuk pertukaran data referensi antar platform — memastikan bahwa sebuah sitasi yang dibuat di Platform A bisa dibaca dan diverifikasi di Platform B. Kompatibel dengan standar internasional seperti Crossref dan DataCite.
+              </p>
+              <div class="mt-5 flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-500 ring-1 ring-black/5"></span>
+                <span class="text-xs font-medium text-neutral-500">TypeScript</span>
+                <svg class="w-3.5 h-3.5 ml-auto text-neutral-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════ STANDARDS ═══════════ -->
-    <section id="standards" class="py-14 sm:py-20 lg:py-28 section-collapsible">
+    <!-- ═══════════════════════════════════════════ STANDARDS ═══════════════════════════════════════════ -->
+    <section id="standards" class="py-12 sm:py-16 lg:py-24 section-collapsible relative">
+      <!-- Floating decorative shapes -->
+      <div class="absolute left-0 top-1/3 -translate-y-1/2 opacity-[0.06] hidden xl:block pointer-events-none" aria-hidden="true">
+        <img src="/illustrations/floating-shapes.svg" alt="" class="w-40" loading="lazy" />
+      </div>
       <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-        <div class="text-center mb-10 sm:mb-14 reveal">
-          <span class="text-brand-600 text-xs font-semibold uppercase tracking-widest">Standar &amp; Pendekatan</span>
-          <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-bold text-ink leading-[1.15] tracking-tight">
-            Enam prinsip. Nol kompromi.
-          </h2>
-        </div>
+        <button type="button" class="section-toggle-btn w-full text-left md:cursor-default block mb-8 sm:mb-12 reveal">
+          <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+            <div class="max-w-2xl">
+              <span class="text-brand-600 text-xs font-semibold uppercase tracking-widest">Standar &amp; Pendekatan</span>
+              <h2 class="mt-2 text-2xl sm:text-3xl font-bold text-ink leading-[1.12] tracking-tight">
+                Enam prinsip yang memandu setiap keputusan
+              </h2>
+            </div>
+            <p class="text-xs sm:text-sm text-neutral-400 max-w-xs sm:text-right">
+              Tidak ada yang kami bangun tanpa melewati keenam lensa ini. Setiap pull request, setiap keputusan arsitektur, setiap baris kode.
+            </p>
+          </div>
+        </button>
 
         <div class="section-body">
-          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 reveal">
-            <div class="group text-center p-5 bg-white rounded-2xl border border-neutral-100 card-lift">
-              <div class="w-10 h-10 mx-auto rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-3 group-hover:scale-110 transition-transform duration-300">
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 reveal">
+            <div class="bg-white rounded-2xl border border-neutral-200/60 p-5 sm:p-6 hover:border-brand-200 transition-colors duration-300">
+              <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-3">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
               </div>
-              <h4 class="text-xs sm:text-sm font-bold text-ink">Metadata Standar</h4>
+              <h4 class="text-base font-bold text-ink mb-1.5">Metadata terstandarisasi</h4>
+              <p class="text-xs sm:text-sm text-neutral-500 leading-relaxed">
+                Setiap karya ilmiah yang masuk ke ekosistem OpenRiset diindeks dengan format metadata yang konsisten — mencakup judul, penulis, abstrak, kata kunci, institusi, dan bidang ilmu. Format ini dirancang untuk kompatibel dengan standar internasional: SINTA, Crossref, DataCite. Tidak ada karya yang &ldquo;hanya bisa dibaca oleh sistem tertentu.&rdquo;
+              </p>
             </div>
-            <div class="group text-center p-5 bg-white rounded-2xl border border-neutral-100 card-lift">
-              <div class="w-10 h-10 mx-auto rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-3 group-hover:scale-110 transition-transform duration-300">
+            <div class="bg-white rounded-2xl border border-neutral-200/60 p-5 sm:p-6 hover:border-brand-200 transition-colors duration-300">
+              <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-3">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </div>
-              <h4 class="text-xs sm:text-sm font-bold text-ink">Verifikasi Bertingkat</h4>
+              <h4 class="text-base font-bold text-ink mb-1.5">Verifikasi bertingkat</h4>
+              <p class="text-xs sm:text-sm text-neutral-500 leading-relaxed">
+                Tidak semua karya diverifikasi dengan cara yang sama. Kami merancang sistem verifikasi berjenjang: <strong class="text-ink">mentor/guru</strong> (verifikasi dasar), <strong class="text-ink">peer</strong> (review sejawat), <strong class="text-ink">institusi</strong> (verifikasi formal). Setiap tingkat menambah bobot kredibilitas — dan setiap tingkat bersifat opsional. Sebuah karya tetap bisa diindeks meskipun hanya lolos verifikasi tingkat pertama.
+              </p>
             </div>
-            <div class="group text-center p-5 bg-white rounded-2xl border border-neutral-100 card-lift">
-              <div class="w-10 h-10 mx-auto rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-3 group-hover:scale-110 transition-transform duration-300">
+            <div class="bg-white rounded-2xl border border-neutral-200/60 p-5 sm:p-6 hover:border-brand-200 transition-colors duration-300">
+              <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-3">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
               </div>
-              <h4 class="text-xs sm:text-sm font-bold text-ink">Sitasi Terbuka</h4>
+              <h4 class="text-base font-bold text-ink mb-1.5">Sitasi terbuka dan machine-readable</h4>
+              <p class="text-xs sm:text-sm text-neutral-500 leading-relaxed">
+                Setiap referensi dalam ekosistem OpenRiset dapat dilacak, diverifikasi, dan dibaca oleh mesin. Format sitasi kami dirancang agar kompatibel dengan citation graph analysis — memungkinkan penelusuran &ldquo;siapa yang mensitasi siapa&rdquo; secara otomatis. Tidak ada kutipan fiktif yang lolos.
+              </p>
             </div>
-            <div class="group text-center p-5 bg-white rounded-2xl border border-neutral-100 card-lift">
-              <div class="w-10 h-10 mx-auto rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-3 group-hover:scale-110 transition-transform duration-300">
+            <div class="bg-white rounded-2xl border border-neutral-200/60 p-5 sm:p-6 hover:border-brand-200 transition-colors duration-300">
+              <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-3">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
               </div>
-              <h4 class="text-xs sm:text-sm font-bold text-ink">API Publik</h4>
+              <h4 class="text-base font-bold text-ink mb-1.5">API publik yang terdokumentasi</h4>
+              <p class="text-xs sm:text-sm text-neutral-500 leading-relaxed">
+                Semua data riset dalam ekosistem OpenRiset dapat diakses melalui REST API yang terdokumentasi dengan baik. Institusi dapat mengintegrasikan platform OpenRiset dengan sistem informasi akademik (SIA) yang sudah ada, repositori institusi, atau dashboard analitik kustom. Tidak ada data yang disembunyikan di balik API proprietary.
+              </p>
             </div>
-            <div class="group text-center p-5 bg-white rounded-2xl border border-neutral-100 card-lift">
-              <div class="w-10 h-10 mx-auto rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-3 group-hover:scale-110 transition-transform duration-300">
+            <div class="bg-white rounded-2xl border border-neutral-200/60 p-5 sm:p-6 hover:border-brand-200 transition-colors duration-300">
+              <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-3">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </div>
-              <h4 class="text-xs sm:text-sm font-bold text-ink">Lisensi MIT</h4>
+              <h4 class="text-base font-bold text-ink mb-1.5">Lisensi MIT — bebas untuk apapun</h4>
+              <p class="text-xs sm:text-sm text-neutral-500 leading-relaxed">
+                Setiap baris kode yang kami tulis dirilis di bawah lisensi MIT. Anda boleh menggunakan, memodifikasi, mendistribusikan, dan bahkan mengomersialkan perangkat lunak ini tanpa membayar sepeser pun dan tanpa meminta izin. Satu-satunya syarat: sertakan notice lisensi. Itu saja.
+              </p>
             </div>
-            <div class="group text-center p-5 bg-white rounded-2xl border border-neutral-100 card-lift">
-              <div class="w-10 h-10 mx-auto rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-3 group-hover:scale-110 transition-transform duration-300">
+            <div class="bg-white rounded-2xl border border-neutral-200/60 p-5 sm:p-6 hover:border-brand-200 transition-colors duration-300">
+              <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-3">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
               </div>
-              <h4 class="text-xs sm:text-sm font-bold text-ink">Semua Jenjang</h4>
+              <h4 class="text-base font-bold text-ink mb-1.5">Dirancang untuk semua jenjang</h4>
+              <p class="text-xs sm:text-sm text-neutral-500 leading-relaxed">
+                Dari siswa SD yang baru belajar menulis laporan observasi, hingga profesor yang mempublikasikan riset multidisiplin — infrastruktur kami dirancang untuk melayani seluruh spektrum. Standar verifikasi, kompleksitas metadata, dan antarmuka disesuaikan dengan tingkat pendidikan pengguna. Tidak ada yang &ldquo;terlalu muda&rdquo; atau &ldquo;terlalu kecil&rdquo; untuk berkontribusi pada pengetahuan.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════ AUDIENCE ═══════════ -->
-    <section id="audience" class="py-14 sm:py-20 lg:py-28 section-collapsible bg-soft">
+    <!-- ═══════════════════════════════════════════ AUDIENCE ═══════════════════════════════════════════ -->
+    <section id="audience" class="py-12 sm:py-16 lg:py-24 section-collapsible bg-soft">
       <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-        <div class="max-w-2xl mb-10 sm:mb-14 reveal">
+        <button type="button" class="section-toggle-btn w-full text-left md:cursor-default block mb-8 sm:mb-12 reveal">
           <span class="text-brand-600 text-xs font-semibold uppercase tracking-widest">Pengguna</span>
-          <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-bold text-ink leading-[1.15] tracking-tight">
-            Dibangun untuk semua yang meneliti
+          <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-bold text-ink leading-[1.12] tracking-tight">
+            Dibangun untuk semua yang meneliti — tanpa memandang institusi, disiplin, atau jenjang
           </h2>
-        </div>
+          <p class="mt-3 text-sm sm:text-base text-neutral-500 leading-relaxed">
+            Kami tidak membangun untuk satu jenis pengguna. Infrastruktur ini dirancang agar bisa melayani seluruh spektrum komunitas riset Indonesia.
+          </p>
+        </button>
 
         <div class="section-body">
           <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 reveal">
-            <div class="group bg-white rounded-2xl border border-neutral-100 p-6 sm:p-7 card-lift shadow-sm">
-              <div class="w-10 h-10 rounded-xl bg-white border border-neutral-100 flex items-center justify-center text-brand-600 mb-4 group-hover:scale-110 transition-transform duration-300 shadow-sm">
+            <div class="group bg-white rounded-2xl border border-neutral-200/60 p-6 sm:p-7 card-lift shadow-sm">
+              <div class="w-10 h-10 rounded-xl bg-white border border-neutral-200/60 flex items-center justify-center text-brand-600 mb-4 group-hover:scale-110 transition-transform duration-300 shadow-sm">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
               </div>
-              <h3 class="text-base font-bold text-ink mb-1.5">Universitas</h3>
-              <p class="text-xs sm:text-sm text-neutral-500 leading-relaxed">Indeksasi karya. Integrasi SIA. Dashboard analitik riset.</p>
+              <h3 class="text-base font-bold text-ink mb-1.5">Universitas &amp; Perguruan Tinggi</h3>
+              <p class="text-xs sm:text-sm text-neutral-500 leading-relaxed">
+                Indeksasi karya ilmiah mahasiswa dan dosen secara otomatis. Integrasi dengan Sistem Informasi Akademik (SIA) yang sudah berjalan. Dashboard analitik untuk memantau produktivitas riset institusi — berapa karya yang dipublikasikan, berapa yang disitasi, di bidang apa kekuatan riset kampus Anda.
+              </p>
             </div>
-            <div class="group bg-white rounded-2xl border border-neutral-100 p-6 sm:p-7 card-lift shadow-sm">
-              <div class="w-10 h-10 rounded-xl bg-white border border-neutral-100 flex items-center justify-center text-neutral-600 mb-4 group-hover:scale-110 transition-transform duration-300 shadow-sm">
+            <div class="group bg-white rounded-2xl border border-neutral-200/60 p-6 sm:p-7 card-lift shadow-sm">
+              <div class="w-10 h-10 rounded-xl bg-white border border-neutral-200/60 flex items-center justify-center text-neutral-600 mb-4 group-hover:scale-110 transition-transform duration-300 shadow-sm">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
               </div>
-              <h3 class="text-base font-bold text-ink mb-1.5">Lembaga Riset</h3>
-              <p class="text-xs sm:text-sm text-neutral-500 leading-relaxed">Platform mandiri. Data milik Anda. Kode bisa dimodifikasi.</p>
+              <h3 class="text-base font-bold text-ink mb-1.5">Lembaga Riset &amp; Pemerintah</h3>
+              <p class="text-xs sm:text-sm text-neutral-500 leading-relaxed">
+                Platform mandiri untuk instansi seperti BRIN, BPPT, atau lembaga riset daerah. Deployment bisa dilakukan di server sendiri — data tetap di bawah kendali institusi. Kode bisa dimodifikasi sesuai kebutuhan spesifik tanpa tergantung vendor eksternal.
+              </p>
             </div>
-            <div class="group bg-white rounded-2xl border border-neutral-100 p-6 sm:p-7 card-lift shadow-sm">
-              <div class="w-10 h-10 rounded-xl bg-white border border-neutral-100 flex items-center justify-center text-amber-600 mb-4 group-hover:scale-110 transition-transform duration-300 shadow-sm">
+            <div class="group bg-white rounded-2xl border border-neutral-200/60 p-6 sm:p-7 card-lift shadow-sm">
+              <div class="w-10 h-10 rounded-xl bg-white border border-neutral-200/60 flex items-center justify-center text-amber-600 mb-4 group-hover:scale-110 transition-transform duration-300 shadow-sm">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
               </div>
-              <h3 class="text-base font-bold text-ink mb-1.5">Sekolah (K&ndash;12)</h3>
-              <p class="text-xs sm:text-sm text-neutral-500 leading-relaxed">Indeksasi karya siswa. Verifikasi sesuai usia. Portofolio untuk masa depan.</p>
+              <h3 class="text-base font-bold text-ink mb-1.5">Sekolah (SD &mdash; SMA/SMK)</h3>
+              <p class="text-xs sm:text-sm text-neutral-500 leading-relaxed">
+                Ini adalah satu-satunya platform indeksasi riset yang secara serius menangani karya ilmiah siswa sekolah. Standar verifikasi disesuaikan dengan usia dan tingkat pendidikan. Portofolio riset yang terbangun bisa menjadi aset berharga saat siswa mendaftar kuliah atau beasiswa.
+              </p>
             </div>
-            <div class="group bg-white rounded-2xl border border-neutral-100 p-6 sm:p-7 card-lift shadow-sm">
-              <div class="w-10 h-10 rounded-xl bg-white border border-neutral-100 flex items-center justify-center text-neutral-600 mb-4 group-hover:scale-110 transition-transform duration-300 shadow-sm">
+            <div class="group bg-white rounded-2xl border border-neutral-200/60 p-6 sm:p-7 card-lift shadow-sm">
+              <div class="w-10 h-10 rounded-xl bg-white border border-neutral-200/60 flex items-center justify-center text-neutral-600 mb-4 group-hover:scale-110 transition-transform duration-300 shadow-sm">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
               </div>
               <h3 class="text-base font-bold text-ink mb-1.5">Peneliti Independen</h3>
-              <p class="text-xs sm:text-sm text-neutral-500 leading-relaxed">Tanpa afiliasi? Tetap bisa publikasi, dapat sitasi, bangun portofolio.</p>
+              <p class="text-xs sm:text-sm text-neutral-500 leading-relaxed">
+                Tidak terafiliasi dengan institusi manapun? Tidak masalah. Anda tetap bisa mempublikasikan karya, mendapatkan verifikasi dari peer, membangun portofolio riset yang bisa diverifikasi, dan memperoleh sitasi — setara dengan peneliti dari institusi manapun. Infrastruktur ini tidak membeda-bedakan afiliasi.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════ FAQ ═══════════ -->
-    <section id="faq" class="py-14 sm:py-20 lg:py-28 section-collapsible">
+    <!-- ═══════════════════════════════════════════ FAQ ═══════════════════════════════════════════ -->
+    <section id="faq" class="py-12 sm:py-16 lg:py-24 section-collapsible">
       <div class="max-w-3xl mx-auto px-5 sm:px-8 lg:px-10">
-        <div class="text-center mb-8 sm:mb-12 reveal">
+        <button type="button" class="section-toggle-btn w-full text-center md:cursor-default block mb-8 sm:mb-10 reveal">
           <span class="text-brand-600 text-xs font-semibold uppercase tracking-widest">FAQ</span>
-          <h2 class="mt-3 text-2xl sm:text-3xl font-bold text-ink leading-[1.15] tracking-tight">
-            Pertanyaan yang sering muncul
+          <h2 class="mt-3 text-2xl sm:text-3xl font-bold text-ink leading-[1.12] tracking-tight">
+            Hal-hal yang sering ditanyakan
           </h2>
-        </div>
+        </button>
 
         <div class="section-body space-y-3 reveal">
-          <details class="group bg-white rounded-2xl border border-neutral-100 p-5 sm:p-6 hover:border-brand-200 transition-colors duration-200 shadow-sm">
-            <summary class="font-semibold text-sm text-ink cursor-pointer group-open:text-brand-700 transition-colors marker:text-brand-500 select-none">Apa bedanya dengan platform lain?</summary>
-            <p class="mt-3 text-sm text-neutral-500 leading-relaxed">Kami bukan platform. Kami <strong class="text-ink">infrastruktur</strong> — fondasi teknis yang bisa dipakai institusi manapun untuk membangun platform risetnya sendiri. Open source. Tanpa vendor lock-in.</p>
+          <details class="group bg-white rounded-2xl border border-neutral-200/60 p-5 sm:p-6 hover:border-brand-200 transition-colors duration-200 shadow-sm">
+            <summary class="font-semibold text-sm text-ink cursor-pointer group-open:text-brand-700 transition-colors marker:text-brand-500 select-none">
+              Apa sebenarnya OpenRiset itu? Platform? Startup? Organisasi?
+            </summary>
+            <p class="mt-3 text-sm text-neutral-500 leading-relaxed">
+              Bukan platform. Bukan startup. OpenRiset adalah <strong class="text-ink">proyek infrastruktur open-source</strong> yang membangun fondasi teknis — perangkat lunak, standar, protokol — untuk publikasi dan indeksasi karya ilmiah. Bayangkan seperti proyek jalan tol: kami bangun jalannya, siapa pun boleh lewat. Apa yang Anda bangun di atasnya — platform riset institusi, repositori kampus, portal jurnal — itu urusan Anda. Kami menyediakan fondasinya.
+            </p>
           </details>
-          <details class="group bg-white rounded-2xl border border-neutral-100 p-5 sm:p-6 hover:border-brand-200 transition-colors duration-200 shadow-sm">
-            <summary class="font-semibold text-sm text-ink cursor-pointer group-open:text-brand-700 transition-colors marker:text-brand-500 select-none">Berbayar?</summary>
-            <p class="mt-3 text-sm text-neutral-500 leading-relaxed"><strong class="text-ink">Tidak.</strong> MIT License. Gratis untuk apapun, termasuk komersial. Biaya hosting ditanggung sendiri oleh pengguna.</p>
+          <details class="group bg-white rounded-2xl border border-neutral-200/60 p-5 sm:p-6 hover:border-brand-200 transition-colors duration-200 shadow-sm">
+            <summary class="font-semibold text-sm text-ink cursor-pointer group-open:text-brand-700 transition-colors marker:text-brand-500 select-none">
+              Kalau gratis, bagaimana OpenRiset membiayai pengembangan?
+            </summary>
+            <p class="mt-3 text-sm text-neutral-500 leading-relaxed">
+              Saat ini, melalui kontribusi sukarela dari para developer yang percaya pada misi ini. Kami tidak punya investor, tidak menjual saham, tidak memungut biaya lisensi. Model kami adalah <strong class="text-ink">open-source public goods</strong> — seperti Linux, Python, atau Wikipedia. Kalau suatu saat ada institusi yang ingin mensponsori pengembangan fitur tertentu, kami terbuka. Tapi itu tidak akan mengubah lisensi atau aksesibilitas proyek inti.
+            </p>
           </details>
-          <details class="group bg-white rounded-2xl border border-neutral-100 p-5 sm:p-6 hover:border-brand-200 transition-colors duration-200 shadow-sm">
-            <summary class="font-semibold text-sm text-ink cursor-pointer group-open:text-brand-700 transition-colors marker:text-brand-500 select-none">Siapa di balik ini?</summary>
-            <p class="mt-3 text-sm text-neutral-500 leading-relaxed">Kontributor independen. Tidak terafiliasi institusi atau pendanaan manapun. Semua pengembangan terbuka di <a href="https://github.com/openriset" class="link-underline text-brand-600 font-medium" target="_blank" rel="noopener">GitHub</a>.</p>
+          <details class="group bg-white rounded-2xl border border-neutral-200/60 p-5 sm:p-6 hover:border-brand-200 transition-colors duration-200 shadow-sm">
+            <summary class="font-semibold text-sm text-ink cursor-pointer group-open:text-brand-700 transition-colors marker:text-brand-500 select-none">
+              Apa bedanya dengan SINTA milik Kemendikbud?
+            </summary>
+            <p class="mt-3 text-sm text-neutral-500 leading-relaxed">
+              SINTA adalah platform milik pemerintah yang fokus pada akademisi perguruan tinggi. OpenRiset adalah <strong class="text-ink">infrastruktur</strong> yang bisa dipakai siapa saja — termasuk untuk membangun platform <em>seperti</em> SINTA, tapi tidak terbatas pada perguruan tinggi. Kami mendukung semua jenjang (SD sampai profesor) dan semua disiplin. Selain itu, kode kami open-source — institusi bisa menjalankan sendiri tanpa bergantung pada server pemerintah.
+            </p>
           </details>
-          <details class="group bg-white rounded-2xl border border-neutral-100 p-5 sm:p-6 hover:border-brand-200 transition-colors duration-200 shadow-sm">
-            <summary class="font-semibold text-sm text-ink cursor-pointer group-open:text-brand-700 transition-colors marker:text-brand-500 select-none">Untuk disiplin apa saja?</summary>
-            <p class="mt-3 text-sm text-neutral-500 leading-relaxed"><strong class="text-ink">Semua.</strong> Sains, sosial, humaniora, teknik, seni, kedokteran. Metadata kami fleksibel — tidak ada batasan.</p>
+          <details class="group bg-white rounded-2xl border border-neutral-200/60 p-5 sm:p-6 hover:border-brand-200 transition-colors duration-200 shadow-sm">
+            <summary class="font-semibold text-sm text-ink cursor-pointer group-open:text-brand-700 transition-colors marker:text-brand-500 select-none">
+              Apakah hanya untuk sains dan fisika?
+            </summary>
+            <p class="mt-3 text-sm text-neutral-500 leading-relaxed">
+              <strong class="text-ink">Tidak.</strong> OpenRiset mendukung semua disiplin ilmu: sains alam, ilmu sosial, humaniora, teknik, kedokteran, seni, ekonomi, hukum — apapun yang menghasilkan karya ilmiah. Metadata kami fleksibel dan tidak mengasumsikan format tertentu. Laporan etnografi, paper machine learning, studi kasus hukum, eksperimen kimia — semua bisa diindeks dengan standar yang sama.
+            </p>
           </details>
-          <details class="group bg-white rounded-2xl border border-neutral-100 p-5 sm:p-6 hover:border-brand-200 transition-colors duration-200 shadow-sm">
-            <summary class="font-semibold text-sm text-ink cursor-pointer group-open:text-brand-700 transition-colors marker:text-brand-500 select-none">Cara mulai?</summary>
-            <p class="mt-3 text-sm text-neutral-500 leading-relaxed">Clone <a href="https://github.com/openriset/community" class="link-underline text-brand-600 font-medium" target="_blank" rel="noopener">community</a>, baca <a href="https://github.com/openriset/spec" class="link-underline text-brand-600 font-medium" target="_blank" rel="noopener">spec</a>, jalankan. Ada pertanyaan? <a href="https://github.com/openriset/openriset.github.io/discussions" class="link-underline text-brand-600 font-medium" target="_blank" rel="noopener">Diskusi di sini</a>.</p>
+          <details class="group bg-white rounded-2xl border border-neutral-200/60 p-5 sm:p-6 hover:border-brand-200 transition-colors duration-200 shadow-sm">
+            <summary class="font-semibold text-sm text-ink cursor-pointer group-open:text-brand-700 transition-colors marker:text-brand-500 select-none">
+              Saya mau pakai untuk institusi saya. Bagaimana caranya?
+            </summary>
+            <p class="mt-3 text-sm text-neutral-500 leading-relaxed">
+              Clone repositori <a href="https://github.com/openriset/community" class="link-underline text-brand-600 font-medium" target="_blank" rel="noopener">community</a>, baca dokumentasi di <a href="https://github.com/openriset/spec" class="link-underline text-brand-600 font-medium" target="_blank" rel="noopener">spec</a>, dan jalankan di server Anda sendiri. Tidak perlu izin. Tidak perlu membayar. Kalau butuh bantuan atau ada pertanyaan, buka diskusi di <a href="https://github.com/openriset/openriset.github.io/discussions" class="link-underline text-brand-600 font-medium" target="_blank" rel="noopener">GitHub Discussions</a> — kami akan bantu semampu kami.
+            </p>
+          </details>
+          <details class="group bg-white rounded-2xl border border-neutral-200/60 p-5 sm:p-6 hover:border-brand-200 transition-colors duration-200 shadow-sm">
+            <summary class="font-semibold text-sm text-ink cursor-pointer group-open:text-brand-700 transition-colors marker:text-brand-500 select-none">
+              Bagaimana cara berkontribusi sebagai developer?
+            </summary>
+            <p class="mt-3 text-sm text-neutral-500 leading-relaxed">
+              Kami menggunakan TypeScript, SvelteKit, PostgreSQL, dan Drizzle ORM. Baca <a href="https://github.com/openriset/openriset.github.io/blob/main/CONTRIBUTING.md" class="link-underline text-brand-600 font-medium" target="_blank" rel="noopener">CONTRIBUTING.md</a> untuk panduan lengkap. Cari issue dengan label <code class="bg-neutral-100 px-1.5 py-0.5 rounded text-xs">good first issue</code> untuk memulai. Pull request selalu diterima — baik itu perbaikan bug, fitur baru, atau dokumentasi.
+            </p>
           </details>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════ CTA ═══════════ -->
-    <section class="py-14 sm:py-20 lg:py-28 bg-soft">
+    <!-- ═══════════════════════════════════════════ CTA ═══════════════════════════════════════════ -->
+    <section class="py-12 sm:py-16 lg:py-24 bg-soft">
       <div class="max-w-4xl mx-auto px-5 sm:px-8 lg:px-10">
         <div class="relative overflow-hidden rounded-3xl bg-ink p-8 sm:p-12 lg:p-16 text-center reveal">
           <div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_100%,rgba(37,99,235,0.12),transparent)]"></div>
+          <div class="absolute top-0 right-0 w-64 h-64 bg-brand-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
           <div class="relative">
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">Siap berkontribusi?</h2>
-            <p class="mt-3 text-sm sm:text-base text-neutral-400 max-w-md mx-auto leading-relaxed">
-              Semua kode terbuka di GitHub. Clone, baca, kontribusi. Tidak perlu izin.
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
+              Siap membantu membangun infrastruktur riset Indonesia?
+            </h2>
+            <p class="mt-3 sm:mt-4 text-sm sm:text-base text-neutral-400 max-w-lg mx-auto leading-relaxed">
+              Semua kode terbuka di GitHub. Clone, baca, mulai berkontribusi. Tidak perlu menunggu undangan. Tidak perlu izin. Tidak perlu membayar. Cukup satu pull request.
             </p>
-            <div class="mt-7 flex flex-col sm:flex-row justify-center gap-3">
-              <a href="https://github.com/openriset" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-ink font-semibold text-sm hover:bg-neutral-100 transition-colors group">
+            <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+              <a href="https://github.com/openriset" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-ink font-semibold text-sm hover:bg-neutral-100 transition-colors group shadow-lg shadow-white/5">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 Lihat di GitHub
                 <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="mailto:openriset@proton.me" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-white/15 text-neutral-300 font-semibold text-sm hover:bg-white/5 hover:border-white/25 transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                Hubungi via email
               </a>
             </div>
           </div>
@@ -411,5 +567,20 @@ const DESC = "OpenRiset membangun standar, perangkat lunak, dan ekosistem publik
         btn.setAttribute('aria-expanded', String(open));
       });
     });
+  </script>
+
+  <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "OpenRiset",
+      "url": "https://openriset.github.io",
+      "description": "OpenRiset membangun standar, perangkat lunak, dan ekosistem publikasi ilmiah terbuka untuk semua disiplin ilmu.",
+      "email": "openriset@proton.me",
+      "logo": "https://openriset.github.io/favicon.svg",
+      "sameAs": ["https://github.com/openriset"],
+      "foundingDate": "2025",
+      "nonprofitStatus": "NonProfitType"
+    }
   </script>
 </Layout>

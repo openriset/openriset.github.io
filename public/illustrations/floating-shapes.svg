@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Floating isometric diamond -->
+  <polygon points="100,20 160,50 100,80 40,50" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.5" opacity="0.6"/>
+  <polygon points="40,50 100,80 100,110 40,80" fill="#bfdbfe" stroke="#93c5fd" stroke-width="0.5" opacity="0.4"/>
+  <polygon points="100,80 160,50 160,80 100,110" fill="#93c5fd" stroke="#60a5fa" stroke-width="0.5" opacity="0.3"/>
+  <!-- Small floating cube -->
+  <polygon points="140,120 165,108 140,96 115,108" fill="#dbeafe" stroke="#93c5fd" stroke-width="0.5" opacity="0.5"/>
+  <polygon points="115,108 140,120 140,133 115,121" fill="#bfdbfe" stroke="#93c5fd" stroke-width="0.5" opacity="0.35"/>
+  <polygon points="140,120 165,108 165,121 140,133" fill="#93c5fd" stroke="#60a5fa" stroke-width="0.5" opacity="0.2"/>
+  <!-- Dot pattern -->
+  <circle cx="30" cy="140" r="3" fill="#bfdbfe" opacity="0.4"/>
+  <circle cx="50" cy="160" r="2" fill="#93c5fd" opacity="0.3"/>
+  <circle cx="170" cy="160" r="3" fill="#bfdbfe" opacity="0.4"/>
+  <circle cx="180" cy="40" r="2" fill="#93c5fd" opacity="0.3"/>
+  <circle cx="30" cy="30" r="2.5" fill="#bfdbfe" opacity="0.5"/>
+</svg>

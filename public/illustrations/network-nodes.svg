@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" fill="none">
+  <defs>
+    <radialGradient id="node-grad" cx="50%" cy="50%"><stop offset="0%" stop-color="#93c5fd"/><stop offset="100%" stop-color="#3b82f6"/></radialGradient>
+    <radialGradient id="node-small" cx="50%" cy="50%"><stop offset="0%" stop-color="#bfdbfe"/><stop offset="100%" stop-color="#60a5fa"/></radialGradient>
+  </defs>
+  <!-- Connection lines -->
+  <line x1="160" y1="120" x2="90" y2="60" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="160" y1="120" x2="240" y2="70" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="160" y1="120" x2="80" y2="180" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="160" y1="120" x2="240" y2="170" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="90" y1="60" x2="240" y2="70" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4 6"/>
+  <line x1="80" y1="180" x2="240" y2="170" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4 6"/>
+  <!-- Center node -->
+  <circle cx="160" cy="120" r="18" fill="url(#node-grad)" opacity="0.9"/>
+  <circle cx="160" cy="120" r="8" fill="white" opacity="0.6"/>
+  <!-- Peripheral nodes -->
+  <circle cx="90" cy="60" r="12" fill="url(#node-small)" opacity="0.85"/>
+  <circle cx="240" cy="70" r="10" fill="url(#node-small)" opacity="0.75"/>
+  <circle cx="80" cy="180" r="14" fill="url(#node-small)" opacity="0.8"/>
+  <circle cx="240" cy="170" r="11" fill="url(#node-small)" opacity="0.7"/>
+  <!-- Small floating nodes -->
+  <circle cx="60" cy="120" r="6" fill="#bfdbfe" opacity="0.5"/>
+  <circle cx="260" cy="120" r="5" fill="#93c5fd" opacity="0.4"/>
+  <circle cx="160" cy="30" r="4" fill="#bfdbfe" opacity="0.3"/>
+</svg>
