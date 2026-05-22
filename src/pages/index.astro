@@ -67,20 +67,6 @@ const SITE_DESC = "OpenRiset adalah organisasi yang membangun infrastruktur sain
           stars={0}
           url="https://github.com/openriset/citation"
         />
-        <RepoCard
-          name="openriset.github.io"
-          description="Website resmi OpenRiset — dibangun dengan Astro 6 dan Tailwind CSS 4."
-          language="TypeScript"
-          stars={0}
-          url="https://github.com/openriset/openriset.github.io"
-        />
-        <RepoCard
-          name=".github"
-          description="Profil organisasi dan konfigurasi GitHub untuk seluruh repositori OpenRiset."
-          language="Markdown"
-          stars={0}
-          url="https://github.com/openriset/.github"
-        />
         <Card
           title="Butuh Infrastruktur Riset?"
           description="OpenRiset menyediakan fondasi yang dapat digunakan oleh organisasi riset manapun. Bebas biaya, bebas modifikasi."
@@ -89,38 +75,38 @@ const SITE_DESC = "OpenRiset adalah organisasi yang membangun infrastruktur sain
       </div>
     </Section>
 
-    <!-- Arsitektur -->
-    <Section id="arsitektur" title="Arsitektur" subtitle="Teknologi yang kami gunakan untuk membangun infrastruktur.">
+    <!-- Standar & Pendekatan -->
+    <Section id="standar" title="Standar & Pendekatan" subtitle="Prinsip yang memandu setiap keputusan dalam membangun infrastruktur riset.">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <Card
-          title="SvelteKit"
-          description="Framework full-stack untuk aplikasi web modern. Performa tinggi dengan SSR dan static generation."
-          icon="🧩"
+          title="Metadata Terstandarisasi"
+          description="Karya ilmiah diindeks dengan format metadata yang konsisten dan interoperabel — kompatibel dengan SINTA, Crossref, DataCite."
+          icon="📋"
         />
         <Card
-          title="TypeScript"
-          description="Strict mode. Semua kode kami fully typed untuk keamanan dan maintainability jangka panjang."
-          icon="🔷"
+          title="Verifikasi Bertingkat"
+          description="Setiap karya melewati proses verifikasi berjenjang: mentor/guru → peer review → publik. Kredibilitas dibangun dari bawah."
+          icon="✅"
         />
         <Card
-          title="PostgreSQL + Drizzle"
-          description="Database relasional modern dengan ORM type-safe. Skema terdefinisi ketat, migrasi terotomasi."
-          icon="🗄️"
+          title="Sitasi Terbuka"
+          description="Standar sitasi yang transparan dan machine-readable. Setiap referensi dapat dilacak dan diverifikasi oleh siapa pun."
+          icon="🔗"
         />
         <Card
-          title="Better Auth"
-          description="Autentikasi modern dengan dukungan multi-provider, session management, dan role-based access."
-          icon="🔐"
+          title="Self-Hosted"
+          description="Semua infrastruktur dapat di-deploy mandiri oleh institusi manapun. Docker compose untuk development, Kubernetes untuk production."
+          icon="🏗️"
         />
         <Card
-          title="Kubernetes-ready"
-          description="Aplikasi dirancang untuk deployment cloud-native. Docker compose untuk development lokal."
-          icon="☸️"
+          title="API Publik"
+          description="Data riset dapat diakses melalui REST API yang terdokumentasi. Integrasi mudah dengan sistem informasi akademik yang sudah ada."
+          icon="🔌"
         />
         <Card
-          title="Astro"
-          description="Static site generation untuk website publik. Performa tinggi, zero JavaScript by default."
-          icon="🌐"
+          title="Lisensi MIT"
+          description="Semua kode bebas digunakan, dimodifikasi, dan didistribusikan. Tanpa biaya, tanpa vendor lock-in, tanpa syarat tersembunyi."
+          icon="📜"
         />
       </div>
     </Section>
