@@ -7,28 +7,26 @@ interface Props {
 }
 
 const { title, description, icon, href } = Astro.props;
-const Wrapper = href ? 'a' : 'div';
+const Tag = href ? 'a' : 'div';
 ---
 
-<Wrapper
+<Tag
   {href}
-  class="block group p-6 sm:p-8 rounded-2xl border border-or-slate-200 bg-white hover:border-or-blue-300 hover:shadow-lg hover:shadow-or-blue-100/50 transition-all duration-200"
+  class="block group p-5 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border border-or-slate-200 bg-white hover:border-or-blue-300 hover:shadow-lg hover:shadow-or-blue-100/30 transition-all duration-200"
   target={href ? "_blank" : undefined}
   rel={href ? "noopener" : undefined}
 >
-  {icon && (
-    <span class="text-3xl mb-4 block">{icon}</span>
-  )}
-  <h3 class="text-lg font-bold text-or-slate-900 group-hover:text-or-blue-700 transition-colors">
+  {icon && <span class="text-2xl sm:text-3xl mb-3 sm:mb-4 block">{icon}</span>}
+  <h3 class="text-base sm:text-lg font-bold text-or-slate-900 group-hover:text-or-blue-700 transition-colors">
     {title}
   </h3>
-  <p class="mt-2 text-sm text-or-slate-500 leading-relaxed">
+  <p class="mt-1.5 sm:mt-2 text-xs sm:text-sm text-or-slate-500 leading-relaxed">
     {description}
   </p>
   {href && (
-    <span class="inline-flex items-center gap-1 mt-4 text-sm font-medium text-or-blue-600">
+    <span class="inline-flex items-center gap-1 mt-3 sm:mt-4 text-xs sm:text-sm font-medium text-or-blue-600">
       Pelajari lebih lanjut
-      <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </span>
   )}
-</Wrapper>
+</Tag>

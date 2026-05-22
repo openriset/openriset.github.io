@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-or-blue-50: #f0f9ff;
-  --color-or-blue-100: #e0f2fe;
-  --color-or-blue-200: #bae6fd;
-  --color-or-blue-300: #7dd3fc;
-  --color-or-blue-400: #38bdf8;
-  --color-or-blue-500: #0ea5e9;
-  --color-or-blue-600: #0284c7;
-  --color-or-blue-700: #0369a1;
-  --color-or-blue-800: #075985;
-  --color-or-blue-900: #0c4a6e;
-  --color-or-blue-950: #082f49;
-  
+  --color-or-blue-50: #eff6ff;
+  --color-or-blue-100: #dbeafe;
+  --color-or-blue-200: #bfdbfe;
+  --color-or-blue-300: #93c5fd;
+  --color-or-blue-400: #60a5fa;
+  --color-or-blue-500: #3b82f6;
+  --color-or-blue-600: #2563eb;
+  --color-or-blue-700: #1d4ed8;
+  --color-or-blue-800: #1e40af;
+  --color-or-blue-900: #1e3a8a;
+  --color-or-blue-950: #172554;
+
   --color-or-slate-50: #f8fafc;
   --color-or-slate-100: #f1f5f9;
   --color-or-slate-200: #e2e8f0;
@@ -24,18 +24,18 @@
   --color-or-slate-800: #1e293b;
   --color-or-slate-900: #0f172a;
   --color-or-slate-950: #020617;
-  
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
-    @apply bg-or-slate-50 text-or-slate-900 antialiased;
+    @apply bg-white text-or-slate-900 antialiased;
     font-family: var(--font-sans);
   }
 
@@ -44,6 +44,6 @@
   }
 
   a {
-    @apply text-or-blue-600 hover:text-or-blue-700 transition-colors;
+    @apply transition-colors duration-150;
   }
 }
