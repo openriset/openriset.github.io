@@ -3,38 +3,40 @@ interface Props {
   id: string;
   title: string;
   subtitle?: string;
-  /** Collapsed by default on mobile. Desktop always open. */
   collapsed?: boolean;
 }
 
 const { id, title, subtitle, collapsed = false } = Astro.props;
 ---
 
-<section {id} class="py-8 sm:py-12 md:py-16 lg:py-20 border-b border-or-slate-100 last:border-b-0">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Section header — clickable toggle on mobile -->
+<section {id} class="relative">
+  <!-- Subtle top separator instead of border-bottom -->
+  <div class="absolute top-0 inset-x-4 sm:inset-x-6 lg:inset-x-8 h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24">
+    <!-- Section header -->
     <button
       type="button"
-      class="section-toggle w-full text-left flex items-start justify-between gap-2 mb-4 sm:mb-6 md:mb-8 lg:mb-10 md:cursor-default"
+      class="section-toggle w-full text-left flex items-start justify-between gap-3 mb-6 sm:mb-8 md:mb-10 md:cursor-default group"
       aria-expanded={collapsed ? "false" : "true"}
     >
       <div class="flex-1 min-w-0">
-        <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-or-slate-900 leading-tight tracking-tight">
+        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-[2rem] font-bold text-neutral-900 leading-[1.15] tracking-tight">
           {title}
         </h2>
         {subtitle && (
-          <p class="mt-1.5 sm:mt-2 text-xs sm:text-sm md:text-base lg:text-lg text-or-slate-500 leading-relaxed max-w-2xl">
+          <p class="mt-2 sm:mt-3 text-sm sm:text-base text-neutral-500 leading-relaxed max-w-2xl">
             {subtitle}
           </p>
         )}
       </div>
-      <!-- Toggle icon — hidden on desktop -->
-      <span class="toggle-icon shrink-0 mt-1.5 sm:mt-2 text-or-slate-400 transition-transform duration-300 md:hidden {collapsed ? '' : 'rotate-180'}">
-        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+      <!-- Toggle icon — mobile only -->
+      <span class="toggle-icon shrink-0 mt-1 sm:mt-1.5 w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-400 transition-all duration-300 md:hidden group-hover:bg-neutral-200 {collapsed ? '' : 'rotate-180 bg-neutral-200'}">
+        <svg class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
       </span>
     </button>
 
-    <!-- Content wrapper -->
+    <!-- Content -->
     <div class="section-content {collapsed ? '' : 'expanded'}">
       <slot />
     </div>
@@ -42,12 +44,11 @@ const { id, title, subtitle, collapsed = false } = Astro.props;
 </section>
 
 <style>
-  /* Mobile: collapsible with smooth animation */
   @media (max-width: 767px) {
     .section-content {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+      transition: max-height 0.45s cubic-bezier(0.33, 1, 0.68, 1), opacity 0.25s ease;
       opacity: 0;
     }
     .section-content.expanded {
@@ -59,12 +60,8 @@ const { id, title, subtitle, collapsed = false } = Astro.props;
       user-select: none;
       -webkit-tap-highlight-color: transparent;
     }
-    .section-toggle:active {
-      background: transparent;
-    }
   }
 
-  /* Desktop: always show full content */
   @media (min-width: 768px) {
     .section-content {
       max-height: none !important;

@@ -10,20 +10,21 @@ const sections = [
 ];
 ---
 
-<nav class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-white/90 backdrop-blur-lg border-t border-or-slate-200 safe-area-bottom" id="mobile-toc">
-  <div class="flex items-center overflow-x-auto scrollbar-hide px-1" id="toc-scroll">
+<nav class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-white/90 backdrop-blur-xl border-t border-neutral-200/60 shadow-[0_-8px_32px_-8px_rgba(0,0,0,0.06)]" id="mobile-toc" style="padding-bottom: env(safe-area-inset-bottom, 0px);">
+  <div class="flex items-center overflow-x-auto scrollbar-none px-1 py-0.5" id="toc-scroll">
     {sections.map(({ id, label }) => (
       <a
         href={`#${id}`}
-        class="toc-link shrink-0 px-2.5 py-2 text-[11px] font-medium text-or-slate-500 hover:text-or-slate-900 whitespace-nowrap transition-colors"
+        class="toc-link shrink-0 px-3 py-2.5 text-[11px] font-semibold text-neutral-500 hover:text-neutral-900 whitespace-nowrap transition-colors"
       >
         {label}
       </a>
     ))}
-    <!-- Scroll to top -->
+    <!-- Divider -->
+    <span class="w-px h-4 bg-neutral-200 shrink-0 mx-0.5"></span>
     <a
       href="#top"
-      class="toc-link shrink-0 px-2.5 py-2 text-[11px] font-medium text-or-slate-400 hover:text-or-slate-900 whitespace-nowrap transition-colors"
+      class="toc-link shrink-0 px-3 py-2.5 text-[11px] font-semibold text-neutral-400 hover:text-neutral-900 whitespace-nowrap transition-colors"
       aria-label="Back to top"
     >
       ↑ Top
@@ -31,38 +32,31 @@ const sections = [
   </div>
 </nav>
 
-<!-- Add padding so content doesn't hide behind TOC -->
-<div class="md:hidden h-10" aria-hidden="true"></div>
+<div class="md:hidden h-11" aria-hidden="true"></div>
 
 <style>
-  .scrollbar-hide {
+  .scrollbar-none {
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-  .safe-area-bottom {
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-  }
+  .scrollbar-none::-webkit-scrollbar { display: none; }
 </style>
 
 <script>
-  // Highlight active section on scroll
-  const tocLinks = document.querySelectorAll('.toc-link');
-  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.toc-link');
+  const sects = document.querySelectorAll('section[id]');
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        tocLinks.forEach(link => {
-          link.classList.toggle('text-or-slate-900', link.getAttribute('href') === `#${id}`);
-          link.classList.toggle('text-or-slate-500', link.getAttribute('href') !== `#${id}`);
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => {
+          const active = l.getAttribute('href') === `#${e.target.id}`;
+          l.classList.toggle('text-neutral-900', active);
+          l.classList.toggle('text-neutral-500', !active);
         });
       }
     });
-  }, { rootMargin: '-40% 0px -55% 0px' });
+  }, { rootMargin: '-30% 0px -60% 0px' });
 
-  sections.forEach(s => observer.observe(s));
+  sects.forEach(s => obs.observe(s));
 </script>

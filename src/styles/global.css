@@ -1,54 +1,60 @@
 @import "tailwindcss";
 
 @theme {
-  --color-or-blue-50: #eff6ff;
-  --color-or-blue-100: #dbeafe;
-  --color-or-blue-200: #bfdbfe;
-  --color-or-blue-300: #93c5fd;
-  --color-or-blue-400: #60a5fa;
-  --color-or-blue-500: #3b82f6;
-  --color-or-blue-600: #2563eb;
-  --color-or-blue-700: #1d4ed8;
-  --color-or-blue-800: #1e40af;
-  --color-or-blue-900: #1e3a8a;
-  --color-or-blue-950: #172554;
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-800: #1e40af;
+  --color-brand-900: #1e3a8a;
 
-  --color-or-slate-50: #f8fafc;
-  --color-or-slate-100: #f1f5f9;
-  --color-or-slate-200: #e2e8f0;
-  --color-or-slate-300: #cbd5e1;
-  --color-or-slate-400: #94a3b8;
-  --color-or-slate-500: #64748b;
-  --color-or-slate-600: #475569;
-  --color-or-slate-700: #334155;
-  --color-or-slate-800: #1e293b;
-  --color-or-slate-900: #0f172a;
-  --color-or-slate-950: #020617;
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-400: #94a3b8;
+  --color-neutral-500: #64748b;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1e293b;
+  --color-neutral-900: #0f172a;
+  --color-neutral-950: #020617;
 
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
 @layer base {
+  :root {
+    --snap-px: 1rem;
+  }
+
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    @apply bg-white text-or-slate-900 antialiased;
+    @apply bg-white text-neutral-900 antialiased;
     font-family: var(--font-sans);
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 
   ::selection {
-    @apply bg-or-blue-200 text-or-blue-900;
+    @apply bg-brand-200 text-brand-900;
   }
 
-  a {
-    @apply transition-colors duration-150;
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-500 rounded;
   }
 }
 
-/* ── Horizontal snap scroll for card grids on mobile ── */
 @layer components {
   .snap-grid {
     display: flex;
@@ -57,44 +63,26 @@
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    padding-bottom: 0.25rem;
-  }
-  .snap-grid::-webkit-scrollbar {
-    display: none;
+    margin-left: calc(-1 * var(--snap-px));
+    margin-right: calc(-1 * var(--snap-px));
+    padding-left: var(--snap-px);
+    padding-right: var(--snap-px);
   }
   .snap-grid > * {
     scroll-snap-align: start;
     flex-shrink: 0;
-    width: 85vw;
-    max-width: 320px;
+    width: 78vw;
+    max-width: 288px;
   }
+  .snap-grid::-webkit-scrollbar { display: none; }
 
-  /* Snap indicator dots */
-  .snap-dots {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 0.75rem;
-  }
-  .snap-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 9999px;
-    background: var(--color-or-slate-300);
-    transition: background 0.2s;
-  }
-  .snap-dot.active {
-    background: var(--color-or-slate-600);
-    width: 16px;
-  }
-
-  /* Desktop: reset to grid */
   @media (min-width: 640px) {
     .snap-grid {
       display: grid;
       overflow-x: visible;
       scroll-snap-type: none;
-      padding-bottom: 0;
+      margin: 0;
+      padding: 0;
     }
     .snap-grid > * {
       width: auto;
@@ -102,8 +90,15 @@
       scroll-snap-align: none;
       flex-shrink: 1;
     }
-    .snap-dots {
-      display: none;
+
+    :root {
+      --snap-px: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --snap-px: 2rem;
     }
   }
 }
